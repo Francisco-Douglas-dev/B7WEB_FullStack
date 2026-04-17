@@ -1,0 +1,7 @@
+/* Definindo variáveis no :root */
+:root{ --brand:#007acc; --padding:10px; }
+
+.badge{ background:var(--brand); color:#fff; padding:var(--padding); border-radius:6px; display:inline-block; }
+
+/* É possível sobrescrever variáveis em escopos mais específicos */
+.box{ --brand:#ff6b6b; }

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Herança no CSS</title>
+  <!-- Exemplo: propriedades herdáveis (color, font-family) -->
+  <style>
+    body { color: #333; font-family: Arial, sans-serif; }
+    /* color e font-family são herdadas por elementos filhos */
+    p { margin: 0 0 10px; }
+    .nao-herdavel { color: initial; }
+  </style>
+</head>
+<body>
+  <h1>Herança</h1>
+  <div>
+    <p>Este parágrafo herda a <code>color</code> e a <code>font-family</code> do <code>body</code>.</p>
+    <p class="nao-herdavel">Este parágrafo redefine a cor para o valor inicial (não herdado).</p>
+  </div>
+  <p>Dica: nem todas as propriedades são herdáveis (ex.: margin, padding não são).</p>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unidades relativas (fonte) 1</title>
+  <!-- em, rem, % -->
+  <style>
+    html { font-size: 16px; }
+    .rem { font-size: 2rem; /* 32px */ }
+    .em { font-size: 1.5em; /* 1.5 * tamanho do elemento pai */ }
+    .percent { font-size: 120%; }
+  </style>
+</head>
+<body>
+  <h1>Unidades relativas (fonte) - parte 1</h1>
+  <p class="rem">Texto com 2rem (duas vezes o font-size do root).</p>
+  <div style="font-size:20px;">
+    <p class="em">Texto com 1.5em (1.5 * 20px = 30px).</p>
+  </div>
+  <p class="percent">Texto com 120% do tamanho padrão.</p>
+</body>
+</html>

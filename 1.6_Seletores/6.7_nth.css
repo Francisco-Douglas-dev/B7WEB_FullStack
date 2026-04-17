@@ -1,0 +1,6 @@
+/* :nth-child(an+b), :nth-child(odd), :nth-child(even) */
+ul{ list-style:none; padding:0; font-family:Arial }
+ul li{ padding:8px }
+ul li:nth-child(odd){ background:#f9f9f9 }
+ul li:nth-child(3){ background:#fff3e0; font-weight:700 }
+body{ margin:16px }

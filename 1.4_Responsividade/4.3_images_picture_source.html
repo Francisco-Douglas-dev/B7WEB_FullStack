@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Imagens responsivas: picture & source</title>
+  <link rel="stylesheet" href="4.3_images_picture_source.css">
+</head>
+<body>
+  <h1>picture + source</h1>
+  <p>O navegador escolhe a melhor fonte para a viewport.</p>
+  <picture>
+    <source media="(min-width:800px)" srcset="image-large.jpg">
+    <source media="(min-width:400px)" srcset="image-medium.jpg">
+    <img src="image-small.jpg" alt="Exemplo responsivo">
+  </picture>
+</body>
+</html>

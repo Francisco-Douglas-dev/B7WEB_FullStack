@@ -1,0 +1,11 @@
+/* Grid que muda com media queries usando operadores */
+.grid{ display:flex; gap:8px; }
+.item{ background:#f0f0f0; padding:12px; flex:1 }
+
+@media only screen and (min-width:700px){
+  .grid{ flex-wrap:nowrap }
+}
+
+@media not all and (min-width:700px){
+  /* comportamento alternativo em navegadores antigos */
+}

@@ -1,0 +1,4 @@
+/* Estilizando inputs básicos */
+input[type="text"]{ padding:6px; border:1px solid #ccc; border-radius:4px }
+input[type="checkbox"], input[type="radio"]{ margin-right:6px }
+form{ font-family:Arial }

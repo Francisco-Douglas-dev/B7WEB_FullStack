@@ -1,0 +1,8 @@
+/* Mobile First: estilos base para dispositivos pequenos */
+body { font-family: Arial, sans-serif; margin:16px; }
+.card { background:#f3f3f3; padding:12px; border-radius:6px; }
+
+/* A partir de 768px aplicamos layout para desktop */
+@media (min-width:768px){
+  .card { max-width:700px; margin:0 auto; padding:20px; }
+}

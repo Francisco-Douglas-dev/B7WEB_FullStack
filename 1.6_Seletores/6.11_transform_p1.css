@@ -1,0 +1,4 @@
+/* Transform 2D básico com transition */
+.box{ width:120px; height:120px; background:#ffcc80; display:flex; align-items:center; justify-content:center; transition: transform .3s ease }
+.box:hover{ transform: translateY(-8px) rotate(-6deg) scale(1.05) }
+body{ font-family:Arial; margin:16px }

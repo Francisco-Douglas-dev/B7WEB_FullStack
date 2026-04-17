@@ -1,0 +1,5 @@
+/* Operadores de atributo: [attr], [attr="value"], [attr^="start"], [attr$="end"], [attr*="contains"] */
+[title]{ background:#fff8e1; padding:4px }
+[a[data-id="123"]]{ color:#00796b; font-weight:700 }
+a[href^="https"]{ text-decoration:underline }
+body{ font-family:Arial; margin:16px }

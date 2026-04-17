@@ -1,0 +1,5 @@
+/* Exemplo simples de ::before e ::after */
+.pill{ position:relative; padding:8px 14px; background:#007acc; color:#fff; border:none; border-radius:20px }
+.pill::after{ content:"\00a0" attr(data-count); position:absolute; right:-6px; top:-6px; background:#ff5252; color:#fff; width:22px; height:22px; display:flex; align-items:center; justify-content:center; border-radius:50%; font-size:12px }
+/* Para demo, adicionamos o atributo via CSS não é possível, mas vemos como inserir */
+body{ font-family:Arial; margin:16px }

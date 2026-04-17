@@ -1,0 +1,5 @@
+/* Animação simples com keyframes */
+.pulse{ display:inline-block; padding:12px; background:#e0f7fa; border-radius:8px }
+.pulse:hover{ animation: pulse 1s infinite; }
+@keyframes pulse{ 0%{ transform:scale(1) } 50%{ transform:scale(1.05) } 100%{ transform:scale(1) } }
+body{ font-family:Arial; margin:16px }

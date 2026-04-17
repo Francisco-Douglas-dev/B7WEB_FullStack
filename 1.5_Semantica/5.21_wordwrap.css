@@ -1,0 +1,4 @@
+/* overflow-wrap (word-wrap) */
+.nowrap{ background:#fff3e0; padding:8px }
+.wrap{ background:#e8f5e9; padding:8px; overflow-wrap: break-word }
+body{ font-family:Arial; margin:16px }

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>O valor inherit</title>
+  <!-- O valor 'inherit' força o elemento a herdar a propriedade do pai -->
+  <style>
+    .pai { color: purple; font-size:18px; }
+    .filho { color: red; }
+    .forcar-inherit { color: inherit; }
+  </style>
+</head>
+<body>
+  <h1>Valor <code>inherit</code></h1>
+  <div class="pai">
+    <p class="filho">Este parágrafo tem cor vermelha (sobrescreve herança).</p>
+    <p class="forcar-inherit">Este parágrafo força a herdar a cor do pai (purple).</p>
+  </div>
+  <p>Dica: <code>inherit</code> é útil para componentes onde se deseja consistência com o contexto.</p>
+</body>
+</html>

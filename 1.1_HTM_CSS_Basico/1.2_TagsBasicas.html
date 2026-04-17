@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--
+    Exemplo: 1.2_TagsBasicas.html
+    Este arquivo inclui as tags HTML básicas organizadas por categorias
+    com comentários explicativos. Use como referência de aprendizado.
+-->
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Exemplos e documentação de tags básicas do HTML">
+    <title>Tags Básicas do HTML - Exemplos</title>
+    <!-- Metadados importantes: charset, viewport, description -->
+</head>
+<body>
+
+    <!-- ========================= -->
+    <!-- Estrutura básica e metadados -->
+    <!-- ========================= -->
+    <!-- <!DOCTYPE html> já está no topo do arquivo e informa o modo padrão de renderização -->
+
+    <header>
+        <h1>Exemplos de Tags Básicas em HTML</h1>
+        <p>Arquivo de referência com comentários e pequenos exemplos.</p>
+    </header>
+
+    <!-- ========================= -->
+    <!-- Cabeçalhos e texto -->
+    <!-- ========================= -->
+    <section>
+        <h2>Cabeçalhos e Texto</h2>
+        <h1>Heading 1 - h1</h1>
+        <h2>Heading 2 - h2</h2>
+        <h3>Heading 3 - h3</h3>
+        <h4>Heading 4 - h4</h4>
+        <h5>Heading 5 - h5</h5>
+        <h6>Heading 6 - h6</h6>
+
+        <p>Parágrafo com <strong>texto em negrito</strong> e <em>texto em itálico</em>.</p>
+        <p>Quebra de linha com <code>&lt;br&gt;</code> abaixo:<br>linha nova</p>
+        <hr>
+    </section>
+
+    <!-- ========================= -->
+    <!-- Links e mídia -->
+    <!-- ========================= -->
+    <section>
+        <h2>Links e Mídia</h2>
+        <p>Link de exemplo: <a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN Web Docs</a></p>
+
+        <!-- Imagem: sempre inclua atributo alt -->
+        <figure>
+            <img src="placeholder.jpg" alt="Imagem de exemplo - substituir pelo caminho real" width="300">
+            <figcaption>Exemplo de <code>&lt;img&gt;</code> com <code>alt</code>.</figcaption>
+        </figure>
+
+        <!-- Áudio e vídeo: fontes são placeholders -->
+        <video controls width="320">
+            <source src="sample.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+
+        <audio controls>
+            <source src="sample.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+
+        <!-- iframe para incorporar conteúdo externo -->
+        <iframe src="about:blank" title="Exemplo de iframe" width="300" height="150"></iframe>
+    </section>
+
+    <!-- ========================= -->
+    <!-- Listas e Tabelas -->
+    <!-- ========================= -->
+    <section>
+        <h2>Listas</h2>
+        <p>Lista não ordenada:</p>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2
+                <ul>
+                    <li>Subitem A</li>
+                </ul>
+            </li>
+            <li>Item 3</li>
+        </ul>
+
+        <p>Lista ordenada:</p>
+        <ol>
+            <li>Primeiro</li>
+            <li>Segundo</li>
+        </ol>
+
+        <h2>Tabelas</h2>
+        <table border="1">
+            <caption>Exemplo de tabela</caption>
+            <thead>
+                <tr>
+                    <th>Coluna A</th>
+                    <th>Coluna B</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Valor A1</td>
+                    <td>Valor B1</td>
+                </tr>
+                <tr>
+                    <td>Valor A2</td>
+                    <td>Valor B2</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- ========================= -->
+    <!-- Formulários -->
+    <!-- ========================= -->
+    <section>
+        <h2>Formulários</h2>
+        <form action="#" method="post">
+            <p>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome">
+            </p>
+
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </p>
+
+            <p>
+                <span>Sexo:</span>
+                <label><input type="radio" name="sexo" value="m"> Masculino</label>
+                <label><input type="radio" name="sexo" value="f"> Feminino</label>
+            </p>
+
+            <p>
+                <label for="escolha">Escolha:</label>
+                <select id="escolha" name="escolha">
+                    <option value="1">Opção 1</option>
+                    <option value="2">Opção 2</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+            </p>
+
+            <p>
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpar</button>
+            </p>
+        </form>
+    </section>
+
+    <!-- ========================= -->
+    <!-- Semântica e agrupamento -->
+    <!-- ========================= -->
+    <section>
+        <h2>Elementos Semânticos e de Layout</h2>
+        <header>
+            <h3>Header (exemplo)</h3>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Sobre</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <article>
+                <h3>Article</h3>
+                <p>Conteúdo principal do artigo.</p>
+            </article>
+
+            <section>
+                <h3>Section</h3>
+                <p>Seção de conteúdo relacionada.</p>
+            </section>
+
+            <aside>
+                <h4>Aside</h4>
+                <p>Conteúdo complementar, como anúncios ou links.</p>
+            </aside>
+        </main>
+
+        <footer>
+            <p>Footer - informações de rodapé.</p>
+        </footer>
+    </section>
+
+    <!-- ========================= -->
+    <!-- Elementos inline e de código -->
+    <!-- ========================= -->
+    <section>
+        <h2>Elementos Inline e de Código</h2>
+        <p>Texto em <small>tamanho menor</small>, <sub>subscrito</sub>, <sup>sobrescrito</sup>.</p>
+        <p>Exemplo de código inline: <code>const x = 1;</code></p>
+        <pre><code>// Bloco de código
+function ola() {
+    console.log('Olá');
+}
+</code></pre>
+    </section>
+
+    <!-- ========================= -->
+    <!-- Script e observações finais -->
+    <!-- ========================= -->
+    <section>
+        <h2>Script</h2>
+        <p>Exemplo mínimo de script:</p>
+        <script>
+            // Console para demonstrar que o script está carregado
+            console.log('Arquivo de exemplo de tags básicas carregado');
+        </script>
+    </section>
+
+</body>
+</html>

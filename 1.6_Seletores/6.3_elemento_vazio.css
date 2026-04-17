@@ -1,0 +1,5 @@
+/* :empty aplica estilos somente quando o elemento não tem conteúdo */
+.box{ border:1px dashed #ccc; padding:12px; margin-bottom:8px }
+.box:empty{ background:#ffecec; min-height:40px }
+.box.not-empty{ background:#ecfff1 }
+body{ font-family:Arial; margin:16px }

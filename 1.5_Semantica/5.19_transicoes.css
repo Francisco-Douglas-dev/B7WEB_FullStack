@@ -1,0 +1,4 @@
+/* Transições suaves */
+.btn{ padding:10px 14px; background:#007acc; color:#fff; border:none; border-radius:6px; transition: background .3s ease, transform .2s }
+.btn:hover{ background:#005fa3; transform: translateY(-3px) }
+body{ font-family:Arial; margin:16px }

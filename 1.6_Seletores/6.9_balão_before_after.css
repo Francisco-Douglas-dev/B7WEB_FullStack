@@ -1,0 +1,6 @@
+/* Tooltip simples usando ::before/::after */
+.tooltip{ position:relative; display:inline-block; padding:8px; background:#e8f0ff; border-radius:6px }
+.tooltip .tip{ visibility:hidden; position:absolute; left:50%; transform:translateX(-50%); bottom:120%; background:#333; color:#fff; padding:8px; border-radius:6px; white-space:nowrap }
+.tooltip .tip::after{ content:""; position:absolute; left:50%; transform:translateX(-50%); top:100%; width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; border-top:6px solid #333 }
+.tooltip:hover .tip{ visibility:visible }
+body{ font-family:Arial; margin:16px }

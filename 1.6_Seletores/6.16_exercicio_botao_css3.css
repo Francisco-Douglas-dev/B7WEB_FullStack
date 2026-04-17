@@ -1,0 +1,4 @@
+/* Botão com sombra, gradiente e transformação */
+.fancy{ background: linear-gradient(180deg,#6ec6ff,#0288d1); color:#fff; padding:10px 18px; border-radius:8px; border:none; box-shadow:0 6px 18px rgba(2,136,209,0.25); transition: transform .15s }
+.fancy:active{ transform: translateY(2px) }
+body{ font-family:Arial; margin:16px }

@@ -1,0 +1,4 @@
+main{ display:grid; grid-template-columns: 1fr 250px; gap:16px; font-family:Arial }
+article{ background:#fff8e1; padding:12px }
+section{ background:#e8f5e9; padding:10px }
+aside{ background:#f0f4ff; padding:10px }

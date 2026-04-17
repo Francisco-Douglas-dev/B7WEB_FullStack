@@ -1,0 +1,4 @@
+/* Exemplo RGBA */
+.bg{ background: rgba(0, 122, 204, 0.15); padding:12px; border-radius:6px }
+.fg{ color: rgba(0,0,0,0.6) }
+body{ font-family:Arial; margin:16px }

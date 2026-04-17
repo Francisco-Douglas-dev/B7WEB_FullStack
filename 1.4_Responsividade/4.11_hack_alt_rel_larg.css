@@ -1,0 +1,6 @@
+/* Hack clássico: padding-top para manter proporção (16:9) */
+.ratio-box{ width:100%; max-width:640px; background:#eee; position:relative; }
+.ratio-box::before{ content:''; display:block; padding-top:56.25%; /* 9/16 = 56.25% */ }
+.ratio-box > *{ position:absolute; top:0; left:0; right:0; bottom:0; }
+
+/* conteúdo interno pode ser posicionado usando absolute */

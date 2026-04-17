@@ -1,0 +1,6 @@
+/* Estilizando placeholder (cross-browser básico) */
+input{ padding:8px; border-radius:4px; border:1px solid #ccc }
+input::placeholder{ color:#999; font-style:italic }
+input:-ms-input-placeholder{ color:#999 }
+input::-ms-input-placeholder{ color:#999 }
+body{ font-family:Arial; margin:16px }

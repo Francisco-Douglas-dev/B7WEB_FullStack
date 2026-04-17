@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Validações Nativas 1</title>
+  <!-- Uso de atributos nativos: required, pattern, min, max -->
+</head>
+<body>
+  <h1>Validações Nativas (1)</h1>
+  <form>
+    <label for="email">Email (obrigatório):</label>
+    <input id="email" type="email" required>
+
+    <label for="idade">Idade (entre 18 e 99):</label>
+    <input id="idade" type="number" min="18" max="99" required>
+
+    <button type="submit">Enviar</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,6 @@
+/* Padrão: estilo para portrait */
+.box{ padding:12px; background:#fff4f0; }
+
+@media (orientation: landscape){
+  .box{ background:#f0fff4; }
+}

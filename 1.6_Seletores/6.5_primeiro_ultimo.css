@@ -1,0 +1,5 @@
+ul{ list-style:none; padding:0; font-family:Arial }
+ul li{ padding:8px; border-bottom:1px solid #eee }
+ul li:first-child{ background:#e3f2fd; font-weight:700 }
+ul li:last-child{ background:#fff3e0 }
+body{ margin:16px }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formatando formulários no CSS (2/2)</title>
+  <!-- Exemplo de estados e estilos avançados (focus, :invalid) -->
+  <style>
+    input:focus { outline: 2px solid #007acc; }
+    input:invalid { border: 2px solid #e53935; }
+    .row { display:flex; gap:8px; }
+    .row input { flex:1; }
+  </style>
+</head>
+<body>
+  <h1>Formatando formulários (2/2)</h1>
+  <form>
+    <div class="row">
+      <input type="text" placeholder="Nome" required>
+      <input type="email" placeholder="Email" required>
+    </div>
+    <button type="submit">Enviar</button>
+  </form>
+</body>
+</html>

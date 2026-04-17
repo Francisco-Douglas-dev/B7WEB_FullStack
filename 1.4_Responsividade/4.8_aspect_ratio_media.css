@@ -1,0 +1,12 @@
+/* Estilo padrão */
+.box{ padding:12px; background:#f7f7ff }
+
+/* Se a viewport for mais larga que alta (aspect > 1/1) */
+@media (min-aspect-ratio: 16/9){
+  .box{ background:#e8f7ff }
+}
+
+/* Se a viewport for mais alta que larga */
+@media (max-aspect-ratio: 3/4){
+  .box{ background:#ffe8f0 }
+}

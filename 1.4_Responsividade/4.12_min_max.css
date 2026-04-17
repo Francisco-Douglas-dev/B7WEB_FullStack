@@ -1,0 +1,4 @@
+/* min() e max() ajudam em regras responsivas */
+.box{ background:#f5f5ff; padding:12px; width: min(90%, 600px); margin:0 auto; }
+
+/* também existe clamp() para combinar min/max e preferido */

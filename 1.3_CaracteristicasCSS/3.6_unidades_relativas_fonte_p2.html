@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unidades relativas (fonte) 2</title>
+  <!-- Exemplo mostrando diferença entre em e rem em contextos aninhados -->
+  <style>
+    html { font-size: 16px; }
+    .container { font-size: 18px; }
+    .container .em { font-size: 1.2em; }  /* 1.2 * 18px = 21.6px */
+    .container .rem { font-size: 1.2rem; } /* 1.2 * 16px = 19.2px */
+  </style>
+</head>
+<body>
+  <h1>Unidades relativas (fonte) - parte 2</h1>
+  <div class="container">
+    <p class="em">Usando <code>em</code> (relativo ao pai).</p>
+    <p class="rem">Usando <code>rem</code> (relativo ao root).</p>
+  </div>
+  <p>Dica: prefira <code>rem</code> para consistência global e <code>em</code> para componentes dependentes do contexto.</p>
+</body>
+</html>

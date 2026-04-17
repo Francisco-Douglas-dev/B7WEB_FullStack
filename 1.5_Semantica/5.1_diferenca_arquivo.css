@@ -1,0 +1,4 @@
+/* Exemplo simples demonstrando separação HTML/CSS */
+body{ font-family: Arial, sans-serif; margin:16px; }
+h1{ color:#004466 }
+p{ color:#333 }

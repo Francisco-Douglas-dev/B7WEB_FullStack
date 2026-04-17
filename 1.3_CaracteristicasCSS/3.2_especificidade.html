@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Especificidade</title>
+  <!-- Demonstração de regra aplicada com diferentes especificidades -->
+  <style>
+    p { color: blue; }               /* especificidade: 0,0,0,1 */
+    .importante p { color: green; }  /* especificidade: 0,0,1,1 */
+    #area p { color: red; }          /* especificidade: 0,1,0,1 -> vence */
+  </style>
+</head>
+<body>
+  <h1>Especificidade</h1>
+  <div>
+    <p>Parágrafo com regra de tag (azul).</p>
+  </div>
+
+  <div class="importante">
+    <p>Parágrafo dentro de classe (verde).</p>
+  </div>
+
+  <div id="area">
+    <p>Parágrafo dentro de ID (vermelho) — regra com maior especificidade.</p>
+  </div>
+  <p>Dica: quanto mais específico, maior prioridade (IDs > classes > tags).</p>
+</body>
+</html>

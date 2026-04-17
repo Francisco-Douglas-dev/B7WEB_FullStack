@@ -1,0 +1,8 @@
+/* Definindo valores padrão */n:root{ --cta-padding:8px; --cta-bg:#007acc; }
+
+.cta{ display:inline-block; background:var(--cta-bg); color:#fff; padding:var(--cta-padding); border-radius:6px; }
+
+/* Alterando variável dentro de media query para ajustar em telas maiores */
+@media (min-width:768px){
+  :root{ --cta-padding:16px; }
+}

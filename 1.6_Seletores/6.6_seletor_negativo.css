@@ -1,0 +1,4 @@
+/* :not(selector) permite excluir elementos da regra */
+a:not(.no){ color:#fff; background:#007acc; padding:6px; border-radius:4px; text-decoration:none }
+a.no{ color:#999 }
+body{ font-family:Arial; margin:16px }

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cascata</title>
+  <!-- Cascata: ordem de aplicação (origem, especificidade, ordem) -->
+  <style>
+    /* regra A */
+    p { color: purple; }
+  </style>
+  <style>
+    /* regra B definida depois: sobrescreve quando mesma especificidade */
+    p { color: orange; }
+  </style>
+</head>
+<body>
+  <h1>Cascata</h1>
+  <p>Este parágrafo ficará laranja porque a segunda regra foi aplicada depois (mesma especificidade).</p>
+  <p>Regras inline e !important alteram a ordem de prioridade.</p>
+  <p style="color:teal;">Exemplo de estilo inline (maior prioridade que estilos em <code>&lt;style&gt;</code>).</p>
+  <p style="color:teal;">Para forçar: <span style="color:teal;">use <code>!important</code> (evite quando possível)</span></p>
+</body>
+</html>

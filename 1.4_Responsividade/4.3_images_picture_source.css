@@ -1,0 +1,6 @@
+/* Exemplo: garantindo que imagem se ajuste ao contêiner */
+picture, img { max-width:100%; display:block; height:auto; }
+
+/* estilo de demo */
+body { font-family: Arial, sans-serif; margin:16px; }
+picture { border:1px solid #ddd; padding:8px; border-radius:6px; }

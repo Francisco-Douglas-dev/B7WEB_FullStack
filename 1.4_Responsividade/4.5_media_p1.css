@@ -1,0 +1,10 @@
+/* Estilos base (mobile) */
+.box { background:#fff2cc; padding:12px; }
+
+/* Aplique estilos em telas maiores */
+@media (min-width:600px){
+  .box { background:#cfe8ff; padding:20px; }
+}
+@media (min-width:1000px){
+  .box { background:#d8f8d8; padding:30px; }
+}

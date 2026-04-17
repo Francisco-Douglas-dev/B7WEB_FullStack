@@ -1,0 +1,6 @@
+/* Seletores por atributo básicos */
+a[data-role="admin"]{ color:#c62828; font-weight:700 }
+a[data-role="user"]{ color:#1565c0 }
+input[name]{ border:1px solid #ccc; padding:6px }
+input[required]{ box-shadow:0 0 0 2px rgba(255,0,0,0.05) }
+body{ font-family:Arial; margin:16px }

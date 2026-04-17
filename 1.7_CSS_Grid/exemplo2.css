@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    margin: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 100px); /* 3 linhas de 100px */
+    gap: 20px;
+}
+
+.item {
+    background-color: #4c77af;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 10px;
+    box-shadow: 5px 15px 20px #000;
+}
+
+.item1 {
+    grid-row: span 2; /* Ocupa 2 linhas */
+}

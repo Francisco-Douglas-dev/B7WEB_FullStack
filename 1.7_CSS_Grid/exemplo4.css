@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 20px;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 200px 1fr 200px; /* Sidebar, main, aside */
+    grid-template-rows: 80px 1fr 80px; /* Header, content, footer */
+    grid-template-areas:
+        "header header header"
+        "sidebar main aside"
+        "footer footer footer";
+    gap: 10px;
+}
+
+.header {
+    grid-area: header;
+    background-color: #4c77af;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #6b9bd1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.main {
+    grid-area: main;
+    background-color: #a0c4ff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.aside {
+    grid-area: aside;
+    background-color: #6b9bd1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #4c77af;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Uma coluna */
+        grid-template-rows: auto; /* Alturas automáticas */
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "aside"
+            "footer";
+    }
+}

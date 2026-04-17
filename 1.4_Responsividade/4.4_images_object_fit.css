@@ -1,0 +1,5 @@
+/* Exemplo de frame com proporção fixa e object-fit */
+.frame{ width:320px; height:180px; border:1px solid #ccc; overflow:hidden; }
+.frame img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+/* opções: cover, contain, fill, none, scale-down */

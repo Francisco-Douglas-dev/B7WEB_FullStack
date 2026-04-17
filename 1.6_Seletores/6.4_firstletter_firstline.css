@@ -1,0 +1,4 @@
+/* ::first-letter e ::first-line são pseudo-elementos para tipografia */
+.intro::first-letter{ font-size:2.2em; font-weight:700; color:#c62828; float:left; margin-right:6px }
+.intro::first-line{ text-transform:uppercase; letter-spacing:1px }
+body{ font-family:Georgia, serif; margin:16px }

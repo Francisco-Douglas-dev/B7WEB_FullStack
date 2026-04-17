@@ -1,0 +1,6 @@
+/* Tabela zebra usando :nth-child */
+table{ border-collapse:collapse; width:100%; font-family:Arial }
+th, td{ padding:8px; border:1px solid #eee }
+tbody tr:nth-child(odd){ background:#fafafa }
+tbody tr:nth-child(even){ background:#fff }
+thead{ background:#f0f4f8 }

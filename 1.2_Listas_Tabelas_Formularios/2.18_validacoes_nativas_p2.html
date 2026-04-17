@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Validações Nativas 2</title>
+  <!-- Exemplo com pattern e mensagens customizadas via constraint validation API (simples) -->
+</head>
+<body>
+  <h1>Validações Nativas (2)</h1>
+  <form id="form">
+    <label for="cep">CEP (somente números):</label>
+    <input id="cep" name="cep" pattern="\d{5}-?\d{3}" placeholder="12345-678" required>
+    <button type="submit">Enviar</button>
+  </form>
+  <script>
+    // Mensagem simples usando evento submit
+    document.getElementById('form').addEventListener('submit', function(e){
+      var cep = document.getElementById('cep');
+      if(!cep.checkValidity()){
+        e.preventDefault();
+        alert('CEP inválido. Formato esperado: 12345-678');
+      }
+    });
+  </script>
+</body>
+</html>
