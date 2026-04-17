@@ -1,0 +1,416 @@
+/**
+ * SASS: HOVER
+ * 
+ * O Sass facilita a criação de efeitos hover usando o & (parent selector).
+ * O & referencia o seletor pai, permitindo aninhar pseudo-classes.
+ * 
+ * Sintaxe:
+ * .elemento {
+ *     // estilos normais
+ *     
+ *     &:hover {
+ *         // estilos no hover
+ *     }
+ * }
+ * 
+ * Compila para:
+ * .elemento { }
+ * .elemento:hover { }
+ * 
+ * Outras pseudo-classes:
+ * &:focus, &:active, &:visited, &:first-child, etc.
+ * 
+ * Vantagens:
+ * - Mantém estilos relacionados juntos
+ * - Código mais organizado
+ * - Fácil de encontrar e modificar
+ * - Melhor legibilidade
+ */
+
+// Variáveis
+$primary: #6366f1;
+$secondary: #8b5cf6;
+$success: #10b981;
+$danger: #ef4444;
+$warning: #f59e0b;
+$white: #fff;
+$text: #1f2937;
+$bg: #f3f4f6;
+
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Mixin para transition
+@mixin smooth-transition($property: all, $duration: $transition-normal) {
+    transition: $property $duration;
+}
+
+// Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: $bg;
+    color: $text;
+    line-height: 1.6;
+}
+
+.showcase {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+
+    .header {
+        background: linear-gradient(135deg, $primary, $secondary);
+        color: $white;
+        padding: 50px 30px;
+        border-radius: 12px;
+        text-align: center;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+    }
+
+    .content {
+        // ============================================
+        // CARDS COM DIFERENTES EFEITOS HOVER
+        // ============================================
+        .hover-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+
+            .card {
+                background-color: $white;
+                padding: 40px 30px;
+                border-radius: 12px;
+                text-align: center;
+                box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+                cursor: pointer;
+                @include smooth-transition;
+
+                .icon {
+                    font-size: 48px;
+                    margin-bottom: 15px;
+                }
+
+                h3 {
+                    color: $primary;
+                    font-size: 22px;
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    color: lighten($text, 30%);
+                    font-size: 14px;
+                }
+
+                // Efeito 1: Scale (aumentar)
+                &.card-scale {
+                    &:hover {
+                        transform: scale(1.08);
+                        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                    }
+                }
+
+                // Efeito 2: Rotate (rotação)
+                &.card-rotate {
+                    &:hover {
+                        transform: rotate(3deg);
+                        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                    }
+                }
+
+                // Efeito 3: Shadow (sombra)
+                &.card-shadow {
+                    &:hover {
+                        box-shadow: 0 12px 40px rgba($primary, 0.3);
+                        transform: translateY(-5px);
+                    }
+                }
+
+                // Efeito 4: Slide Up (deslizar para cima)
+                &.card-slide {
+                    &:hover {
+                        transform: translateY(-15px);
+                        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+                    }
+                }
+
+                // Efeito 5: Glow (brilho)
+                &.card-glow {
+                    &:hover {
+                        box-shadow: 0 0 30px rgba($warning, 0.6);
+                        border: 2px solid $warning;
+                    }
+                }
+
+                // Efeito 6: Background Flip (mudança de fundo)
+                &.card-flip {
+                    @include smooth-transition(all, $transition-slow);
+
+                    &:hover {
+                        background: linear-gradient(135deg, $primary, $secondary);
+                        color: $white;
+                        transform: scale(1.05);
+
+                        h3, p {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+
+        // ============================================
+        // BOTÕES COM HOVER
+        // ============================================
+        .hover-buttons {
+            background-color: $white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+
+            h2 {
+                color: $primary;
+                margin-bottom: 25px;
+                font-size: 28px;
+                text-align: center;
+            }
+
+            .button-group {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                justify-content: center;
+
+                .btn {
+                    padding: 12px 30px;
+                    border: none;
+                    border-radius: 8px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    @include smooth-transition;
+
+                    // Botão primário
+                    &.btn-primary {
+                        background-color: $primary;
+                        color: $white;
+
+                        &:hover {
+                            background-color: darken($primary, 10%);
+                            transform: translateY(-3px);
+                            box-shadow: 0 6px 20px rgba($primary, 0.4);
+                        }
+
+                        &:active {
+                            transform: translateY(-1px);
+                        }
+                    }
+
+                    // Botão secundário
+                    &.btn-secondary {
+                        background-color: $secondary;
+                        color: $white;
+
+                        &:hover {
+                            background-color: darken($secondary, 10%);
+                            transform: translateY(-3px);
+                            box-shadow: 0 6px 20px rgba($secondary, 0.4);
+                        }
+                    }
+
+                    // Botão sucesso
+                    &.btn-success {
+                        background-color: $success;
+                        color: $white;
+
+                        &:hover {
+                            background-color: darken($success, 10%);
+                            transform: scale(1.05);
+                        }
+                    }
+
+                    // Botão perigo
+                    &.btn-danger {
+                        background-color: $danger;
+                        color: $white;
+
+                        &:hover {
+                            background-color: darken($danger, 10%);
+                            box-shadow: 0 0 20px rgba($danger, 0.5);
+                        }
+                    }
+
+                    // Botão outline
+                    &.btn-outline {
+                        background-color: transparent;
+                        color: $primary;
+                        border: 2px solid $primary;
+
+                        &:hover {
+                            background-color: $primary;
+                            color: $white;
+                            transform: translateY(-3px);
+                        }
+                    }
+
+                    // Botão gradiente
+                    &.btn-gradient {
+                        background: linear-gradient(135deg, $primary, $secondary);
+                        color: $white;
+
+                        &:hover {
+                            background: linear-gradient(135deg, darken($primary, 5%), darken($secondary, 5%));
+                            box-shadow: 0 8px 25px rgba($primary, 0.3);
+                            transform: scale(1.08);
+                        }
+                    }
+                }
+            }
+        }
+
+        // ============================================
+        // LINKS COM HOVER
+        // ============================================
+        .hover-links {
+            background-color: $white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+
+            h2 {
+                color: $primary;
+                margin-bottom: 25px;
+                font-size: 28px;
+                text-align: center;
+            }
+
+            .link-list {
+                list-style: none;
+                max-width: 500px;
+                margin: 0 auto;
+
+                li {
+                    margin-bottom: 20px;
+                    font-size: 18px;
+
+                    a {
+                        color: $text;
+                        text-decoration: none;
+                        @include smooth-transition;
+                        display: inline-block;
+
+                        // Link com sublinhado animado
+                        &.link-underline {
+                            position: relative;
+
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                bottom: -5px;
+                                left: 0;
+                                width: 0;
+                                height: 3px;
+                                background-color: $primary;
+                                @include smooth-transition(width);
+                            }
+
+                            &:hover {
+                                color: $primary;
+
+                                &::after {
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        // Link com colchetes
+                        &.link-bracket {
+                            &::before {
+                                content: '[ ';
+                                color: $primary;
+                                opacity: 0;
+                                @include smooth-transition;
+                            }
+
+                            &::after {
+                                content: ' ]';
+                                color: $primary;
+                                opacity: 0;
+                                @include smooth-transition;
+                            }
+
+                            &:hover {
+                                color: $primary;
+                                padding: 0 10px;
+
+                                &::before,
+                                &::after {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+
+                        // Link com seta
+                        &.link-arrow {
+                            &:hover {
+                                color: $primary;
+                                transform: translateX(10px);
+                            }
+                        }
+
+                        // Link com fundo
+                        &.link-background {
+                            padding: 8px 16px;
+                            border-radius: 6px;
+
+                            &:hover {
+                                background-color: lighten($primary, 40%);
+                                color: $primary;
+                                padding: 8px 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        background-color: $text;
+        color: $white;
+        padding: 25px;
+        border-radius: 12px;
+        text-align: center;
+        margin-top: 40px;
+        @include smooth-transition;
+
+        &:hover {
+            background: linear-gradient(135deg, $text, lighten($text, 10%));
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+}

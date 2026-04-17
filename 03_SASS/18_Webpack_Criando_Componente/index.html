@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpack - Criando Componentes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Webpack: Criando Componentes</h1>
+        <p class="subtitle">Estruturando aplicações com componentes modulares</p>
+    </header>
+
+    <main class="content">
+        <section class="intro">
+            <h2>Componentização com Webpack</h2>
+            <p>Webpack permite criar componentes reutilizáveis e modulares, separando a lógica, estilos e templates em arquivos independentes que são empacotados juntos.</p>
+        </section>
+
+        <section class="structure">
+            <h2>Estrutura de um Componente</h2>
+            <div class="code-block">
+                <pre><code>src/
+├── components/
+│   ├── Button/
+│   │   ├── Button.js       // Lógica do componente
+│   │   ├── Button.css      // Estilos do componente
+│   │   └── index.js        // Export principal
+│   └── Card/
+│       ├── Card.js
+│       ├── Card.css
+│       └── index.js
+└── index.js                // Ponto de entrada</code></pre>
+            </div>
+        </section>
+
+        <section class="example">
+            <h2>Exemplo: Componente Button</h2>
+            <div class="step">
+                <h3>1. Button.js (Lógica)</h3>
+                <div class="code-block">
+                    <pre><code>// src/components/Button/Button.js
+import './Button.css';
+
+export default class Button {
+    constructor(text, onClick) {
+        this.text = text;
+        this.onClick = onClick;
+    }
+
+    render() {
+        const button = document.createElement('button');
+        button.className = 'btn';
+        button.textContent = this.text;
+        button.addEventListener('click', this.onClick);
+        return button;
+    }
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>2. Button.css (Estilos)</h3>
+                <div class="code-block">
+                    <pre><code>/* src/components/Button/Button.css */
+.btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #1c78c0, #8b5cf6);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>3. index.js (Export)</h3>
+                <div class="code-block">
+                    <pre><code>// src/components/Button/index.js
+export { default } from './Button';</code></pre>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>4. Usando o Componente</h3>
+                <div class="code-block">
+                    <pre><code>// src/index.js
+import Button from './components/Button';
+
+const myButton = new Button('Clique aqui', () => {
+    alert('Botão clicado!');
+});
+
+document.body.appendChild(myButton.render());</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits">
+            <h2>Vantagens da Componentização</h2>
+            <ul>
+                <li>Reutilização de código</li>
+                <li>Manutenção facilitada</li>
+                <li>Encapsulamento de lógica e estilos</li>
+                <li>Testes independentes</li>
+                <li>Melhor organização do projeto</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 - Estudos FullStack B7WEB - Webpack Components</p>
+    </footer>
+</body>
+</html>

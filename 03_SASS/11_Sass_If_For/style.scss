@@ -1,0 +1,307 @@
+/**
+ * SASS: IF + FOR
+ * 
+ * O Sass possui estruturas de controle que permitem criar CSS dinâmico.
+ * 
+ * ============================================
+ * @IF - CONDICIONAIS
+ * ============================================
+ * Sintaxe:
+ * @if (condição) {
+ *     // código se verdadeiro
+ * } @else if (outra condição) {
+ *     // código se segunda condição verdadeira
+ * } @else {
+ *     // código se todas falsas
+ * }
+ * 
+ * ============================================
+ * @FOR - LOOPS
+ * ============================================
+ * Sintaxe:
+ * @for $i from 1 through 10 {
+ *     // código repetido 10 vezes
+ *     // $i varia de 1 a 10 (inclusivo)
+ * }
+ * 
+ * ou
+ * 
+ * @for $i from 1 to 10 {
+ *     // $i varia de 1 a 9 (exclusivo)
+ * }
+ * 
+ * Vantagens:
+ * - Gera código CSS automaticamente
+ * - Reduz repetição
+ * - Facilita criação de sistemas de grid
+ * - Útil para gerar classes utilitárias
+ */
+
+// Variáveis
+$primary: #6366f1;
+$secondary: #8b5cf6;
+$success: #10b981;
+$warning: #f59e0b;
+$danger: #ef4444;
+$white: #fff;
+$black: #000;
+$text: #1f2937;
+$bg: #f3f4f6;
+
+$base-spacing: 8px;
+$columns: 6;
+
+// ============================================
+// EXEMPLO 1: USANDO @IF
+// ============================================
+
+// Mixin que usa @if para escolher estilo baseado no tema
+@mixin theme($theme-name) {
+    @if $theme-name == light {
+        background-color: $white;
+        color: $text;
+        border: 2px solid lighten($text, 60%);
+    } @else if $theme-name == dark {
+        background-color: darken($text, 10%);
+        color: $white;
+        border: 2px solid lighten($black, 30%);
+    } @else {
+        background-color: $bg;
+        color: $text;
+        border: 2px solid $primary;
+    }
+}
+
+// Função que retorna cor baseada em condição
+@function get-contrast-color($bg-color) {
+    @if (lightness($bg-color) > 50%) {
+        @return $black;  // Fundo claro = texto escuro
+    } @else {
+        @return $white;  // Fundo escuro = texto claro
+    }
+}
+
+// ============================================
+// ESTILOS BASE
+// ============================================
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: $bg;
+    color: $text;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+
+    .header {
+        background: linear-gradient(135deg, $primary, $secondary);
+        color: $white;
+        padding: 50px 30px;
+        border-radius: 10px;
+        text-align: center;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+    }
+
+    .content {
+        section {
+            background-color: $white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+
+            h2 {
+                color: $primary;
+                margin-bottom: 25px;
+                font-size: 26px;
+                border-bottom: 3px solid $primary;
+                padding-bottom: 10px;
+            }
+        }
+
+        // ============================================
+        // APLICANDO @IF - Temas
+        // ============================================
+        .if-examples {
+            .themes {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+
+                .box {
+                    flex: 1;
+                    min-width: 250px;
+                    padding: 30px;
+                    border-radius: 8px;
+                    text-align: center;
+                    font-weight: bold;
+                    font-size: 18px;
+                    transition: transform 0.3s ease;
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+
+                    &.theme-light {
+                        @include theme(light);
+                    }
+
+                    &.theme-dark {
+                        @include theme(dark);
+                    }
+                }
+            }
+        }
+
+        // ============================================
+        // USANDO @FOR - Grid System
+        // ============================================
+        .for-examples {
+            .grid-sizes {
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+
+                // Gera classes .col-1 até .col-6
+                @for $i from 1 through $columns {
+                    .col-#{$i} {
+                        background: lighten($primary, 35%);
+                        color: darken($primary, 10%);
+                        padding: 20px;
+                        border-radius: 5px;
+                        text-align: center;
+                        font-weight: bold;
+                        border-left: 4px solid $primary;
+                        
+                        // Largura baseada na coluna
+                        flex: 0 0 calc(#{$i} * (100% / #{$columns}) - 10px);
+                        
+                        // Cor diferente para cada coluna usando @if
+                        @if $i <= 2 {
+                            background: lighten($success, 40%);
+                            border-left-color: $success;
+                            color: darken($success, 10%);
+                        } @else if $i <= 4 {
+                            background: lighten($warning, 40%);
+                            border-left-color: $warning;
+                            color: darken($warning, 10%);
+                        } @else {
+                            background: lighten($danger, 35%);
+                            border-left-color: $danger;
+                            color: darken($danger, 10%);
+                        }
+                    }
+                }
+            }
+        }
+
+        // ============================================
+        // USANDO @FOR - Opacidades
+        // ============================================
+        .opacity-examples {
+            .opacity-boxes {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+                gap: 15px;
+
+                // Gera classes de opacidade de .opacity-1 até .opacity-10
+                @for $i from 1 through 10 {
+                    .opacity-#{$i} {
+                        background-color: $primary;
+                        color: $white;
+                        padding: 25px 15px;
+                        border-radius: 8px;
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: 14px;
+                        // Aplica opacidade de 10% a 100%
+                        opacity: $i * 0.1;
+                        transition: transform 0.3s ease;
+
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+        }
+
+        // ============================================
+        // USANDO @FOR - Espaçamentos
+        // ============================================
+        .spacing-examples {
+            .spacing-demo {
+                background-color: $bg;
+                padding: 20px;
+                border-radius: 8px;
+
+                // Gera classes de margin-top de .mt-1 até .mt-4
+                @for $i from 1 through 4 {
+                    .mt-#{$i} {
+                        background-color: lighten($secondary, 30%);
+                        color: darken($secondary, 20%);
+                        padding: 15px;
+                        border-radius: 5px;
+                        border-left: 4px solid $secondary;
+                        font-weight: 600;
+                        // Margin-top aumenta progressivamente
+                        margin-top: $base-spacing * $i;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        background-color: $text;
+        color: $white;
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+        p {
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+}
+
+// ============================================
+// BONUS: Gerando classes utilitárias com @for
+// ============================================
+
+// Gera classes de padding .p-1 até .p-5
+@for $i from 1 through 5 {
+    .p-#{$i} {
+        padding: $base-spacing * $i;
+    }
+}
+
+// Gera classes de font-size .text-1 até .text-5
+@for $i from 1 through 5 {
+    .text-#{$i} {
+        font-size: 12px + ($i * 2px);
+    }
+}

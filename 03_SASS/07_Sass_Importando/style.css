@@ -1,0 +1,151 @@
+/**
+ * SASS: IMPORTANDO OUTROS ARQUIVOS
+ * 
+ * O Sass permite importar outros arquivos SCSS usando @import ou @use.
+ * Isso ajuda a organizar o código em módulos separados.
+ * 
+ * Sintaxe:
+ * @import 'arquivo'; ou @import 'arquivo.scss';
+ * 
+ * Arquivos parciais começam com underscore (_)
+ * Exemplo: _variables.scss
+ * 
+ * Vantagens:
+ * - Melhor organização do código
+ * - Reutilização de código
+ * - Facilita manutenção
+ * - Trabalho em equipe mais eficiente
+ * 
+ * Ordem de importação recomendada:
+ * 1. Variáveis
+ * 2. Mixins
+ * 3. Reset/Base
+ * 4. Componentes
+ * 5. Páginas
+ */
+/**
+ * ARQUIVO PARCIAL: _variables.scss
+ * 
+ * Arquivos parciais começam com underscore (_)
+ * Eles não são compilados individualmente, apenas quando importados
+ */
+/**
+ * ARQUIVO PARCIAL: _reset.scss
+ * 
+ * Reset básico de estilos
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #1f2937;
+  background-color: #f9fafb;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/**
+ * ARQUIVO PARCIAL: _mixins.scss
+ * 
+ * Mixins reutilizáveis
+ */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.app .header {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #ffffff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.app .header .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+.app .header .navigation {
+  display: flex;
+  gap: 20px;
+}
+.app .header .navigation a {
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.app .header .navigation a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.app .main-content {
+  flex: 1;
+  padding: 40px;
+}
+.app .main-content .hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 60px 0;
+  text-align: center;
+}
+.app .main-content .hero h1 {
+  font-size: 32px;
+  color: #6366f1;
+  margin-bottom: 20px;
+}
+.app .main-content .hero p {
+  font-size: 20px;
+  color: #1f2937;
+  max-width: 600px;
+}
+.app .main-content .info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.app .main-content .info-grid .info-card {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.app .main-content .info-grid .info-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+.app .main-content .info-grid .info-card h2 {
+  color: #6366f1;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.app .main-content .info-grid .info-card p {
+  color: #4b5563;
+}
+.app .footer {
+  background-color: #1f2937;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+.app .footer p {
+  opacity: 0.8;
+}

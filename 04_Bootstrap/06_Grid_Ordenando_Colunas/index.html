@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid - Ordenando Colunas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .demo-box {
+            padding: 20px;
+            background-color: #6c757d;
+            color: white;
+            border: 2px solid white;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .box-1 { background-color: #dc3545; }
+        .box-2 { background-color: #ffc107; color: #000; }
+        .box-3 { background-color: #28a745; }
+        .box-4 { background-color: #17a2b8; }
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="display-4 text-center mb-5">Grid - Ordenando Colunas</h1>
+
+        <!-- Introdução -->
+        <div class="alert alert-info">
+            <h4>🔄 Ordenação de Colunas</h4>
+            <p>O Bootstrap permite reordenar colunas usando classes de ordem (<code>.order-</code>) sem alterar o HTML.</p>
+        </div>
+
+        <!-- Exemplo 1: Ordem padrão -->
+        <h3 class="mb-3">1. Ordem Padrão (sem modificação)</h3>
+        <div class="row mb-5">
+            <div class="col-4 demo-box box-1">Primeiro no HTML</div>
+            <div class="col-4 demo-box box-2">Segundo no HTML</div>
+            <div class="col-4 demo-box box-3">Terceiro no HTML</div>
+        </div>
+
+        <!-- Exemplo 2: Ordem modificada -->
+        <h3 class="mb-3">2. Ordem Modificada com .order-</h3>
+        <div class="row mb-5">
+            <div class="col-4 demo-box box-1 order-3">Primeiro no HTML<br>(order-3)</div>
+            <div class="col-4 demo-box box-2 order-1">Segundo no HTML<br>(order-1)</div>
+            <div class="col-4 demo-box box-3 order-2">Terceiro no HTML<br>(order-2)</div>
+        </div>
+
+        <!-- Exemplo 3: Order first e last -->
+        <h3 class="mb-3">3. Order First e Last</h3>
+        <div class="row mb-5">
+            <div class="col-4 demo-box box-1">Primeiro</div>
+            <div class="col-4 demo-box box-2 order-last">Segundo<br>(order-last)</div>
+            <div class="col-4 demo-box box-3 order-first">Terceiro<br>(order-first)</div>
+        </div>
+
+        <!-- Exemplo 4: Ordem responsiva -->
+        <h3 class="mb-3">4. Ordem Responsiva</h3>
+        <div class="alert alert-warning">
+            <strong>Redimensione a janela:</strong> A ordem das colunas muda em diferentes tamanhos de tela!
+        </div>
+        <div class="row mb-5">
+            <div class="col-12 col-md-4 demo-box box-1 order-2 order-md-1">
+                Box 1<br>
+                Mobile: 2ª posição<br>
+                Desktop: 1ª posição
+            </div>
+            <div class="col-12 col-md-4 demo-box box-2 order-1 order-md-2">
+                Box 2<br>
+                Mobile: 1ª posição<br>
+                Desktop: 2ª posição
+            </div>
+            <div class="col-12 col-md-4 demo-box box-3 order-3">
+                Box 3<br>
+                Sempre 3ª posição
+            </div>
+        </div>
+
+        <!-- Exemplo 5: Invertendo conteúdo e sidebar -->
+        <h3 class="mb-3">5. Caso Prático: Sidebar Mobile-First</h3>
+        <p class="text-muted">Em mobile, a sidebar aparece primeiro. Em desktop, o conteúdo vem primeiro.</p>
+        <div class="row mb-5">
+            <div class="col-12 col-lg-8 order-2 order-lg-1">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Conteúdo Principal</h4>
+                        <p>Este conteúdo aparece:</p>
+                        <ul>
+                            <li><strong>Mobile:</strong> Segundo (order-2)</li>
+                            <li><strong>Desktop:</strong> Primeiro (order-lg-1)</li>
+                        </ul>
+                        <p>Útil quando você quer que a sidebar apareça primeiro em mobile para melhor UX.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4 order-1 order-lg-2">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5>Sidebar</h5>
+                        <p>Esta sidebar aparece:</p>
+                        <ul>
+                            <li><strong>Mobile:</strong> Primeiro (order-1)</li>
+                            <li><strong>Desktop:</strong> Segundo (order-lg-2)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exemplo 6: Múltiplas reordenações -->
+        <h3 class="mb-3">6. Reordenação Complexa</h3>
+        <div class="row mb-5">
+            <div class="col-3 demo-box box-1 order-4">A (order-4)</div>
+            <div class="col-3 demo-box box-2 order-2">B (order-2)</div>
+            <div class="col-3 demo-box box-3 order-3">C (order-3)</div>
+            <div class="col-3 demo-box box-4 order-1">D (order-1)</div>
+        </div>
+
+        <!-- Exemplo 7: Offset + Order -->
+        <h3 class="mb-3">7. Combinando Offset e Order</h3>
+        <div class="row mb-5">
+            <div class="col-4 offset-2 demo-box box-1 order-3">Offset 2 + Order 3</div>
+            <div class="col-4 demo-box box-2 order-1">Order 1</div>
+            <div class="col-4 offset-4 demo-box box-3 order-2">Offset 4 + Order 2</div>
+        </div>
+
+        <!-- Tabela de classes -->
+        <div class="card mb-4">
+            <div class="card-header bg-dark text-white">
+                <h4>Classes de Ordenação Disponíveis</h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Classe</th>
+                            <th>Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>.order-0</code></td>
+                            <td>Primeira posição</td>
+                        </tr>
+                        <tr>
+                            <td><code>.order-1</code> até <code>.order-5</code></td>
+                            <td>Posições específicas</td>
+                        </tr>
+                        <tr>
+                            <td><code>.order-first</code></td>
+                            <td>Move para o início (order: -1)</td>
+                        </tr>
+                        <tr>
+                            <td><code>.order-last</code></td>
+                            <td>Move para o final (order: 6)</td>
+                        </tr>
+                        <tr>
+                            <td><code>.order-sm-*</code>, <code>.order-md-*</code>, etc.</td>
+                            <td>Ordenação responsiva por breakpoint</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Dicas -->
+        <div class="alert alert-success">
+            <h4>💡 Dicas Importantes</h4>
+            <ul class="mb-0">
+                <li>Use <code>.order-</code> para reordenar colunas sem mudar o HTML</li>
+                <li><code>.order-first</code> e <code>.order-last</code> são atalhos úteis</li>
+                <li>Combine com breakpoints para layouts responsivos inteligentes</li>
+                <li>Valores vão de 0 a 5, mas também aceita <code>first</code> e <code>last</code></li>
+                <li>Útil para priorizar conteúdo em mobile sem duplicar HTML</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

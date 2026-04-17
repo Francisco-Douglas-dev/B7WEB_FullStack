@@ -1,0 +1,143 @@
+/**
+ * SASS: VARIÁVEIS
+ * 
+ * Variáveis no Sass permitem armazenar valores reutilizáveis.
+ * Sintaxe: $nome-da-variavel: valor;
+ * 
+ * Vantagens:
+ * - Centraliza valores importantes
+ * - Facilita manutenção (altere em um lugar só)
+ * - Garante consistência no design
+ * - Torna o código mais legível
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+.theme-demo {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+.theme-demo .header {
+  background: linear-gradient(135deg, #3498db, #2ecc71);
+  color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.theme-demo .header h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+.theme-demo .header p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+.theme-demo .main-content .variable-examples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.theme-demo .main-content .variable-examples .example-card {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.theme-demo .main-content .variable-examples .example-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+.theme-demo .main-content .variable-examples .example-card h2 {
+  color: #2c3e50;
+  font-size: 24px;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 10px;
+}
+.theme-demo .main-content .variable-examples .example-card p {
+  color: #7f8c8d;
+  margin-bottom: 20px;
+}
+.theme-demo .main-content .variable-examples .example-card .color-swatches {
+  display: flex;
+  gap: 10px;
+}
+.theme-demo .main-content .variable-examples .example-card .color-swatches .swatch {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.theme-demo .main-content .variable-examples .example-card .color-swatches .swatch.primary {
+  background-color: #3498db;
+}
+.theme-demo .main-content .variable-examples .example-card .color-swatches .swatch.secondary {
+  background-color: #2ecc71;
+}
+.theme-demo .main-content .variable-examples .example-card .color-swatches .swatch.accent {
+  background-color: #e74c3c;
+}
+.theme-demo .main-content .variable-examples .example-card .spacing-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.theme-demo .main-content .variable-examples .example-card .spacing-demo .box {
+  background-color: #3498db;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.theme-demo .main-content .variable-examples .example-card .spacing-demo .box.small {
+  padding: 10px;
+}
+.theme-demo .main-content .variable-examples .example-card .spacing-demo .box.medium {
+  padding: 20px;
+}
+.theme-demo .main-content .variable-examples .example-card .spacing-demo .box.large {
+  padding: 40px;
+}
+.theme-demo .main-content .variable-examples .example-card .text-samples p {
+  margin: 10px 0;
+  color: #2c3e50;
+}
+.theme-demo .main-content .variable-examples .example-card .text-samples p.text-small {
+  font-size: 14px;
+}
+.theme-demo .main-content .variable-examples .example-card .text-samples p.text-medium {
+  font-size: 16px;
+}
+.theme-demo .main-content .variable-examples .example-card .text-samples p.text-large {
+  font-size: 24px;
+  font-weight: bold;
+}
+.theme-demo .footer {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.theme-demo .footer p {
+  color: #e74c3c;
+  font-size: 16px;
+  font-weight: 600;
+}

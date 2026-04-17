@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sass: Grupos de Elementos</title>
+    <!-- CSS compilado com agrupamento de seletores -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Demonstração de agrupamento de elementos no Sass -->
+    <div class="container">
+        <header class="page-header">
+            <h1>Grupos de Elementos no Sass</h1>
+            <p>Aninhamento e organização hierárquica de seletores</p>
+        </header>
+
+        <section class="content-section">
+            <!-- Formulário demonstrando agrupamento -->
+            <div class="form-wrapper">
+                <h2>Formulário de Contato</h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" placeholder="Seu nome completo">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" placeholder="seu@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensagem:</label>
+                        <textarea id="message" rows="5" placeholder="Sua mensagem..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+
+            <!-- Lista demonstrando aninhamento -->
+            <div class="list-wrapper">
+                <h2>Lista Aninhada</h2>
+                <ul class="nested-list">
+                    <li>
+                        Item 1
+                        <ul>
+                            <li>Subitem 1.1</li>
+                            <li>Subitem 1.2</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Item 2
+                        <ul>
+                            <li>Subitem 2.1</li>
+                            <li>Subitem 2.2</li>
+                        </ul>
+                    </li>
+                    <li>Item 3</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            <p>&copy; 2026 - Exemplo de Agrupamento de Elementos</p>
+        </footer>
+    </div>
+</body>
+</html>

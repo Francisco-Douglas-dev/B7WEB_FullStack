@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estruturando Projeto Bootstrap</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Estrutura básica de um projeto Bootstrap -->
+    <div class="container-fluid bg-primary text-white py-4">
+        <div class="container">
+            <h1 class="display-4">Estrutura de Projeto Bootstrap</h1>
+            <p class="lead">Organizando arquivos e pastas</p>
+        </div>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="container my-5">
+        <!-- Estrutura de pastas -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-dark text-white">
+                        <h4>📁 Estrutura de Pastas</h4>
+                    </div>
+                    <div class="card-body">
+                        <pre class="bg-light p-3 rounded">
+projeto/
+├── index.html
+├── css/
+│   ├── bootstrap.min.css
+│   └── style.css (customizações)
+├── js/
+│   ├── bootstrap.bundle.min.js
+│   └── script.js (seu código)
+├── img/
+│   └── (suas imagens)
+└── fonts/
+    └── (suas fontes)
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white">
+                        <h4>📄 HTML Básico</h4>
+                    </div>
+                    <div class="card-body">
+                        <pre class="bg-light p-3 rounded small">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" 
+        content="width=device-width, 
+                 initial-scale=1.0"&gt;
+  &lt;title&gt;Meu Site&lt;/title&gt;
+  &lt;link href="bootstrap.min.css" 
+        rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Conteúdo --&gt;
+  &lt;script src="bootstrap.bundle.min.js"&gt;
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Containers -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <h2 class="mb-4">Tipos de Containers</h2>
+            </div>
+        </div>
+
+        <!-- Container normal -->
+        <div class="mb-4">
+            <h5 class="text-primary">.container (largura fixa responsiva)</h5>
+            <div class="container border border-primary p-3 bg-light">
+                Este é um container com largura fixa que se adapta ao tamanho da tela. Possui margens laterais automáticas para centralização.
+            </div>
+        </div>
+
+        <!-- Container fluid -->
+        <div class="mb-4">
+            <h5 class="text-success">.container-fluid (largura 100%)</h5>
+        </div>
+    </div>
+
+    <div class="container-fluid border border-success p-3 bg-light mb-4">
+        Este container ocupa 100% da largura da tela em qualquer tamanho de dispositivo.
+    </div>
+
+    <div class="container">
+        <!-- Container breakpoint -->
+        <div class="mb-4">
+            <h5 class="text-warning">.container-md (breakpoint específico)</h5>
+            <div class="container-md border border-warning p-3 bg-light">
+                Este container é fluid até atingir o breakpoint 'md', depois fica com largura fixa.
+            </div>
+        </div>
+
+        <!-- Dicas importantes -->
+        <div class="alert alert-info mt-5">
+            <h4 class="alert-heading">💡 Dicas Importantes:</h4>
+            <ul class="mb-0">
+                <li><strong>Use .container</strong> para conteúdo centralizado com margens</li>
+                <li><strong>Use .container-fluid</strong> para layouts de tela cheia</li>
+                <li><strong>Sempre inclua</strong> a meta tag viewport para responsividade</li>
+                <li><strong>Carregue o CSS no &lt;head&gt;</strong> e o JS antes de &lt;/body&gt;</li>
+                <li><strong>Use CDN</strong> para desenvolvimento rápido ou baixe para produção</li>
+            </ul>
+        </div>
+
+        <!-- Ordem de carregamento -->
+        <div class="card bg-warning mb-5">
+            <div class="card-body">
+                <h5 class="card-title">⚠️ Ordem de Carregamento</h5>
+                <ol class="mb-0">
+                    <li>Bootstrap CSS (no head)</li>
+                    <li>Seu CSS customizado (depois do Bootstrap)</li>
+                    <li>Bootstrap JS (antes de fechar body)</li>
+                    <li>Seu JavaScript (por último)</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

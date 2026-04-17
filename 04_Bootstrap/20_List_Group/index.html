@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Group</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="display-4 text-center mb-5">List Group</h1>
+
+        <div class="row">
+            <!-- List básica -->
+            <div class="col-md-6 mb-4">
+                <h3>1. List Group Básico</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Item da lista 1</li>
+                    <li class="list-group-item">Item da lista 2</li>
+                    <li class="list-group-item">Item da lista 3</li>
+                    <li class="list-group-item">Item da lista 4</li>
+                    <li class="list-group-item">Item da lista 5</li>
+                </ul>
+            </div>
+
+            <!-- List ativo e desativado -->
+            <div class="col-md-6 mb-4">
+                <h3>2. Items Ativos e Desativados</h3>
+                <ul class="list-group">
+                    <li class="list-group-item active">Item ativo</li>
+                    <li class="list-group-item">Item normal</li>
+                    <li class="list-group-item">Outro item</li>
+                    <li class="list-group-item disabled">Item desativado</li>
+                    <li class="list-group-item">Mais um item</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Links -->
+            <div class="col-md-6 mb-4">
+                <h3>3. List Group com Links</h3>
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active">
+                        Link ativo
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        Link normal (hover para ver)
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        Terceiro link
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action disabled">
+                        Link desativado
+                    </a>
+                </div>
+            </div>
+
+            <!-- Botões -->
+            <div class="col-md-6 mb-4">
+                <h3>4. List Group com Botões</h3>
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action active">
+                        Botão ativo
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action">
+                        Botão clicável
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action">
+                        Outro botão
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action" disabled>
+                        Botão desativado
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- List com Flush -->
+        <h3 class="mt-4">5. List Group Flush (sem bordas)</h3>
+        <ul class="list-group list-group-flush mb-4">
+            <li class="list-group-item">Item sem borda lateral</li>
+            <li class="list-group-item">Item sem borda lateral</li>
+            <li class="list-group-item">Item sem borda lateral</li>
+            <li class="list-group-item">Item sem borda lateral</li>
+        </ul>
+
+        <!-- Cores contextuais -->
+        <h3 class="mt-4">6. Cores Contextuais</h3>
+        <ul class="list-group mb-4">
+            <li class="list-group-item">Item padrão</li>
+            <li class="list-group-item list-group-item-primary">Item primary</li>
+            <li class="list-group-item list-group-item-secondary">Item secondary</li>
+            <li class="list-group-item list-group-item-success">Item success</li>
+            <li class="list-group-item list-group-item-danger">Item danger</li>
+            <li class="list-group-item list-group-item-warning">Item warning</li>
+            <li class="list-group-item list-group-item-info">Item info</li>
+            <li class="list-group-item list-group-item-light">Item light</li>
+            <li class="list-group-item list-group-item-dark">Item dark</li>
+        </ul>
+
+        <!-- Com badges -->
+        <h3 class="mt-4">7. List Group com Badges</h3>
+        <ul class="list-group mb-4">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Mensagens
+                <span class="badge bg-primary rounded-pill">14</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Notificações
+                <span class="badge bg-danger rounded-pill">5</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Tarefas pendentes
+                <span class="badge bg-warning text-dark rounded-pill">3</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Favoritos
+                <span class="badge bg-success rounded-pill">22</span>
+            </li>
+        </ul>
+
+        <!-- Conteúdo customizado -->
+        <h3 class="mt-4">8. Conteúdo Customizado</h3>
+        <div class="list-group mb-4">
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Título do item</h5>
+                    <small>3 dias atrás</small>
+                </div>
+                <p class="mb-1">Algum conteúdo de placeholder em um parágrafo.</p>
+                <small>E uma pequena nota adicional.</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action active">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Segundo item</h5>
+                    <small class="text-white">2 dias atrás</small>
+                </div>
+                <p class="mb-1">Este item está ativo para demonstração.</p>
+                <small class="text-white">Nota adicional do item ativo.</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Terceiro item</h5>
+                    <small>1 dia atrás</small>
+                </div>
+                <p class="mb-1">Mais algum conteúdo interessante aqui.</p>
+                <small>E mais informações.</small>
+            </a>
+        </div>
+
+        <!-- Com checkboxes -->
+        <h3 class="mt-4">9. List Group com Checkboxes</h3>
+        <div class="list-group mb-4">
+            <label class="list-group-item">
+                <input class="form-check-input me-2" type="checkbox" checked>
+                Tarefa completada
+            </label>
+            <label class="list-group-item">
+                <input class="form-check-input me-2" type="checkbox">
+                Tarefa pendente
+            </label>
+            <label class="list-group-item">
+                <input class="form-check-input me-2" type="checkbox">
+                Outra tarefa
+            </label>
+            <label class="list-group-item">
+                <input class="form-check-input me-2" type="checkbox">
+                Mais uma tarefa
+            </label>
+        </div>
+
+        <!-- Exemplo prático: Menu lateral -->
+        <h3 class="mt-4">10. Exemplo: Menu de Dashboard</h3>
+        <div class="list-group mb-4">
+            <a href="#" class="list-group-item list-group-item-action active">
+                <i class="bi bi-house-door"></i> 🏠 Dashboard
+            </a>
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                📧 Mensagens
+                <span class="badge bg-primary rounded-pill">5</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                👥 Usuários
+            </a>
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                🔔 Notificações
+                <span class="badge bg-danger rounded-pill">12</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                📊 Relatórios
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                ⚙️ Configurações
+            </a>
+        </div>
+
+        <!-- Exemplo: Contatos -->
+        <h3 class="mt-4">11. Exemplo: Lista de Contatos</h3>
+        <div class="list-group mb-4">
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">👤 João Silva</h5>
+                    <small>Online</small>
+                </div>
+                <p class="mb-1">joao@email.com</p>
+                <small>Desenvolvedor Frontend</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">👤 Maria Santos</h5>
+                    <small class="text-muted">Offline</small>
+                </div>
+                <p class="mb-1">maria@email.com</p>
+                <small>Designer UI/UX</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">👤 Pedro Oliveira</h5>
+                    <small>Online</small>
+                </div>
+                <p class="mb-1">pedro@email.com</p>
+                <small>Gerente de Projetos</small>
+            </a>
+        </div>
+
+        <!-- Horizontal -->
+        <h3 class="mt-4">12. List Group Horizontal</h3>
+        <ul class="list-group list-group-horizontal mb-2">
+            <li class="list-group-item">Item 1</li>
+            <li class="list-group-item">Item 2</li>
+            <li class="list-group-item">Item 3</li>
+        </ul>
+        <ul class="list-group list-group-horizontal-md mb-4">
+            <li class="list-group-item">Responsivo</li>
+            <li class="list-group-item">Horizontal</li>
+            <li class="list-group-item">em MD+</li>
+        </ul>
+
+        <!-- Numbered -->
+        <h3 class="mt-4">13. List Group Numerada</h3>
+        <ol class="list-group list-group-numbered mb-4">
+            <li class="list-group-item">Primeiro passo</li>
+            <li class="list-group-item">Segundo passo</li>
+            <li class="list-group-item">Terceiro passo</li>
+            <li class="list-group-item">Quarto passo</li>
+        </ol>
+
+        <!-- Numbered com badges -->
+        <h3 class="mt-4">14. List Numerada com Conteúdo Customizado</h3>
+        <ol class="list-group list-group-numbered mb-4">
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold">Planejamento</div>
+                    Definir objetivos e metas do projeto
+                </div>
+                <span class="badge bg-primary rounded-pill">Concluído</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold">Desenvolvimento</div>
+                    Implementar funcionalidades principais
+                </div>
+                <span class="badge bg-warning text-dark rounded-pill">Em andamento</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold">Testes</div>
+                    Validar e corrigir bugs
+                </div>
+                <span class="badge bg-secondary rounded-pill">Pendente</span>
+            </li>
+        </ol>
+
+        <!-- Referência -->
+        <div class="alert alert-info mt-5">
+            <h4>📝 Classes do List Group</h4>
+            <ul class="mb-0">
+                <li><code>.list-group</code> - Container principal</li>
+                <li><code>.list-group-item</code> - Item da lista</li>
+                <li><code>.list-group-item-action</code> - Para links e botões</li>
+                <li><code>.list-group-flush</code> - Remove bordas</li>
+                <li><code>.list-group-horizontal</code> - Lista horizontal</li>
+                <li><code>.list-group-numbered</code> - Lista numerada</li>
+                <li><code>.list-group-item-{color}</code> - Cores contextuais</li>
+                <li><code>.active</code> - Estado ativo</li>
+                <li><code>.disabled</code> - Estado desativado</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

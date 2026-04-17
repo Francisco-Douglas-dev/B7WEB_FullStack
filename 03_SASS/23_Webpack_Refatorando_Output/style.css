@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+.header {
+  background: linear-gradient(135deg, #1c78c0, #8b5cf6);
+  color: #ffffff;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.header .subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.content section {
+  background: #ffffff;
+  padding: 40px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.content section h2 {
+  color: #1c78c0;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #10b981;
+  padding-bottom: 10px;
+  font-size: 1.8rem;
+}
+.content section p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.code-block {
+  background-color: #282c34;
+  color: #61dafb;
+  padding: 20px;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 20px 0;
+  border: 2px solid #1c78c0;
+}
+.code-block pre {
+  margin: 0;
+}
+.code-block pre code {
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.practice {
+  background: linear-gradient(to right, #f9d4e5, #ffffff);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border-left: 5px solid #ec4899;
+  transition: all 0.3s ease;
+}
+.practice:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+.practice h3 {
+  color: #ec4899;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.practice p {
+  margin: 0;
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.results ul {
+  list-style: none;
+  padding-left: 0;
+}
+.results ul li {
+  padding: 20px;
+  padding-left: 50px;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #bef5e0, transparent);
+  border-left: 4px solid #10b981;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.results ul li:hover {
+  transform: translateX(10px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+.results ul li::before {
+  content: "🎯";
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+}
+
+.footer {
+  background-color: #333;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+.footer p {
+  font-size: 0.9rem;
+}

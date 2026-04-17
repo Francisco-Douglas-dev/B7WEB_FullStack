@@ -1,0 +1,213 @@
+/**
+ * SASS: VARIÁVEIS
+ * 
+ * Variáveis no Sass permitem armazenar valores reutilizáveis.
+ * Sintaxe: $nome-da-variavel: valor;
+ * 
+ * Vantagens:
+ * - Centraliza valores importantes
+ * - Facilita manutenção (altere em um lugar só)
+ * - Garante consistência no design
+ * - Torna o código mais legível
+ */
+
+// ============================================
+// VARIÁVEIS DE CORES
+// ============================================
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$accent-color: #e74c3c;
+$text-color: #2c3e50;
+$text-light: #7f8c8d;
+$bg-color: #ecf0f1;
+$white: #ffffff;
+
+// ============================================
+// VARIÁVEIS DE ESPAÇAMENTO
+// ============================================
+$spacing-small: 10px;
+$spacing-medium: 20px;
+$spacing-large: 40px;
+
+// ============================================
+// VARIÁVEIS DE TIPOGRAFIA
+// ============================================
+$font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-size-small: 14px;
+$font-size-medium: 16px;
+$font-size-large: 24px;
+$font-size-xlarge: 32px;
+
+// ============================================
+// VARIÁVEIS DE LAYOUT
+// ============================================
+$border-radius: 10px;
+$box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+$transition: all 0.3s ease;
+
+// ============================================
+// ESTILOS USANDO AS VARIÁVEIS
+// ============================================
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+    background-color: $bg-color;
+    color: $text-color;
+    line-height: 1.6;
+}
+
+.theme-demo {
+    max-width: 1200px;
+    margin: $spacing-large auto;
+    padding: $spacing-medium;
+
+    .header {
+        background: linear-gradient(135deg, $primary-color, $secondary-color);
+        color: $white;
+        padding: $spacing-large;
+        border-radius: $border-radius;
+        text-align: center;
+        margin-bottom: $spacing-large;
+        box-shadow: $box-shadow;
+
+        h1 {
+            font-size: $font-size-xlarge;
+            margin-bottom: $spacing-small;
+        }
+
+        p {
+            font-size: $font-size-medium;
+            opacity: 0.9;
+        }
+    }
+
+    .main-content {
+        .variable-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: $spacing-medium;
+
+            .example-card {
+                background-color: $white;
+                padding: $spacing-large;
+                border-radius: $border-radius;
+                box-shadow: $box-shadow;
+                transition: $transition;
+
+                &:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+                }
+
+                h2 {
+                    color: $text-color;
+                    font-size: $font-size-large;
+                    margin-bottom: $spacing-medium;
+                    border-bottom: 3px solid $primary-color;
+                    padding-bottom: $spacing-small;
+                }
+
+                p {
+                    color: $text-light;
+                    margin-bottom: $spacing-medium;
+                }
+
+                // Demonstração de cores
+                .color-swatches {
+                    display: flex;
+                    gap: $spacing-small;
+
+                    .swatch {
+                        width: 80px;
+                        height: 80px;
+                        border-radius: $border-radius;
+                        box-shadow: $box-shadow;
+
+                        &.primary {
+                            background-color: $primary-color;
+                        }
+
+                        &.secondary {
+                            background-color: $secondary-color;
+                        }
+
+                        &.accent {
+                            background-color: $accent-color;
+                        }
+                    }
+                }
+
+                // Demonstração de espaçamentos
+                .spacing-demo {
+                    display: flex;
+                    flex-direction: column;
+                    gap: $spacing-small;
+
+                    .box {
+                        background-color: $primary-color;
+                        color: $white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: $border-radius / 2;
+                        font-weight: bold;
+
+                        &.small {
+                            padding: $spacing-small;
+                        }
+
+                        &.medium {
+                            padding: $spacing-medium;
+                        }
+
+                        &.large {
+                            padding: $spacing-large;
+                        }
+                    }
+                }
+
+                // Demonstração de tipografia
+                .text-samples {
+                    p {
+                        margin: $spacing-small 0;
+                        color: $text-color;
+
+                        &.text-small {
+                            font-size: $font-size-small;
+                        }
+
+                        &.text-medium {
+                            font-size: $font-size-medium;
+                        }
+
+                        &.text-large {
+                            font-size: $font-size-large;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        background-color: $white;
+        padding: $spacing-medium;
+        border-radius: $border-radius;
+        text-align: center;
+        margin-top: $spacing-large;
+        box-shadow: $box-shadow;
+
+        p {
+            color: $accent-color;
+            font-size: $font-size-medium;
+            font-weight: 600;
+        }
+    }
+}

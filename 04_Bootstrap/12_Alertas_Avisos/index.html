@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alertas e Avisos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="display-4 text-center mb-5">Alertas e Avisos</h1>
+
+        <!-- Alertas básicos -->
+        <h3 class="mb-3">1. Alertas Básicos</h3>
+        <div class="alert alert-primary" role="alert">
+            Este é um alerta <strong>primary</strong> - Use para informações gerais
+        </div>
+        <div class="alert alert-secondary" role="alert">
+            Este é um alerta <strong>secondary</strong> - Use para informações secundárias
+        </div>
+        <div class="alert alert-success" role="alert">
+            Este é um alerta <strong>success</strong> - Use para mensagens de sucesso
+        </div>
+        <div class="alert alert-danger" role="alert">
+            Este é um alerta <strong>danger</strong> - Use para erros e avisos críticos
+        </div>
+        <div class="alert alert-warning" role="alert">
+            Este é um alerta <strong>warning</strong> - Use para avisos e atenções
+        </div>
+        <div class="alert alert-info" role="alert">
+            Este é um alerta <strong>info</strong> - Use para informações úteis
+        </div>
+        <div class="alert alert-light" role="alert">
+            Este é um alerta <strong>light</strong> - Estilo claro
+        </div>
+        <div class="alert alert-dark" role="alert">
+            Este é um alerta <strong>dark</strong> - Estilo escuro
+        </div>
+
+        <!-- Alertas com links -->
+        <h3 class="mb-3 mt-5">2. Alertas com Links (.alert-link)</h3>
+        <div class="alert alert-success" role="alert">
+            Seu cadastro foi realizado com sucesso! 
+            <a href="#" class="alert-link">Clique aqui para fazer login</a>.
+        </div>
+        <div class="alert alert-danger" role="alert">
+            Erro ao processar pagamento. 
+            <a href="#" class="alert-link">Tente novamente</a> ou entre em contato com o suporte.
+        </div>
+
+        <!-- Alertas com conteúdo adicional -->
+        <h3 class="mb-3 mt-5">3. Alertas com Conteúdo Adicional</h3>
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Bem-vindo!</h4>
+            <p>Seu cadastro foi concluído com sucesso. Agora você pode aproveitar todos os recursos da plataforma.</p>
+            <hr>
+            <p class="mb-0">Para começar, explore nossos tutoriais na seção de ajuda.</p>
+        </div>
+
+        <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading">Informação Importante</h4>
+            <p>O sistema passará por manutenção programada no dia <strong>20/02/2024</strong> das 02:00 às 04:00</p>
+            <hr>
+            <p class="mb-0">Durante este período, alguns serviços poderão ficar temporariamente indisponíveis.</p>
+        </div>
+
+        <!-- Alertas dismissible -->
+        <h3 class="mb-3 mt-5">4. Alertas Dismissible (Fecháveis)</h3>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Atenção!</strong> Este alerta pode ser fechado clicando no X.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <strong>Dica:</strong> Você pode personalizar suas preferências na página de configurações.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <!-- Alertas com ícones -->
+        <h3 class="mb-3 mt-5">5. Alertas com Ícones e Emojis</h3>
+        <div class="alert alert-success d-flex align-items-center" role="alert">
+            <div class="me-3 fs-3">✓</div>
+            <div>
+                <strong>Sucesso!</strong> Sua operação foi completada com êxito.
+            </div>
+        </div>
+
+        <div class="alert alert-warning d-flex align-items-center" role="alert">
+            <div class="me-3 fs-3">⚠️</div>
+            <div>
+                <strong>Atenção!</strong> Verifique os dados antes de continuar.
+            </div>
+        </div>
+
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+            <div class="me-3 fs-3">❌</div>
+            <div>
+                <strong>Erro!</strong> Não foi possível processar sua solicitação.
+            </div>
+        </div>
+
+        <div class="alert alert-info d-flex align-items-center" role="alert">
+            <div class="me-3 fs-3">ℹ️</div>
+            <div>
+                <strong>Informação:</strong> Novos recursos foram adicionados à plataforma.
+            </div>
+        </div>
+
+        <!-- Alertas com botões -->
+        <h3 class="mb-3 mt-5">6. Alertas com Botões de Ação</h3>
+        <div class="alert alert-primary d-flex justify-content-between align-items-center" role="alert">
+            <span>Você tem <strong>3 mensagens não lidas</strong></span>
+            <button class="btn btn-primary btn-sm">Ver Mensagens</button>
+        </div>
+
+        <div class="alert alert-warning" role="alert">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <strong>Atualização disponível!</strong><br>
+                    <small>Versão 2.0 com novos recursos e melhorias.</small>
+                </div>
+                <div>
+                    <button class="btn btn-warning btn-sm me-2">Atualizar Agora</button>
+                    <button class="btn btn-outline-secondary btn-sm">Depois</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alertas complexos -->
+        <h3 class="mb-3 mt-5">7. Alertas Complexos</h3>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <div class="d-flex align-items-start">
+                <div class="me-3 fs-2">🔒</div>
+                <div class="flex-grow-1">
+                    <h5 class="alert-heading">Falha de Segurança Detectada</h5>
+                    <p>Detectamos uma tentativa de acesso não autorizado à sua conta.</p>
+                    <hr>
+                    <p class="mb-0">
+                        <strong>Ações recomendadas:</strong>
+                    </p>
+                    <ul class="mb-3">
+                        <li>Altere sua senha imediatamente</li>
+                        <li>Ative a autenticação de dois fatores</li>
+                        <li>Revise as sessões ativas</li>
+                    </ul>
+                    <button class="btn btn-danger btn-sm">Alterar Senha</button>
+                    <button class="btn btn-outline-danger btn-sm">Ver Detalhes</button>
+                </div>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <!-- Grid de alertas -->
+        <h3 class="mb-3 mt-5">8. Grid de Notificações</h3>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="alert alert-success mb-0" role="alert">
+                    <strong>✓ Upload completo</strong><br>
+                    <small>arquivo.pdf enviado com sucesso</small>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="alert alert-info mb-0" role="alert">
+                    <strong>📧 Nova mensagem</strong><br>
+                    <small>Você recebeu 1 nova mensagem</small>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="alert alert-warning mb-0" role="alert">
+                    <strong>⏰ Lembrete</strong><br>
+                    <small>Reunião às 15:00</small>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="alert alert-primary mb-0" role="alert">
+                    <strong>🎉 Parabéns!</strong><br>
+                    <small>Você completou 10 tarefas</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast-style alerts -->
+        <h3 class="mb-3 mt-5">9. Alertas Estilo Toast</h3>
+        <div class="position-relative" style="height: 300px;">
+            <div class="position-absolute top-0 end-0" style="width: 350px;">
+                <div class="alert alert-success alert-dismissible fade show shadow" role="alert">
+                    <strong>Sucesso!</strong> Item adicionado ao carrinho.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+                <div class="alert alert-info alert-dismissible fade show shadow" role="alert">
+                    <strong>Novo comentário</strong> em sua publicação.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exemplo prático -->
+        <h3 class="mb-3 mt-5">10. Exemplo Prático: Sistema de Notificações</h3>
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <h5 class="mb-0">Central de Notificações</h5>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-success alert-dismissible fade show">
+                    <strong>✓ Pagamento Aprovado</strong><br>
+                    <small class="text-muted">Há 5 minutos</small><br>
+                    Seu pagamento de R$ 199,90 foi processado com sucesso.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+
+                <div class="alert alert-warning alert-dismissible fade show">
+                    <strong>⏰ Prazo Próximo</strong><br>
+                    <small class="text-muted">Há 1 hora</small><br>
+                    O prazo para entrega do projeto termina em 2 dias.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+
+                <div class="alert alert-info alert-dismissible fade show">
+                    <strong>📢 Nova Feature</strong><br>
+                    <small class="text-muted">Há 3 horas</small><br>
+                    Confira as novidades da versão 2.5!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Referência -->
+        <div class="alert alert-dark mt-5">
+            <h4>📝 Classes de Alertas</h4>
+            <ul class="mb-0">
+                <li><code>.alert .alert-{cor}</code> - Alerta básico (primary, success, danger, warning, info, etc.)</li>
+                <li><code>.alert-link</code> - Estiliza links dentro de alertas</li>
+                <li><code>.alert-heading</code> - Títulos dentro de alertas</li>
+                <li><code>.alert-dismissible</code> - Alerta que pode ser fechado</li>
+                <li><code>.fade .show</code> - Efeito de transição ao fechar</li>
+                <li><code>.btn-close</code> - Botão de fechar</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

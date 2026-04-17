@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid - Colunas e Larguras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .demo-col {
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: 2px solid white;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .demo-col-alt {
+            background-color: #2196F3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="display-4 text-center mb-5">Grid - Colunas e Larguras</h1>
+
+        <!-- Exemplo 1: Larguras diferentes -->
+        <h3 class="mb-3">1. Colunas com Larguras Diferentes</h3>
+        <div class="row mb-4">
+            <div class="col-2 demo-col">col-2</div>
+            <div class="col-10 demo-col demo-col-alt">col-10</div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-3 demo-col">col-3</div>
+            <div class="col-9 demo-col demo-col-alt">col-9</div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-4 demo-col">col-4</div>
+            <div class="col-8 demo-col demo-col-alt">col-8</div>
+        </div>
+
+        <!-- Exemplo 2: Múltiplas colunas -->
+        <h3 class="mb-3 mt-5">2. Múltiplas Colunas com Larguras Variadas</h3>
+        <div class="row mb-4">
+            <div class="col-2 demo-col">col-2</div>
+            <div class="col-3 demo-col demo-col-alt">col-3</div>
+            <div class="col-4 demo-col">col-4</div>
+            <div class="col-3 demo-col demo-col-alt">col-3</div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-1 demo-col">1</div>
+            <div class="col-2 demo-col demo-col-alt">2</div>
+            <div class="col-3 demo-col">3</div>
+            <div class="col-4 demo-col demo-col-alt">4</div>
+            <div class="col-2 demo-col">2</div>
+        </div>
+
+        <!-- Exemplo 3: Quebra de linha automática -->
+        <h3 class="mb-3 mt-5">3. Quebra de Linha Automática</h3>
+        <div class="alert alert-info">
+            Quando a soma das colunas ultrapassa 12, as colunas seguintes quebram para a próxima linha automaticamente.
+        </div>
+        <div class="row mb-4">
+            <div class="col-8 demo-col">col-8 (primeira linha)</div>
+            <div class="col-6 demo-col demo-col-alt">col-6 (quebra para segunda linha pois 8+6=14 &gt; 12)</div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-6 demo-col">col-6</div>
+            <div class="col-6 demo-col demo-col-alt">col-6 (mesma linha = 12)</div>
+            <div class="col-4 demo-col">col-4 (nova linha)</div>
+            <div class="col-4 demo-col demo-col-alt">col-4</div>
+            <div class="col-4 demo-col">col-4 (soma = 12)</div>
+        </div>
+
+        <!-- Exemplo 4: Larguras automáticas -->
+        <h3 class="mb-3 mt-5">4. Larguras Automáticas</h3>
+        <div class="alert alert-warning">
+            Use <code>.col</code> sem número para distribuir o espaço igualmente entre as colunas.
+        </div>
+        <div class="row mb-4">
+            <div class="col demo-col">col (auto)</div>
+            <div class="col demo-col demo-col-alt">col (auto)</div>
+            <div class="col demo-col">col (auto)</div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-6 demo-col">col-6 (fixo)</div>
+            <div class="col demo-col demo-col-alt">col (preenche o resto)</div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-3 demo-col">col-3</div>
+            <div class="col demo-col demo-col-alt">col (auto)</div>
+            <div class="col demo-col">col (auto)</div>
+            <div class="col-2 demo-col demo-col-alt">col-2</div>
+        </div>
+
+        <!-- Exemplo 5: Responsividade combinada -->
+        <h3 class="mb-3 mt-5">5. Combinando Breakpoints</h3>
+        <p class="text-muted">Redimensione a janela para ver as mudanças!</p>
+        
+        <div class="row mb-4">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 demo-col">
+                <strong>Vários breakpoints</strong><br>
+                XS: 100%<br>
+                SM: 50%<br>
+                MD: 33%<br>
+                LG: 25%
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 demo-col demo-col-alt">
+                <strong>Vários breakpoints</strong><br>
+                XS: 100%<br>
+                SM: 50%<br>
+                MD: 33%<br>
+                LG: 25%
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 demo-col">
+                <strong>Vários breakpoints</strong><br>
+                XS: 100%<br>
+                SM: 50%<br>
+                MD: 33%<br>
+                LG: 25%
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 demo-col demo-col-alt">
+                <strong>Vários breakpoints</strong><br>
+                XS: 100%<br>
+                SM: 50%<br>
+                MD: 33%<br>
+                LG: 25%
+            </div>
+        </div>
+
+        <!-- Exemplo 6: Layout de blog -->
+        <h3 class="mb-3 mt-5">6. Exemplo Prático: Layout de Blog</h3>
+        <div class="row">
+            <div class="col-12 col-lg-8 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Conteúdo Principal</h4>
+                        <p class="card-text">Esta coluna ocupa 100% em mobile e 66% (8/12) em desktop.</p>
+                        <p>col-12 col-lg-8</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4 mb-3">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">Sidebar</h5>
+                        <p class="card-text">Esta coluna ocupa 100% em mobile e 33% (4/12) em desktop.</p>
+                        <p>col-12 col-lg-4</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exemplo 7: Grid de cards -->
+        <h3 class="mb-3 mt-5">7. Grid de Cards Responsivo</h3>
+        <div class="row">
+            <div class="col-6 col-md-4 col-xl-3 mb-3">
+                <div class="card h-100">
+                    <div class="card-body bg-primary text-white">
+                        <h5>Card 1</h5>
+                        <p class="small mb-0">Mobile: 50%<br>Tablet: 33%<br>Desktop: 25%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3 mb-3">
+                <div class="card h-100">
+                    <div class="card-body bg-success text-white">
+                        <h5>Card 2</h5>
+                        <p class="small mb-0">Mobile: 50%<br>Tablet: 33%<br>Desktop: 25%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3 mb-3">
+                <div class="card h-100">
+                    <div class="card-body bg-warning">
+                        <h5>Card 3</h5>
+                        <p class="small mb-0">Mobile: 50%<br>Tablet: 33%<br>Desktop: 25%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3 mb-3">
+                <div class="card h-100">
+                    <div class="card-body bg-danger text-white">
+                        <h5>Card 4</h5>
+                        <p class="small mb-0">Mobile: 50%<br>Tablet: 33%<br>Desktop: 25%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resumo -->
+        <div class="alert alert-success mt-5">
+            <h4 class="alert-heading">📝 Resumo</h4>
+            <ul class="mb-0">
+                <li><code>.col-[número]</code> define a largura em uma escala de 12</li>
+                <li><code>.col</code> sem número se auto-ajusta ao espaço disponível</li>
+                <li>A soma maior que 12 causa quebra de linha automática</li>
+                <li>Combine breakpoints para responsividade: <code>.col-12 .col-md-6 .col-lg-4</code></li>
+                <li>Use diferentes larguras para criar layouts assimétricos</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

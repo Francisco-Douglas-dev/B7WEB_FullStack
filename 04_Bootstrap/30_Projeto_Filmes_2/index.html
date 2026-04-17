@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto: Filmes em Cartaz (Parte 2)</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .movie-card {
+            transition: transform 0.3s;
+        }
+        .movie-card:hover {
+            transform: scale(1.05);
+        }
+        .rating {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        AULA 30: PROJETO FILMES EM CARTAZ (PARTE 2)
+        Nesta parte, vamos adicionar funcionalidades interativas:
+        - Modal com detalhes do filme
+        - Sistema de filtros
+        - Paginação
+        - Avaliação com estrelas
+    -->
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">🎬 CineMax</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Em Cartaz</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Em Breve</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Ingressos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Filtros -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Filtros</h5>
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <select class="form-select">
+                                    <option selected>Gênero</option>
+                                    <option>Ação</option>
+                                    <option>Comédia</option>
+                                    <option>Drama</option>
+                                    <option>Terror</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <select class="form-select">
+                                    <option selected>Classificação</option>
+                                    <option>Livre</option>
+                                    <option>+12</option>
+                                    <option>+14</option>
+                                    <option>+16</option>
+                                    <option>+18</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <select class="form-select">
+                                    <option selected>Avaliação</option>
+                                    <option>5 Estrelas</option>
+                                    <option>4+ Estrelas</option>
+                                    <option>3+ Estrelas</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-primary w-100">Aplicar Filtros</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grid de Filmes com Modal -->
+    <div class="container mt-4 mb-5">
+        <h2 class="mb-4">Filmes em Cartaz</h2>
+        <div class="row g-4">
+            <!-- Filme 1 -->
+            <div class="col-md-3">
+                <div class="card movie-card h-100">
+                    <img src="https://via.placeholder.com/300x450/ff6b6b/ffffff?text=Filme+1" class="card-img-top" alt="Filme 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Aventura Espacial</h5>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-primary">Ficção</span>
+                            <span class="badge rating text-white">⭐ 4.8</span>
+                        </div>
+                        <p class="card-text small text-muted">Uma jornada épica pelo universo.</p>
+                        <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#movieModal1">
+                            Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filme 2 -->
+            <div class="col-md-3">
+                <div class="card movie-card h-100">
+                    <img src="https://via.placeholder.com/300x450/4ecdc4/ffffff?text=Filme+2" class="card-img-top" alt="Filme 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Comédia Romântica</h5>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-success">Comédia</span>
+                            <span class="badge rating text-white">⭐ 4.5</span>
+                        </div>
+                        <p class="card-text small text-muted">Uma história hilária de amor.</p>
+                        <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#movieModal2">
+                            Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filme 3 -->
+            <div class="col-md-3">
+                <div class="card movie-card h-100">
+                    <img src="https://via.placeholder.com/300x450/95e1d3/ffffff?text=Filme+3" class="card-img-top" alt="Filme 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Herói da Ação</h5>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-danger">Ação</span>
+                            <span class="badge rating text-white">⭐ 4.9</span>
+                        </div>
+                        <p class="card-text small text-muted">Explosões e muita adrenalina.</p>
+                        <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#movieModal3">
+                            Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filme 4 -->
+            <div class="col-md-3">
+                <div class="card movie-card h-100">
+                    <img src="https://via.placeholder.com/300x450/f38181/ffffff?text=Filme+4" class="card-img-top" alt="Filme 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Mistério Noturno</h5>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-dark">Terror</span>
+                            <span class="badge rating text-white">⭐ 4.6</span>
+                        </div>
+                        <p class="card-text small text-muted">Um thriller arrepiante.</p>
+                        <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#movieModal4">
+                            Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paginação -->
+        <nav aria-label="Navegação de página" class="mt-5">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Próximo</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Modal Filme 1 -->
+    <div class="modal fade" id="movieModal1" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Aventura Espacial</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="https://via.placeholder.com/300x450/ff6b6b/ffffff?text=Filme+1" class="img-fluid rounded" alt="Filme 1">
+                        </div>
+                        <div class="col-md-8">
+                            <h4>Sinopse</h4>
+                            <p>Uma expedição espacial descobre um planeta misterioso que pode abrigar vida alienígena. A tripulação enfrenta desafios inimagináveis enquanto explora esse novo mundo.</p>
+                            
+                            <h5>Informações</h5>
+                            <ul class="list-unstyled">
+                                <li><strong>Diretor:</strong> John Smith</li>
+                                <li><strong>Duração:</strong> 2h 15min</li>
+                                <li><strong>Classificação:</strong> 12 anos</li>
+                                <li><strong>Gênero:</strong> Ficção Científica</li>
+                            </ul>
+
+                            <h5>Horários</h5>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <button class="btn btn-outline-primary btn-sm">14:00</button>
+                                <button class="btn btn-outline-primary btn-sm">16:30</button>
+                                <button class="btn btn-outline-primary btn-sm">19:00</button>
+                                <button class="btn btn-outline-primary btn-sm">21:30</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Comprar Ingresso</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modais para outros filmes (simplificados) -->
+    <div class="modal fade" id="movieModal2" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Comédia Romântica</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Detalhes do filme Comédia Romântica...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="movieModal3" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Herói da Ação</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Detalhes do filme Herói da Ação...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="movieModal4" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mistério Noturno</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Detalhes do filme Mistério Noturno...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes em Cartaz - Parte 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #e50914;
+            --bg-dark: #141414;
+            --bg-gray: #222;
+        }
+        
+        body {
+            background-color: var(--bg-dark);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--bg-dark) !important;
+            padding: 20px 0;
+        }
+        .navbar-brand {
+            color: var(--primary-color) !important;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 70vh;
+            background-image: linear-gradient(to bottom, transparent, var(--bg-dark)), url('https://via.placeholder.com/1920x1080/1a1a1a/666666?text=Featured+Movie');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 50px;
+        }
+        .hero-content {
+            padding: 50px 0;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .hero-buttons .btn {
+            padding: 12px 40px;
+            font-size: 1.1rem;
+            margin-right: 15px;
+        }
+
+        /* Movie Cards */
+        .movie-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            background-color: var(--bg-gray);
+        }
+        .movie-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(229, 9, 20, 0.4);
+        }
+        .movie-card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        .movie-info {
+            padding: 15px;
+        }
+        .movie-rating {
+            background-color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /* Categories */
+        .category-section {
+            margin-bottom: 50px;
+        }
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            padding-left: 5px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        /* Filters */
+        .filter-section {
+            background-color: var(--bg-gray);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        /* Badge */
+        .badge-custom {
+            background-color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">CINEMAX</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#emcartaz">Em Cartaz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#lancamentos">Lançamentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#populares">Populares</a>
+                    </li>
+                </ul>
+                <div class="d-flex ms-3">
+                    <input class="form-control me-2" type="search" placeholder="Buscar filmes...">
+                    <button class="btn btn-danger">🔍</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Vingadores: Ultimato</h1>
+                <p class="lead mb-4">Após Thanos eliminar metade das criaturas vivas, os Vingadores precisam reunir forças para reverter a catástrofe.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-danger btn-lg">▶ Assistir Trailer</button>
+                    <button class="btn btn-outline-light btn-lg">ℹ Mais Informações</button>
+                </div>
+                <div class="mt-3">
+                    <span class="badge-custom">Ação</span>
+                    <span class="badge-custom">Aventura</span>
+                    <span class="badge-custom">Ficção</span>
+                    <span class="text-warning">⭐ 8.4/10</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <div class="container">
+        <div class="filter-section">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <select class="form-select">
+                        <option selected>Todos os Gêneros</option>
+                        <option>Ação</option>
+                        <option>Comédia</option>
+                        <option>Drama</option>
+                        <option>Terror</option>
+                        <option>Ficção Científica</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select">
+                        <option selected>Todos os Anos</option>
+                        <option>2024</option>
+                        <option>2023</option>
+                        <option>2022</option>
+                        <option>2021</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select">
+                        <option selected>Ordenar por</option>
+                        <option>Mais Recentes</option>
+                        <option>Mais Populares</option>
+                        <option>Melhor Avaliados</option>
+                        <option>A-Z</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-danger w-100">Aplicar Filtros</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Em Cartaz -->
+    <div class="container category-section" id="emcartaz">
+        <h2 class="category-title">🎬 Em Cartaz nos Cinemas</h2>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/300x450/1a1a1a/e50914?text=Ação+1" alt="Filme">
+                    <div class="movie-info">
+                        <span class="movie-rating">⭐ 8.5</span>
+                        <h5 class="mt-2">Missão Impossível</h5>
+                        <p class="text-muted mb-2">Ação, Aventura • 2024</p>
+                        <span class="badge bg-secondary">Legendado</span>
+                        <span class="badge bg-info">IMAX</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/300x450/2a2a2a/e50914?text=Comédia" alt="Filme">
+                    <div class="movie-info">
+                        <span class="movie-rating">⭐ 7.8</span>
+                        <h5 class="mt-2">Férias Frustradas</h5>
+                        <p class="text-muted mb-2">Comédia • 2024</p>
+                        <span class="badge bg-secondary">Dublado</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/300x450/1a1a1a/e50914?text=Terror" alt="Filme">
+                    <div class="movie-info">
+                        <span class="movie-rating">⭐ 8.2</span>
+                        <h5 class="mt-2">A Invocação</h5>
+                        <p class="text-muted mb-2">Terror • 2024</p>
+                        <span class="badge bg-danger">+16</span>
+                        <span class="badge bg-secondary">Legendado</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/300x450/2a2a2a/e50914?text=Drama" alt="Filme">
+                    <div class="movie-info">
+                        <span class="movie-rating">⭐ 9.1</span>
+                        <h5 class="mt-2">Oppenheimer</h5>
+                        <p class="text-muted mb-2">Drama, História • 2024</p>
+                        <span class="badge bg-warning text-dark">Oscar</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/300x450/1a1a1a/e50914?text=Animação" alt="Filme">
+                    <div class="movie-info">
+                        <span class="movie-rating">⭐ 8.7</span>
+                        <h5 class="mt-2">Elementos</h5>
+                        <p class="text-muted mb-2">Animação, Família • 2024</p>
+                        <span class="badge bg-success">Livre</span>
+                        <span class="badge bg-secondary">Dublado</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/300x450/2a2a2a/e50914?text=Ficção" alt="Filme">
+                    <div class="movie-info">
+                        <span class="movie-rating">⭐ 8.9</span>
+                        <h5 class="mt-2">Duna: Parte 2</h5>
+                        <p class="text-muted mb-2">Ficção, Aventura • 2024</p>
+                        <span class="badge bg-info">IMAX</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/300x450/1a1a1a/e50914?text=Romance" alt="Filme">
+                    <div class="movie-info">
+                        <span class="movie-rating">⭐ 7.5</span>
+                        <h5 class="mt-2">Um Amor para Recordar</h5>
+                        <p class="text-muted mb-2">Romance, Drama • 2024</p>
+                        <span class="badge bg-danger">+12</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/300x450/2a2a2a/e50914?text=Suspense" alt="Filme">
+                    <div class="movie-info">
+                        <span class="movie-rating">⭐ 8.3</span>
+                        <h5 class="mt-2">O Suspeito</h5>
+                        <p class="text-muted mb-2">Suspense, Crime • 2024</p>
+                        <span class="badge bg-danger">+16</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <button class="btn btn-outline-light btn-lg">Ver Todos os Filmes →</button>
+        </div>
+    </div>
+
+    <!-- Lançamentos -->
+    <div class="container category-section" id="lancamentos">
+        <h2 class="category-title">🆕 Próximos Lançamentos</h2>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="movie-card">
+                    <div class="position-absolute top-0 end-0 m-2">
+                        <span class="badge bg-warning text-dark">Em Breve</span>
+                    </div>
+                    <img src="https://via.placeholder.com/300x450/1a1a1a/ffc107?text=Em+Breve" alt="Filme">
+                    <div class="movie-info">
+                        <h5>Deadpool & Wolverine</h5>
+                        <p class="text-muted mb-2">Ação, Comédia • Jul 2024</p>
+                        <small class="text-warning">Lançamento: 26/07/2024</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="movie-card">
+                    <div class="position-absolute top-0 end-0 m-2">
+                        <span class="badge bg-warning text-dark">Em Breve</span>
+                    </div>
+                    <img src="https://via.placeholder.com/300x450/2a2a2a/ffc107?text=Aguardado" alt="Filme">
+                    <div class="movie-info">
+                        <h5>Gladiador II</h5>
+                        <p class="text-muted mb-2">Ação, História • Nov 2024</p>
+                        <small class="text-warning">Lançamento: 22/11/2024</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="movie-card">
+                    <div class="position-absolute top-0 end-0 m-2">
+                        <span class="badge bg-warning text-dark">Em Breve</span>
+                    </div>
+                    <img src="https://via.placeholder.com/300x450/1a1a1a/ffc107?text=Novo" alt="Filme">
+                    <div class="movie-info">
+                        <h5>Avatar 3</h5>
+                        <p class="text-muted mb-2">Ficção, Aventura • Dez 2024</p>
+                        <small class="text-warning">Lançamento: 20/12/2024</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="movie-card">
+                    <div class="position-absolute top-0 end-0 m-2">
+                        <span class="badge bg-warning text-dark">Em Breve</span>
+                    </div>
+                    <img src="https://via.placeholder.com/300x450/2a2a2a/ffc107?text=Previsto" alt="Filme">
+                    <div class="movie-info">
+                        <h5>Homem-Aranha 4</h5>
+                        <p class="text-muted mb-2">Ação, Aventura • 2025</p>
+                        <small class="text-warning">Lançamento: 2025</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="container mb-5">
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="text-center p-4" style="background-color: var(--bg-gray); border-radius: 8px;">
+                    <h2 class="text-danger">150+</h2>
+                    <p class="text-muted mb-0">Filmes em Cartaz</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center p-4" style="background-color: var(--bg-gray); border-radius: 8px;">
+                    <h2 class="text-danger">50+</h2>
+                    <p class="text-muted mb-0">Cinemas Parceiros</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center p-4" style="background-color: var(--bg-gray); border-radius: 8px;">
+                    <h2 class="text-danger">1M+</h2>
+                    <p class="text-muted mb-0">Ingressos Vendidos</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center p-4" style="background-color: var(--bg-gray); border-radius: 8px;">
+                    <h2 class="text-danger">4.8★</h2>
+                    <p class="text-muted mb-0">Avaliação Média</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5" style="background-color: var(--bg-gray);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h4 class="text-danger mb-3">CINEMAX</h4>
+                    <p class="text-muted">Sua fonte completa de informações sobre filmes em cartaz e próximos lançamentos.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted text-decoration-none">Sobre Nós</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Contato</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Política de Privacidade</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Termos de Uso</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">Siga-nos</h5>
+                    <div>
+                        <a href="#" class="btn btn-outline-light me-2">Facebook</a>
+                        <a href="#" class="btn btn-outline-light me-2">Twitter</a>
+                        <a href="#" class="btn btn-outline-light">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="text-center text-muted">
+                <p class="mb-0">© 2024 CINEMAX. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Movie card click effect
+        document.querySelectorAll('.movie-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const movieTitle = this.querySelector('h5').textContent;
+                alert('Você clicou em: ' + movieTitle + '\n\nAqui seria exibida a página de detalhes do filme!');
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('input[type="search"]');
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                alert('Buscando por: ' + this.value);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilidades</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="display-4 text-center mb-5">Utilidades (Utilities)</h1>
+
+        <!-- Cores de Texto -->
+        <h3>1. Cores de Texto</h3>
+        <p class="text-primary">Texto Primary</p>
+        <p class="text-secondary">Texto Secondary</p>
+        <p class="text-success">Texto Success</p>
+        <p class="text-danger">Texto Danger</p>
+        <p class="text-warning">Texto Warning</p>
+        <p class="text-info">Texto Info</p>
+        <p class="text-light bg-dark">Texto Light</p>
+        <p class="text-dark">Texto Dark</p>
+        <p class="text-muted">Texto Muted (opaco)</p>
+
+        <!-- Cores de Background -->
+        <h3 class="mt-5">2. Cores de Background</h3>
+        <div class="p-3 mb-2 bg-primary text-white">Background Primary</div>
+        <div class="p-3 mb-2 bg-secondary text-white">Background Secondary</div>
+        <div class="p-3 mb-2 bg-success text-white">Background Success</div>
+        <div class="p-3 mb-2 bg-danger text-white">Background Danger</div>
+        <div class="p-3 mb-2 bg-warning text-dark">Background Warning</div>
+        <div class="p-3 mb-2 bg-info text-white">Background Info</div>
+        <div class="p-3 mb-2 bg-light text-dark">Background Light</div>
+        <div class="p-3 mb-2 bg-dark text-white">Background Dark</div>
+
+        <!-- Display -->
+        <h3 class="mt-5">3. Display (Exibição)</h3>
+        <div class="d-block bg-primary text-white p-2 mb-2">d-block (ocupa toda largura)</div>
+        <span class="d-inline bg-success text-white p-2">d-inline</span>
+        <span class="d-inline bg-success text-white p-2">d-inline</span>
+        <div class="d-inline-block bg-warning text-dark p-2 mt-2">d-inline-block</div>
+        <div class="d-inline-block bg-warning text-dark p-2">d-inline-block</div>
+        
+        <h5 class="mt-3">Display Responsivo</h5>
+        <div class="d-none d-lg-block bg-info text-white p-2">Visível apenas em telas LARGE+</div>
+        <div class="d-block d-md-none bg-danger text-white p-2">Visível apenas em telas SMALL</div>
+
+        <!-- Flexbox -->
+        <h3 class="mt-5">4. Flexbox</h3>
+        <div class="d-flex bg-light p-3 mb-3">
+            <div class="p-2 bg-primary text-white">Flex item 1</div>
+            <div class="p-2 bg-secondary text-white">Flex item 2</div>
+            <div class="p-2 bg-success text-white">Flex item 3</div>
+        </div>
+
+        <h5>Direção</h5>
+        <div class="d-flex flex-column bg-light p-3 mb-3">
+            <div class="p-2 bg-primary text-white">Item 1 (column)</div>
+            <div class="p-2 bg-secondary text-white">Item 2 (column)</div>
+        </div>
+
+        <h5>Justify Content</h5>
+        <div class="d-flex justify-content-start bg-light p-3 mb-2">
+            <div class="p-2 bg-primary text-white">Start</div>
+        </div>
+        <div class="d-flex justify-content-center bg-light p-3 mb-2">
+            <div class="p-2 bg-success text-white">Center</div>
+        </div>
+        <div class="d-flex justify-content-end bg-light p-3 mb-2">
+            <div class="p-2 bg-danger text-white">End</div>
+        </div>
+        <div class="d-flex justify-content-between bg-light p-3 mb-2">
+            <div class="p-2 bg-info text-white">Between</div>
+            <div class="p-2 bg-warning text-dark">Between</div>
+        </div>
+        <div class="d-flex justify-content-around bg-light p-3 mb-3">
+            <div class="p-2 bg-primary text-white">Around</div>
+            <div class="p-2 bg-success text-white">Around</div>
+        </div>
+
+        <h5>Align Items</h5>
+        <div class="d-flex align-items-start bg-light p-3 mb-2" style="height: 100px;">
+            <div class="p-2 bg-primary text-white">Start</div>
+        </div>
+        <div class="d-flex align-items-center bg-light p-3 mb-2" style="height: 100px;">
+            <div class="p-2 bg-success text-white">Center</div>
+        </div>
+        <div class="d-flex align-items-end bg-light p-3 mb-3" style="height: 100px;">
+            <div class="p-2 bg-danger text-white">End</div>
+        </div>
+
+        <!-- Espaçamento (Margin e Padding) -->
+        <h3 class="mt-5">5. Espaçamento (Margin e Padding)</h3>
+        <p class="text-muted">m = margin, p = padding</p>
+        <p class="text-muted">t = top, b = bottom, s = start (left), e = end (right), x = horizontal, y = vertical</p>
+        <p class="text-muted">Valores: 0, 1, 2, 3, 4, 5 (0 = 0, 5 = 3rem)</p>
+
+        <div class="bg-light p-3 mb-3">
+            <div class="bg-primary text-white p-3">Padding 3 (p-3)</div>
+        </div>
+
+        <div class="bg-light p-3 mb-3">
+            <div class="bg-success text-white m-3 p-2">Margin 3 (m-3)</div>
+        </div>
+
+        <div class="bg-light p-3 mb-3">
+            <div class="bg-warning text-dark mt-3 mb-3 p-2">Margin Top e Bottom (mt-3 mb-3)</div>
+        </div>
+
+        <div class="bg-light p-3 mb-3">
+            <div class="bg-info text-white px-5 py-2">Padding horizontal 5, vertical 2 (px-5 py-2)</div>
+        </div>
+
+        <!-- Bordas -->
+        <h3 class="mt-5">6. Bordas</h3>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="border p-3">border</div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="border-top p-3">border-top</div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="border-end p-3">border-end</div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="border-bottom p-3">border-bottom</div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="border-start p-3">border-start</div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="border border-primary p-3">border-primary</div>
+            </div>
+        </div>
+
+        <h5>Espessura da Borda</h5>
+        <div class="border border-1 p-2 mb-2">border-1</div>
+        <div class="border border-2 p-2 mb-2">border-2</div>
+        <div class="border border-3 p-2 mb-2">border-3</div>
+        <div class="border border-4 p-2 mb-2">border-4</div>
+        <div class="border border-5 p-2 mb-3">border-5</div>
+
+        <!-- Border Radius -->
+        <h3 class="mt-5">7. Border Radius (Cantos Arredondados)</h3>
+        <div class="row">
+            <div class="col-md-3 mb-3">
+                <div class="rounded bg-primary text-white p-3">rounded</div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="rounded-0 bg-success text-white border p-3">rounded-0</div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="rounded-1 bg-warning text-dark p-3">rounded-1</div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="rounded-2 bg-info text-white p-3">rounded-2</div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="rounded-3 bg-danger text-white p-3">rounded-3</div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="rounded-circle bg-secondary text-white p-3 text-center" style="width: 100px; height: 100px;">
+                    circle
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="rounded-pill bg-success text-white p-3">rounded-pill</div>
+            </div>
+        </div>
+
+        <!-- Texto -->
+        <h3 class="mt-5">8. Utilitários de Texto</h3>
+        
+        <h5>Alinhamento</h5>
+        <p class="text-start">Texto alinhado à esquerda (start)</p>
+        <p class="text-center">Texto centralizado</p>
+        <p class="text-end">Texto alinhado à direita (end)</p>
+
+        <h5>Transformação</h5>
+        <p class="text-lowercase">TEXTO EM MINÚSCULA</p>
+        <p class="text-uppercase">texto em maiúscula</p>
+        <p class="text-capitalize">primeira letra maiúscula</p>
+
+        <h5>Peso da Fonte</h5>
+        <p class="fw-bold">Texto em negrito (bold)</p>
+        <p class="fw-normal">Texto normal</p>
+        <p class="fw-light">Texto leve (light)</p>
+        <p class="fst-italic">Texto itálico</p>
+
+        <h5>Tamanho da Fonte</h5>
+        <p class="fs-1">Font size 1 (maior)</p>
+        <p class="fs-2">Font size 2</p>
+        <p class="fs-3">Font size 3</p>
+        <p class="fs-4">Font size 4</p>
+        <p class="fs-5">Font size 5</p>
+        <p class="fs-6">Font size 6 (menor)</p>
+
+        <!-- Dimensões -->
+        <h3 class="mt-5">9. Largura e Altura</h3>
+        <div class="w-25 bg-primary text-white p-2 mb-2">Width 25%</div>
+        <div class="w-50 bg-success text-white p-2 mb-2">Width 50%</div>
+        <div class="w-75 bg-warning text-dark p-2 mb-2">Width 75%</div>
+        <div class="w-100 bg-info text-white p-2 mb-3">Width 100%</div>
+
+        <div style="height: 200px; background: #f8f9fa;">
+            <div class="h-25 bg-primary text-white p-2">Height 25%</div>
+        </div>
+
+        <!-- Sombras -->
+        <h3 class="mt-5">10. Sombras</h3>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="shadow-sm p-3 bg-white">shadow-sm (pequena)</div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="shadow p-3 bg-white">shadow (normal)</div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="shadow-lg p-3 bg-white">shadow-lg (grande)</div>
+            </div>
+        </div>
+
+        <!-- Posicionamento -->
+        <h3 class="mt-5">11. Posicionamento</h3>
+        <div class="position-relative bg-light p-5 mb-3">
+            <div class="position-absolute top-0 start-0 bg-primary text-white p-2">top-0 start-0</div>
+            <div class="position-absolute top-0 end-0 bg-success text-white p-2">top-0 end-0</div>
+            <div class="position-absolute bottom-0 start-0 bg-warning text-dark p-2">bottom-0 start-0</div>
+            <div class="position-absolute bottom-0 end-0 bg-danger text-white p-2">bottom-0 end-0</div>
+        </div>
+
+        <!-- Visibilidade -->
+        <h3 class="mt-5">12. Visibilidade</h3>
+        <p class="visible">Elemento visível</p>
+        <p class="invisible">Elemento invisível (ocupa espaço)</p>
+        <p class="text-muted">Use d-none para remover completamente</p>
+
+        <!-- Float -->
+        <h3 class="mt-5">13. Float</h3>
+        <div class="clearfix bg-light p-3 mb-3">
+            <div class="float-start bg-primary text-white p-2">float-start (esquerda)</div>
+            <div class="float-end bg-success text-white p-2">float-end (direita)</div>
+        </div>
+
+        <!-- Overflow -->
+        <h3 class="mt-5">14. Overflow</h3>
+        <div class="overflow-auto bg-light p-3 mb-2" style="max-height: 100px;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate.</p>
+        </div>
+
+        <!-- Exemplo combinado -->
+        <h3 class="mt-5">15. Exemplo: Card Completo com Utilities</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card shadow-lg rounded-3 border-0">
+                    <div class="card-header bg-primary text-white fw-bold">
+                        Perfil do Usuário
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://via.placeholder.com/80" class="rounded-circle me-3">
+                            <div>
+                                <h5 class="mb-0 fw-bold">João Silva</h5>
+                                <p class="text-muted mb-0 fs-6">Desenvolvedor Full Stack</p>
+                            </div>
+                        </div>
+                        <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="btn btn-primary px-4">Seguir</button>
+                            <button class="btn btn-outline-secondary">Mensagem</button>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-light text-center">
+                        <div class="d-flex justify-content-around">
+                            <div>
+                                <h6 class="fw-bold mb-0">1.2k</h6>
+                                <small class="text-muted">Seguidores</small>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-0">350</h6>
+                                <small class="text-muted">Seguindo</small>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-0">89</h6>
+                                <small class="text-muted">Posts</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Referência completa -->
+        <div class="alert alert-info mt-5">
+            <h4>📝 Categorias de Utilities</h4>
+            <ul class="mb-0">
+                <li><strong>Cores:</strong> text-{color}, bg-{color}</li>
+                <li><strong>Display:</strong> d-none, d-block, d-inline, d-flex</li>
+                <li><strong>Flexbox:</strong> justify-content-*, align-items-*</li>
+                <li><strong>Espaçamento:</strong> m-*, p-*, mt-*, mb-*, mx-*, my-*</li>
+                <li><strong>Bordas:</strong> border, border-{side}, border-{color}</li>
+                <li><strong>Border Radius:</strong> rounded, rounded-circle, rounded-pill</li>
+                <li><strong>Texto:</strong> text-center, text-uppercase, fw-bold, fs-*</li>
+                <li><strong>Dimensões:</strong> w-*, h-* (25, 50, 75, 100)</li>
+                <li><strong>Sombras:</strong> shadow, shadow-sm, shadow-lg</li>
+                <li><strong>Posição:</strong> position-*, top-*, bottom-*, start-*, end-*</li>
+            </ul>
+        </div>
+
+        <div class="alert alert-success">
+            <h5>💡 Dica Pro</h5>
+            <p class="mb-0">Utilities são super poderosas! Use-as para criar layouts rapidamente sem precisar escrever CSS customizado. Combine múltiplas utilities para resultados impressionantes!</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

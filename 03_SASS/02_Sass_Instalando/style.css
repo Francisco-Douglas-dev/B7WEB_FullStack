@@ -1,0 +1,93 @@
+/**
+ * SASS: INSTALANDO O SASS
+ * 
+ * Este arquivo demonstra estilos para um guia de instalação.
+ * Mostra o uso básico de aninhamento e organização de código SCSS.
+ * 
+ * Comandos de instalação:
+ * - npm install -g sass (instalação global)
+ * - npm install --save-dev sass (instalação local no projeto)
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.guide {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  width: 100%;
+  overflow: hidden;
+}
+.guide .guide-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 40px 30px;
+  text-align: center;
+}
+.guide .guide-header h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+.guide .guide-header .subtitle {
+  font-size: 16px;
+  opacity: 0.9;
+}
+.guide .installation-steps {
+  padding: 30px;
+}
+.guide .installation-steps .step {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+.guide .installation-steps .step:last-child {
+  margin-bottom: 0;
+}
+.guide .installation-steps .step h2 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.guide .installation-steps .step .command {
+  display: block;
+  background-color: #2d3748;
+  color: #48bb78;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  margin: 10px 0;
+  overflow-x: auto;
+}
+.guide .installation-steps .step p {
+  color: #666;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+.guide .guide-footer {
+  background-color: #f8f9fa;
+  padding: 20px 30px;
+  text-align: center;
+  border-top: 1px solid #e2e8f0;
+}
+.guide .guide-footer p {
+  color: #667eea;
+  font-weight: bold;
+  font-size: 18px;
+}

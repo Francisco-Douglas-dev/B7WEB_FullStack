@@ -1,0 +1,148 @@
+/**
+ * SASS: USANDO O SASS
+ * 
+ * Este arquivo demonstra o uso prático do Sass com:
+ * - Aninhamento profundo de seletores
+ * - Organização hierárquica do código
+ * - Uso do & (parent selector) para estados hover/active
+ * 
+ * Para compilar: sass style.scss style.css
+ */
+
+// Reset básico
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e9ecef;
+}
+
+// Dashboard principal com layout flexbox
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+
+    // Sidebar lateral com navegação aninhada
+    .sidebar {
+        width: 250px;
+        background-color: #2c3e50;
+        color: white;
+        padding: 30px 20px;
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 10px;
+        }
+
+        // Navegação aninhada dentro da sidebar
+        nav {
+            ul {
+                list-style: none;
+
+                li {
+                    margin-bottom: 10px;
+
+                    a {
+                        display: block;
+                        color: #bdc3c7;
+                        text-decoration: none;
+                        padding: 12px 15px;
+                        border-radius: 5px;
+                        transition: all 0.3s ease;
+
+                        // Estado hover usando & (parent selector)
+                        &:hover {
+                            background-color: #34495e;
+                            color: white;
+                            transform: translateX(5px);
+                        }
+
+                        // Estado ativo
+                        &.active {
+                            background-color: #3498db;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Conteúdo principal
+    .content {
+        flex: 1;
+        padding: 30px;
+
+        // Cabeçalho da página
+        .page-header {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+
+            h1 {
+                color: #2c3e50;
+                margin-bottom: 10px;
+            }
+
+            p {
+                color: #7f8c8d;
+                font-size: 16px;
+            }
+        }
+
+        // Seção de cards
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+
+            // Card base com aninhamento
+            .card {
+                background-color: white;
+                padding: 25px;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                border-left: 4px solid #3498db;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+                h3 {
+                    color: #2c3e50;
+                    margin-bottom: 10px;
+                    font-size: 20px;
+                }
+
+                p {
+                    color: #7f8c8d;
+                    line-height: 1.6;
+                }
+
+                // Efeito hover no card
+                &:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+                }
+
+                // Variações de cores dos cards
+                &.card-primary {
+                    border-left-color: #3498db;
+                }
+
+                &.card-secondary {
+                    border-left-color: #9b59b6;
+                }
+
+                &.card-success {
+                    border-left-color: #2ecc71;
+                }
+            }
+        }
+    }
+}

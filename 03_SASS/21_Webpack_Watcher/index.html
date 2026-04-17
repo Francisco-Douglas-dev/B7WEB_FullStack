@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpack - Watcher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Webpack Watcher</h1>
+        <p class="subtitle">Modo watch para recompilação automática</p>
+    </header>
+
+    <main class="content">
+        <section class="intro">
+            <h2>O que é o Watch Mode?</h2>
+            <p>O modo watch do Webpack monitora mudanças nos arquivos do projeto e recompila automaticamente quando detecta alterações. Isso elimina a necessidade de executar o build manualmente a cada modificação.</p>
+        </section>
+
+        <section class="activation">
+            <h2>Ativando o Watch Mode</h2>
+            <div class="method">
+                <h3>Método 1: Via Linha de Comando</h3>
+                <div class="code-block">
+                    <pre><code># Executar webpack em modo watch
+npx webpack --watch
+
+# Ou usando yarn
+yarn webpack --watch</code></pre>
+                </div>
+            </div>
+
+            <div class="method">
+                <h3>Método 2: package.json Script</h3>
+                <div class="code-block">
+                    <pre><code>{
+    "scripts": {
+        "build": "webpack",
+        "watch": "webpack --watch",
+        "dev": "webpack --watch --mode development"
+    }
+}
+
+# Executar
+npm run watch</code></pre>
+                </div>
+            </div>
+
+            <div class="method">
+                <h3>Método 3: webpack.config.js</h3>
+                <div class="code-block">
+                    <pre><code>module.exports = {
+    mode: 'development',
+    watch: true,
+    watchOptions: {
+        ignored: /node_modules/,
+        aggregateTimeout: 300,
+        poll: 1000
+    }
+};</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="options">
+            <h2>Opções de Configuração</h2>
+            <div class="option-card">
+                <h3>ignored</h3>
+                <p>Define pastas/arquivos que não devem ser monitorados (ex: node_modules)</p>
+                <div class="code-example">
+                    <code>ignored: /node_modules/</code>
+                </div>
+            </div>
+
+            <div class="option-card">
+                <h3>aggregateTimeout</h3>
+                <p>Tempo de espera (ms) após uma mudança antes de recompilar</p>
+                <div class="code-example">
+                    <code>aggregateTimeout: 300</code>
+                </div>
+            </div>
+
+            <div class="option-card">
+                <h3>poll</h3>
+                <p>Verifica mudanças em intervalos (útil em sistemas que não suportam eventos de arquivo)</p>
+                <div class="code-example">
+                    <code>poll: 1000</code>
+                </div>
+            </div>
+        </section>
+
+        <section class="dev-server">
+            <h2>Webpack Dev Server (Alternativa Recomendada)</h2>
+            <p>Para desenvolvimento, o webpack-dev-server é mais poderoso que o watch simples, oferecendo live reload e HMR.</p>
+            <div class="code-block">
+                <pre><code># Instalar webpack-dev-server
+npm install --save-dev webpack-dev-server
+
+# package.json
+{
+    "scripts": {
+        "start": "webpack serve --open",
+        "dev": "webpack serve --mode development"
+    }
+}
+
+# webpack.config.js
+module.exports = {
+    devServer: {
+        static: './dist',
+        port: 3000,
+        hot: true,
+        open: true
+    }
+};</code></pre>
+            </div>
+        </section>
+
+        <section class="comparison">
+            <h2>Watch vs Dev Server</h2>
+            <div class="comparison-table">
+                <div class="comparison-row">
+                    <div class="feature">Watch Mode</div>
+                    <div class="desc">Recompila arquivos automaticamente</div>
+                </div>
+                <div class="comparison-row highlight">
+                    <div class="feature">Dev Server</div>
+                    <div class="desc">Recompila + Live Reload + HMR + Servidor HTTP</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tips">
+            <h2>Dicas de Uso</h2>
+            <ul>
+                <li>Use watch para builds simples e testes rápidos</li>
+                <li>Prefira dev server para desenvolvimento ativo</li>
+                <li>Sempre ignore node_modules para melhor performance</li>
+                <li>Configure aggregateTimeout para evitar recompilações excessivas</li>
+                <li>Use Ctrl+C para parar o processo watch</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 - Estudos FullStack B7WEB - Webpack Watch Mode</p>
+    </footer>
+</body>
+</html>

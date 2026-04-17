@@ -1,0 +1,169 @@
+// Variáveis
+$primary-color: #1c78c0;
+$secondary-color: #8b5cf6;
+$success-color: #10b981;
+$text-color: #333;
+$bg-color: #f5f5f5;
+$white: #ffffff;
+$dark: #282c34;
+
+// Espaçamentos
+$spacing-sm: 10px;
+$spacing-md: 20px;
+$spacing-lg: 40px;
+
+// Mixin para cards animados
+@mixin animated-card {
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: scale(1.02);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+}
+
+// Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: $text-color;
+    background-color: $bg-color;
+}
+
+// Header
+.header {
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    color: $white;
+    padding: $spacing-lg;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: $spacing-sm;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+}
+
+// Content
+.content {
+    max-width: 1200px;
+    margin: $spacing-lg auto;
+    padding: 0 $spacing-md;
+
+    section {
+        background: $white;
+        padding: $spacing-lg;
+        margin-bottom: $spacing-md;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+        h2 {
+            color: $primary-color;
+            margin-bottom: $spacing-md;
+            border-bottom: 3px solid $success-color;
+            padding-bottom: $spacing-sm;
+            font-size: 1.8rem;
+        }
+
+        p {
+            margin-bottom: $spacing-md;
+            line-height: 1.8;
+        }
+    }
+}
+
+// Type cards - cards de tipos
+.type-card {
+    background: linear-gradient(135deg, lighten($secondary-color, 40%), $white);
+    padding: $spacing-md;
+    margin-bottom: $spacing-md;
+    border-left: 5px solid $secondary-color;
+    border-radius: 5px;
+    @include animated-card;
+
+    h3 {
+        color: $secondary-color;
+        font-family: 'Courier New', monospace;
+        margin-bottom: $spacing-sm;
+        font-size: 1.2rem;
+    }
+
+    p {
+        margin: 0;
+        color: darken($text-color, 5%);
+    }
+}
+
+// Code block
+.code-block {
+    background-color: $dark;
+    color: #61dafb;
+    padding: $spacing-md;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: $spacing-md 0;
+    border: 2px solid $primary-color;
+
+    pre {
+        margin: 0;
+
+        code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+    }
+}
+
+// Usage examples
+.usage-example {
+    margin-bottom: $spacing-lg;
+
+    h3 {
+        color: $success-color;
+        margin-bottom: $spacing-md;
+        padding: $spacing-sm;
+        background: lighten($success-color, 45%);
+        border-radius: 5px;
+        display: inline-block;
+    }
+}
+
+// Info box
+.info-box {
+    background: linear-gradient(to right, lighten($primary-color, 45%), $white);
+    padding: $spacing-md;
+    border-radius: 8px;
+    margin-top: $spacing-md;
+    border-left: 5px solid $primary-color;
+
+    p {
+        margin: 0;
+        font-style: italic;
+        color: darken($primary-color, 10%);
+    }
+}
+
+// Footer
+.footer {
+    background-color: #333;
+    color: $white;
+    text-align: center;
+    padding: $spacing-md;
+    margin-top: $spacing-lg;
+
+    p {
+        font-size: 0.9rem;
+    }
+}

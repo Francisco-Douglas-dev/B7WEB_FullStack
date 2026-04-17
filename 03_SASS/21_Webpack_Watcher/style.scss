@@ -1,0 +1,222 @@
+// Variáveis
+$primary-color: #1c78c0;
+$secondary-color: #8b5cf6;
+$success-color: #10b981;
+$text-color: #333;
+$bg-color: #f5f5f5;
+$white: #ffffff;
+$dark: #282c34;
+$warning: #f59e0b;
+
+// Espaçamentos
+$spacing-sm: 10px;
+$spacing-md: 20px;
+$spacing-lg: 40px;
+
+// Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: $text-color;
+    background-color: $bg-color;
+}
+
+// Header
+.header {
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    color: $white;
+    padding: $spacing-lg;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: $spacing-sm;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+}
+
+// Content
+.content {
+    max-width: 1200px;
+    margin: $spacing-lg auto;
+    padding: 0 $spacing-md;
+
+    section {
+        background: $white;
+        padding: $spacing-lg;
+        margin-bottom: $spacing-md;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+        h2 {
+            color: $primary-color;
+            margin-bottom: $spacing-md;
+            border-bottom: 3px solid $success-color;
+            padding-bottom: $spacing-sm;
+        }
+
+        p {
+            margin-bottom: $spacing-md;
+            line-height: 1.8;
+        }
+    }
+}
+
+// Method sections
+.method {
+    margin-bottom: $spacing-lg;
+    padding: $spacing-md;
+    background: lighten($primary-color, 48%);
+    border-radius: 8px;
+    border-left: 5px solid $primary-color;
+
+    h3 {
+        color: $primary-color;
+        margin-bottom: $spacing-md;
+        font-size: 1.2rem;
+    }
+}
+
+// Code block
+.code-block {
+    background-color: $dark;
+    color: #61dafb;
+    padding: $spacing-md;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: $spacing-md 0;
+    border: 2px solid $primary-color;
+
+    pre {
+        margin: 0;
+
+        code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+    }
+}
+
+// Option cards
+.option-card {
+    background: lighten($secondary-color, 45%);
+    padding: $spacing-md;
+    margin-bottom: $spacing-md;
+    border-radius: 5px;
+    border-left: 4px solid $secondary-color;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateX(8px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    h3 {
+        color: $secondary-color;
+        font-family: 'Courier New', monospace;
+        margin-bottom: $spacing-sm;
+        font-size: 1.1rem;
+    }
+
+    p {
+        margin-bottom: $spacing-md;
+        font-size: 0.95rem;
+    }
+
+    .code-example {
+        background: $dark;
+        padding: $spacing-sm;
+        border-radius: 3px;
+
+        code {
+            color: #61dafb;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+// Comparison table
+.comparison-table {
+    .comparison-row {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: $spacing-md;
+        padding: $spacing-md;
+        margin-bottom: $spacing-sm;
+        background: lighten($success-color, 48%);
+        border-radius: 5px;
+        border-left: 4px solid $success-color;
+
+        &.highlight {
+            background: linear-gradient(to right, lighten($warning, 35%), $white);
+            border-left-color: $warning;
+
+            .feature {
+                color: $warning;
+                font-weight: bold;
+            }
+        }
+
+        .feature {
+            font-weight: 600;
+            color: $success-color;
+        }
+
+        .desc {
+            color: $text-color;
+        }
+    }
+}
+
+// Tips list
+.tips {
+    ul {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+            padding: $spacing-md;
+            margin-bottom: $spacing-sm;
+            background: linear-gradient(to right, lighten($success-color, 40%), transparent);
+            border-left: 4px solid $success-color;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: translateX(10px);
+            }
+
+            &::before {
+                content: '💡';
+                margin-right: $spacing-sm;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+// Footer
+.footer {
+    background-color: #333;
+    color: $white;
+    text-align: center;
+    padding: $spacing-md;
+    margin-top: $spacing-lg;
+
+    p {
+        font-size: 0.9rem;
+    }
+}

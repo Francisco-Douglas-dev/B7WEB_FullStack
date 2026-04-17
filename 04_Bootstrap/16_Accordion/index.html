@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="display-4 text-center mb-5">Componente Accordion</h1>
+
+        <!-- Accordion básico -->
+        <h3 class="mb-3">1. Accordion Básico</h3>
+        <p class="text-muted">Apenas um item pode estar aberto por vez (comportamento padrão)</p>
+        
+        <div class="accordion" id="accordionBasic">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        Accordion Item #1
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionBasic">
+                    <div class="accordion-body">
+                        <strong>Este é o primeiro item do accordion.</strong> Ele inicia aberto por padrão. Quando você abrir outro item, este será automaticamente fechado.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        Accordion Item #2
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionBasic">
+                    <div class="accordion-body">
+                        <strong>Este é o segundo item.</strong> Note que apenas um item pode estar aberto por vez devido ao atributo data-bs-parent.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionBasic">
+                    <div class="accordion-body">
+                        <strong>Este é o terceiro item.</strong> O accordion é perfeito para FAQ, menus e conteúdos longos que precisam de organização.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion flush -->
+        <h3 class="mb-3 mt-5">2. Accordion Flush (Sem Bordas)</h3>
+        <div class="accordion accordion-flush" id="accordionFlush">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne">
+                        Accordion Flush Item #1
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                    <div class="accordion-body">Este accordion não possui bordas externas, ficando "flush" com o container.</div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo">
+                        Accordion Flush Item #2
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                    <div class="accordion-body">Ideal para usar dentro de cards ou containers coloridos.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion sempre aberto -->
+        <h3 class="mb-3 mt-5">3. Accordion com Múltiplos Itens Abertos</h3>
+        <p class="text-muted">Removendo data-bs-parent, múltiplos itens podem ficar abertos simultaneamente</p>
+        
+        <div class="accordion" id="accordionMultiple">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#multiOne">
+                        Item 1 - Pode ficar aberto
+                    </button>
+                </h2>
+                <div id="multiOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        Este item pode permanecer aberto enquanto outros também estão abertos.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#multiTwo">
+                        Item 2 - Independente
+                    </button>
+                </h2>
+                <div id="multiTwo" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Você pode abrir este item sem fechar o anterior.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#multiThree">
+                        Item 3 - Também independente
+                    </button>
+                </h2>
+                <div id="multiThree" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Todos os três podem estar abertos ao mesmo tempo!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exemplo prático: FAQ -->
+        <h3 class="mb-3 mt-5">4. Exemplo Prático: FAQ (Perguntas Frequentes)</h3>
+        <div class="accordion" id="accordionFAQ">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                        <strong>❓ O que é Bootstrap?</strong>
+                    </button>
+                </h2>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFAQ">
+                    <div class="accordion-body">
+                        Bootstrap é o framework CSS mais popular do mundo para construir sites responsivos e mobile-first. Criado por desenvolvedores do Twitter, oferece componentes prontos, sistema de grid flexível e extensas classes utilitárias.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                        <strong>❓ Como começar a usar Bootstrap?</strong>
+                    </button>
+                </h2>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                    <div class="accordion-body">
+                        Você pode começar incluindo os arquivos CSS e JavaScript via CDN no seu HTML, ou instalando via NPM. A documentação oficial em getbootstrap.com tem um guia completo de início rápido.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                        <strong>❓ Bootstrap é gratuito?</strong>
+                    </button>
+                </h2>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                    <div class="accordion-body">
+                        Sim! Bootstrap é 100% gratuito e open source. Você pode usar em projetos pessoais ou comerciais sem nenhum custo.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                        <strong>❓ Qual a diferença entre Collapse e Accordion?</strong>
+                    </button>
+                </h2>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                    <div class="accordion-body">
+                        Collapse permite expandir/recolher qualquer elemento. Accordion é uma implementação específica de Collapse onde apenas um item pode estar aberto por vez (comportamento típico de FAQ).
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                        <strong>❓ Bootstrap funciona em todos os navegadores?</strong>
+                    </button>
+                </h2>
+                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                    <div class="accordion-body">
+                        Bootstrap 5 suporta as últimas versões dos principais navegadores (Chrome, Firefox, Safari, Edge). Não suporta mais Internet Explorer 11.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exemplo: Documentação de produto -->
+        <h3 class="mb-3 mt-5">5. Exemplo: Documentação de Produto</h3>
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">📱 Smartphone XYZ - Manual do Usuário</h5>
+            </div>
+            <div class="card-body p-0">
+                <div class="accordion accordion-flush" id="accordionDoc">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#doc1">
+                                📦 Conteúdo da Embalagem
+                            </button>
+                        </h2>
+                        <div id="doc1" class="accordion-collapse collapse show" data-bs-parent="#accordionDoc">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>1x Smartphone XYZ</li>
+                                    <li>1x Carregador USB-C</li>
+                                    <li>1x Cabo USB-C</li>
+                                    <li>1x Ferramenta de remoção do SIM</li>
+                                    <li>Manual do usuário</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#doc2">
+                                🔋 Primeira Carga
+                            </button>
+                        </h2>
+                        <div id="doc2" class="accordion-collapse collapse" data-bs-parent="#accordionDoc">
+                            <div class="accordion-body">
+                                Recomendamos carregar o dispositivo por pelo menos 2 horas antes do primeiro uso. O dispositivo pode ser usado durante o carregamento.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#doc3">
+                                ⚙️ Configuração Inicial
+                            </button>
+                        </h2>
+                        <div id="doc3" class="accordion-collapse collapse" data-bs-parent="#accordionDoc">
+                            <div class="accordion-body">
+                                <ol>
+                                    <li>Insira o chip SIM</li>
+                                    <li>Ligue o aparelho pressionando o botão lateral</li>
+                                    <li>Selecione seu idioma</li>
+                                    <li>Conecte-se ao Wi-Fi</li>
+                                    <li>Configure sua conta</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#doc4">
+                                📸 Usando a Câmera
+                            </button>
+                        </h2>
+                        <div id="doc4" class="accordion-collapse collapse" data-bs-parent="#accordionDoc">
+                            <div class="accordion-body">
+                                Abra o aplicativo Câmera e toque no botão de captura. Deslize para alternar entre foto e vídeo. Use o zoom com pinça para aproximar ou afastar.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#doc5">
+                                🛠️ Solução de Problemas
+                            </button>
+                        </h2>
+                        <div id="doc5" class="accordion-collapse collapse" data-bs-parent="#accordionDoc">
+                            <div class="accordion-body">
+                                <strong>Dispositivo não liga:</strong> Verifique se está carregado<br>
+                                <strong>Sem sinal:</strong> Verifique se o chip está inserido corretamente<br>
+                                <strong>Lentidão:</strong> Reinicie o dispositivo<br>
+                                <strong>Outros problemas:</strong> Entre em contato com o suporte
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion com ícones personalizados -->
+        <h3 class="mb-3 mt-5">6. Accordion com Conteúdo Rico</h3>
+        <div class="accordion" id="accordionRich">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button bg-success text-white" type="button" data-bs-toggle="collapse" data-bs-target="#rich1">
+                        ✅ Recursos Incluídos
+                    </button>
+                </h2>
+                <div id="rich1" class="accordion-collapse collapse show" data-bs-parent="#accordionRich">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>💎 Premium Features</h6>
+                                <ul>
+                                    <li>Suporte prioritário 24/7</li>
+                                    <li>Armazenamento ilimitado</li>
+                                    <li>Backups automáticos</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>🎁 Bônus</h6>
+                                <ul>
+                                    <li>Templates exclusivos</li>
+                                    <li>Integrações premium</li>
+                                    <li>Treinamento gratuito</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed bg-info text-white" type="button" data-bs-toggle="collapse" data-bs-target="#rich2">
+                        💰 Planos e Preços
+                    </button>
+                </h2>
+                <div id="rich2" class="accordion-collapse collapse" data-bs-parent="#accordionRich">
+                    <div class="accordion-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Plano</th>
+                                        <th>Preço</th>
+                                        <th>Recursos</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Básico</td>
+                                        <td>R$ 29/mês</td>
+                                        <td>10 GB</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pro</td>
+                                        <td>R$ 79/mês</td>
+                                        <td>100 GB</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Enterprise</td>
+                                        <td>R$ 199/mês</td>
+                                        <td>Ilimitado</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Referência -->
+        <div class="alert alert-info mt-5">
+            <h4>📝 Estrutura do Accordion</h4>
+            <ul class="mb-0">
+                <li><code>.accordion</code> - Container principal</li>
+                <li><code>.accordion-item</code> - Cada item do accordion</li>
+                <li><code>.accordion-header</code> - Cabeçalho clicável</li>
+                <li><code>.accordion-button</code> - Botão de toggle</li>
+                <li><code>.accordion-collapse</code> - Conteúdo colapsável</li>
+                <li><code>.accordion-body</code> - Corpo do conteúdo</li>
+                <li><code>.accordion-flush</code> - Remove bordas externas</li>
+                <li><code>data-bs-parent</code> - Controla comportamento de "apenas um aberto por vez"</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

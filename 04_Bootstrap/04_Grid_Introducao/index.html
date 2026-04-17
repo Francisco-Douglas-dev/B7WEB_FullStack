@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid - Introdução</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos para visualizar melhor o grid */
+        .demo-row > div {
+            padding: 15px;
+            background-color: #e9ecef;
+            border: 2px solid #dee2e6;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="display-4 text-center mb-5">Sistema de Grid do Bootstrap</h1>
+
+        <!-- Introdução -->
+        <div class="alert alert-info">
+            <h4 class="alert-heading">📐 O que é o Grid System?</h4>
+            <p>O Grid System do Bootstrap é baseado em <strong>12 colunas</strong> e utiliza Flexbox. Ele permite criar layouts responsivos facilmente dividindo a tela em linhas (rows) e colunas (columns).</p>
+        </div>
+
+        <!-- Estrutura básica -->
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h4>Estrutura Básica</h4>
+            </div>
+            <div class="card-body">
+                <pre class="bg-light p-3 rounded">
+&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col"&gt;Coluna 1&lt;/div&gt;
+        &lt;div class="col"&gt;Coluna 2&lt;/div&gt;
+        &lt;div class="col"&gt;Coluna 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+                <p class="mb-0"><strong>Container:</strong> Envolve todo o conteúdo<br>
+                <strong>Row:</strong> Cria uma linha horizontal<br>
+                <strong>Col:</strong> Define as colunas dentro da linha</p>
+            </div>
+        </div>
+
+        <!-- Exemplo 1: Colunas iguais -->
+        <h3 class="mt-5 mb-3">1. Colunas de Largura Igual</h3>
+        <div class="row demo-row">
+            <div class="col">Coluna 1</div>
+            <div class="col">Coluna 2</div>
+            <div class="col">Coluna 3</div>
+        </div>
+
+        <!-- Exemplo 2: 2 colunas -->
+        <h3 class="mt-5 mb-3">2. Duas Colunas</h3>
+        <div class="row demo-row">
+            <div class="col">Coluna 50%</div>
+            <div class="col">Coluna 50%</div>
+        </div>
+
+        <!-- Exemplo 3: Larguras específicas -->
+        <h3 class="mt-5 mb-3">3. Larguras Específicas (Sistema de 12 colunas)</h3>
+        <div class="alert alert-warning">
+            <strong>Sistema de 12 colunas:</strong> Cada linha possui 12 unidades. 
+            Use .col-[número] para definir quantas unidades cada coluna ocupa.
+        </div>
+        
+        <div class="row demo-row mb-3">
+            <div class="col-12">col-12 (largura total - 12/12)</div>
+        </div>
+
+        <div class="row demo-row mb-3">
+            <div class="col-6">col-6 (metade - 6/12)</div>
+            <div class="col-6">col-6 (metade - 6/12)</div>
+        </div>
+
+        <div class="row demo-row mb-3">
+            <div class="col-4">col-4 (1/3 - 4/12)</div>
+            <div class="col-4">col-4 (1/3 - 4/12)</div>
+            <div class="col-4">col-4 (1/3 - 4/12)</div>
+        </div>
+
+        <div class="row demo-row mb-3">
+            <div class="col-3">col-3</div>
+            <div class="col-3">col-3</div>
+            <div class="col-3">col-3</div>
+            <div class="col-3">col-3</div>
+        </div>
+
+        <div class="row demo-row mb-3">
+            <div class="col-8">col-8 (maior)</div>
+            <div class="col-4">col-4 (menor)</div>
+        </div>
+
+        <div class="row demo-row mb-3">
+            <div class="col-3">col-3</div>
+            <div class="col-6">col-6</div>
+            <div class="col-3">col-3</div>
+        </div>
+
+        <!-- Breakpoints -->
+        <h3 class="mt-5 mb-3">4. Breakpoints Responsivos</h3>
+        <div class="card mb-4">
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Breakpoint</th>
+                            <th>Classe</th>
+                            <th>Tamanho</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Extra small</td>
+                            <td><code>.col-</code></td>
+                            <td>&lt;576px</td>
+                        </tr>
+                        <tr>
+                            <td>Small</td>
+                            <td><code>.col-sm-</code></td>
+                            <td>≥576px</td>
+                        </tr>
+                        <tr>
+                            <td>Medium</td>
+                            <td><code>.col-md-</code></td>
+                            <td>≥768px</td>
+                        </tr>
+                        <tr>
+                            <td>Large</td>
+                            <td><code>.col-lg-</code></td>
+                            <td>≥992px</td>
+                        </tr>
+                        <tr>
+                            <td>Extra large</td>
+                            <td><code>.col-xl-</code></td>
+                            <td>≥1200px</td>
+                        </tr>
+                        <tr>
+                            <td>Extra extra large</td>
+                            <td><code>.col-xxl-</code></td>
+                            <td>≥1400px</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Exemplo responsivo -->
+        <h3 class="mt-5 mb-3">5. Exemplo Responsivo</h3>
+        <p class="text-muted">Redimensione a janela do navegador para ver a mudança!</p>
+        <div class="row demo-row">
+            <div class="col-12 col-md-6 col-lg-4">
+                <strong>col-12 col-md-6 col-lg-4</strong><br>
+                Mobile: 100%<br>
+                Tablet: 50%<br>
+                Desktop: 33%
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <strong>col-12 col-md-6 col-lg-4</strong><br>
+                Mobile: 100%<br>
+                Tablet: 50%<br>
+                Desktop: 33%
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <strong>col-12 col-md-6 col-lg-4</strong><br>
+                Mobile: 100%<br>
+                Tablet: 50%<br>
+                Desktop: 33%
+            </div>
+        </div>
+
+        <!-- Dicas -->
+        <div class="alert alert-success mt-5">
+            <h4 class="alert-heading">💡 Dicas Importantes</h4>
+            <ul class="mb-0">
+                <li>Sempre envolva as <code>.row</code> dentro de <code>.container</code> ou <code>.container-fluid</code></li>
+                <li>Colunas devem estar sempre dentro de <code>.row</code></li>
+                <li>A soma das colunas deve ser <strong>12</strong> (ou menos, deixando espaço vazio)</li>
+                <li>Use classes responsivas para adaptar o layout a diferentes telas</li>
+                <li>O Grid usa Flexbox, então é muito flexível!</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

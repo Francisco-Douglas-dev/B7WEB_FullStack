@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpack - Carregando CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Webpack: Carregando CSS</h1>
+        <p class="subtitle">Como processar e carregar arquivos CSS com Webpack</p>
+    </header>
+
+    <main class="content">
+        <section class="intro">
+            <h2>CSS Loaders no Webpack</h2>
+            <p>Para trabalhar com arquivos CSS no Webpack, precisamos de loaders específicos que processam e injetam os estilos na aplicação.</p>
+        </section>
+
+        <section class="installation">
+            <h2>Instalação dos Loaders</h2>
+            <div class="code-block">
+                <pre><code># Instalar style-loader e css-loader
+npm install --save-dev style-loader css-loader
+
+# Ou com yarn
+yarn add -D style-loader css-loader</code></pre>
+            </div>
+            <div class="info-box">
+                <p><strong>css-loader:</strong> Interpreta @import e url() como import/require() e resolve-os.</p>
+                <p><strong>style-loader:</strong> Injeta o CSS no DOM através de tags &lt;style&gt;.</p>
+            </div>
+        </section>
+
+        <section class="config">
+            <h2>Configuração no webpack.config.js</h2>
+            <div class="code-block">
+                <pre><code>module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader']
+            }
+        ]
+    }
+};
+
+// IMPORTANTE: A ordem dos loaders importa!
+// Eles são executados de trás para frente:
+// 1. css-loader processa o CSS
+// 2. style-loader injeta no DOM</code></pre>
+            </div>
+        </section>
+
+        <section class="usage">
+            <h2>Como Usar</h2>
+            <div class="step-card">
+                <h3>1. Criar arquivo CSS</h3>
+                <p>Crie seu arquivo styles.css normalmente.</p>
+            </div>
+            <div class="step-card">
+                <h3>2. Importar no JavaScript</h3>
+                <div class="code-block">
+                    <pre><code>// No seu arquivo index.js
+import './styles.css';
+
+// O Webpack irá processar e injetar o CSS</code></pre>
+                </div>
+            </div>
+            <div class="step-card">
+                <h3>3. Build e Resultado</h3>
+                <p>Ao executar o build, o CSS será empacotado junto com o JavaScript e injetado dinamicamente na página.</p>
+            </div>
+        </section>
+
+        <section class="options">
+            <h2>Opções Avançadas</h2>
+            <div class="code-block">
+                <pre><code>// Exemplo com CSS Modules
+{
+    test: /\.css$/,
+    use: [
+        'style-loader',
+        {
+            loader: 'css-loader',
+            options: {
+                modules: true,
+                importLoaders: 1
+            }
+        }
+    ]
+}</code></pre>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 - Estudos FullStack B7WEB - CSS com Webpack</p>
+    </footer>
+</body>
+</html>

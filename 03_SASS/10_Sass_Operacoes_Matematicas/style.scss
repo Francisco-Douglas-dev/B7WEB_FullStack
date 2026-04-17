@@ -1,0 +1,231 @@
+/**
+ * SASS: OPERAÇÕES MATEMÁTICAS
+ * 
+ * O Sass permite realizar operações matemáticas diretamente no CSS.
+ * 
+ * Operadores disponíveis:
+ * + (adição)
+ * - (subtração)
+ * * (multiplicação)
+ * / (divisão - use math.div() no Sass moderno)
+ * % (módulo - resto da divisão)
+ * 
+ * Exemplos:
+ * width: 100px + 50px;        // 150px
+ * height: 200px - 50px;       // 150px
+ * padding: 10px * 2;          // 20px
+ * margin: 60px / 3;           // 20px
+ * value: 10 % 3;              // 1
+ * 
+ * Vantagens:
+ * - Cálculos dinâmicos
+ * - Fácil manutenção de proporções
+ * - Layout responsivo mais flexível
+ * - Evita valores hardcoded
+ */
+
+// ============================================
+// VARIÁVEIS PARA CÁLCULOS
+// ============================================
+$base-size: 16px;
+$spacing-unit: 8px;
+$container-width: 1200px;
+$columns: 3;
+
+// Cores
+$color-base: #6366f1;
+$white: #fff;
+$text: #1f2937;
+$bg: #f9fafb;
+
+// ============================================
+// CÁLCULOS COM OPERAÇÕES
+// ============================================
+$large-size: $base-size * 2;           // 32px
+$column-width: $container-width / $columns;  // 400px
+$half-spacing: $spacing-unit / 2;      // 4px
+$double-spacing: $spacing-unit * 2;    // 16px
+$margin-calc: $spacing-unit + 12px;    // 20px
+
+// Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: $base-size;
+    background-color: $bg;
+    color: $text;
+    line-height: 1.6;
+}
+
+.calculator-demo {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: $spacing-unit * 2.5;  // 20px
+
+    .header {
+        background: linear-gradient(135deg, $color-base, darken($color-base, 10%));
+        color: $white;
+        padding: ($spacing-unit * 5) ($spacing-unit * 3);  // 40px 24px
+        border-radius: $spacing-unit;
+        text-align: center;
+        margin-bottom: $spacing-unit * 5;  // 40px
+        box-shadow: 0 ($spacing-unit / 2) ($spacing-unit * 2) rgba(0, 0, 0, 0.1);
+
+        h1 {
+            font-size: $base-size * 2.5;  // 40px
+            margin-bottom: $spacing-unit + 2px;  // 10px
+        }
+
+        p {
+            font-size: $base-size + 2px;  // 18px
+            opacity: 0.9;
+        }
+    }
+
+    .content {
+        .operations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax($column-width - 100px, 1fr));
+            gap: $spacing-unit * 2.5;  // 20px
+            margin-bottom: $spacing-unit * 5;  // 40px
+
+            .operation-box {
+                background-color: $white;
+                // Usando operações para padding
+                padding: ($spacing-unit * 3) ($spacing-unit * 2);  // 24px 16px
+                border-radius: $spacing-unit;
+                box-shadow: 0 ($spacing-unit / 2) ($spacing-unit * 2) rgba(0, 0, 0, 0.08);
+                transition: all 0.3s ease;
+                text-align: center;
+
+                &:hover {
+                    transform: translateY(-$spacing-unit);  // -8px
+                    box-shadow: 0 $spacing-unit ($spacing-unit * 3) rgba(0, 0, 0, 0.12);
+                }
+
+                .icon {
+                    font-size: $base-size * 3;  // 48px
+                    margin-bottom: $spacing-unit + 4px;  // 12px
+                }
+
+                h2 {
+                    font-size: $base-size + 4px;  // 20px
+                    color: $color-base;
+                    margin-bottom: $spacing-unit;  // 8px
+                }
+
+                p {
+                    color: lighten($text, 30%);
+                    margin-bottom: $spacing-unit + 4px;  // 12px
+                    font-size: $base-size - 2px;  // 14px
+                }
+
+                code {
+                    display: block;
+                    background-color: darken($bg, 5%);
+                    padding: $spacing-unit ($spacing-unit + 4px);  // 8px 12px
+                    border-radius: $spacing-unit / 2;  // 4px
+                    font-size: $base-size - 4px;  // 12px
+                    color: darken($color-base, 10%);
+                    font-family: 'Courier New', monospace;
+                }
+
+                // Diferentes cores calculadas para cada box
+                &.addition {
+                    border-left: ($spacing-unit / 2) solid lighten($color-base, 10%);
+                }
+
+                &.subtraction {
+                    border-left: ($spacing-unit / 2) solid lighten($color-base, 5%);
+                }
+
+                &.multiplication {
+                    border-left: ($spacing-unit / 2) solid $color-base;
+                }
+
+                &.division {
+                    border-left: ($spacing-unit / 2) solid darken($color-base, 5%);
+                }
+
+                &.modulo {
+                    border-left: ($spacing-unit / 2) solid darken($color-base, 10%);
+                }
+
+                &.combined {
+                    border-left: ($spacing-unit / 2) solid darken($color-base, 15%);
+                }
+            }
+        }
+
+        .practical-examples {
+            background-color: $white;
+            padding: $spacing-unit * 4;  // 32px
+            border-radius: $spacing-unit;
+            box-shadow: 0 ($spacing-unit / 2) ($spacing-unit * 2) rgba(0, 0, 0, 0.08);
+
+            h2 {
+                font-size: $base-size * 1.75;  // 28px
+                color: $color-base;
+                margin-bottom: $spacing-unit * 3;  // 24px
+                text-align: center;
+            }
+
+            .grid-example {
+                display: grid;
+                // Usando cálculo para definir colunas
+                grid-template-columns: repeat($columns, 1fr);
+                gap: $spacing-unit * 2;  // 16px
+
+                .grid-item {
+                    background: linear-gradient(135deg, lighten($color-base, 35%), lighten($color-base, 30%));
+                    padding: $spacing-unit * 3;  // 24px
+                    border-radius: $spacing-unit / 2;  // 4px
+                    text-align: center;
+                    font-weight: bold;
+                    color: $color-base;
+                    // Altura calculada
+                    height: ($spacing-unit * 10) + 20px;  // 100px
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: ($spacing-unit / 4) solid $color-base;  // 2px
+                }
+            }
+        }
+    }
+
+    .footer {
+        background-color: $white;
+        padding: $spacing-unit * 3;  // 24px
+        margin-top: $spacing-unit * 5;  // 40px
+        border-radius: $spacing-unit;
+        text-align: center;
+        box-shadow: 0 ($spacing-unit / 2) ($spacing-unit * 2) rgba(0, 0, 0, 0.08);
+
+        p {
+            color: $color-base;
+            font-size: $base-size + 2px;  // 18px
+            font-weight: 600;
+        }
+    }
+}
+
+// Media query usando operações
+@media (max-width: $container-width - 200px) {  // 1000px
+    .calculator-demo {
+        padding: $spacing-unit * 1.5;  // 12px
+        
+        .content .operations {
+            grid-template-columns: 1fr;
+        }
+
+        .content .practical-examples .grid-example {
+            grid-template-columns: 1fr;
+        }
+    }
+}

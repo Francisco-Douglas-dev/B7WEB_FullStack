@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpack - Carregando Imagens</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Webpack: Carregando Imagens</h1>
+        <p class="subtitle">Como processar e otimizar imagens com Webpack</p>
+    </header>
+
+    <main class="content">
+        <section class="intro">
+            <h2>Asset Modules</h2>
+            <p>A partir do Webpack 5, não é mais necessário usar loaders externos como file-loader ou url-loader. O Webpack possui Asset Modules nativos para processar imagens e outros arquivos.</p>
+        </section>
+
+        <section class="types">
+            <h2>Tipos de Asset Modules</h2>
+            <div class="type-card">
+                <h3>asset/resource</h3>
+                <p>Emite um arquivo separado e exporta a URL. Substitui o file-loader.</p>
+            </div>
+            <div class="type-card">
+                <h3>asset/inline</h3>
+                <p>Exporta data URI do asset. Substitui o url-loader.</p>
+            </div>
+            <div class="type-card">
+                <h3>asset/source</h3>
+                <p>Exporta o código-fonte do asset. Substitui o raw-loader.</p>
+            </div>
+            <div class="type-card">
+                <h3>asset</h3>
+                <p>Escolhe automaticamente entre exportar data URI ou arquivo separado.</p>
+            </div>
+        </section>
+
+        <section class="config">
+            <h2>Configuração no webpack.config.js</h2>
+            <div class="code-block">
+                <pre><code>module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource'
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource'
+            }
+        ]
+    },
+    output: {
+        assetModuleFilename: 'images/[hash][ext][query]'
+    }
+};</code></pre>
+            </div>
+        </section>
+
+        <section class="usage">
+            <h2>Como Usar</h2>
+            <div class="usage-example">
+                <h3>No JavaScript:</h3>
+                <div class="code-block">
+                    <pre><code>import Logo from './assets/logo.png';
+
+const img = document.createElement('img');
+img.src = Logo;
+document.body.appendChild(img);</code></pre>
+                </div>
+            </div>
+            <div class="usage-example">
+                <h3>No CSS:</h3>
+                <div class="code-block">
+                    <pre><code>.logo {
+    background-image: url('./assets/logo.png');
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="optimization">
+            <h2>Otimização de Imagens</h2>
+            <div class="code-block">
+                <pre><code># Instalar image-minimizer-webpack-plugin
+npm install image-minimizer-webpack-plugin imagemin --save-dev
+
+# Para PNG
+npm install imagemin-pngquant --save-dev
+
+# Para JPEG
+npm install imagemin-mozjpeg --save-dev</code></pre>
+            </div>
+            <div class="info-box">
+                <p>A otimização de imagens reduz o tamanho dos arquivos sem perder qualidade visual significativa, melhorando o desempenho da aplicação.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 - Estudos FullStack B7WEB - Webpack Images</p>
+    </footer>
+</body>
+</html>

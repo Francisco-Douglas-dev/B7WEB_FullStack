@@ -1,0 +1,176 @@
+// Variáveis globais do projeto
+$primary-color: #1c78c0;
+$secondary-color: #8b5cf6;
+$success-color: #10b981;
+$text-color: #333;
+$bg-color: #f5f5f5;
+$white: #ffffff;
+$dark: #282c34;
+
+// Espaçamentos
+$spacing-sm: 10px;
+$spacing-md: 20px;
+$spacing-lg: 40px;
+
+// Mixin para gradientes
+@mixin gradient-bg($color1, $color2) {
+    background: linear-gradient(135deg, $color1, $color2);
+}
+
+// Mixin para sombras
+@mixin box-shadow($level: 1) {
+    @if $level == 1 {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    } @else if $level == 2 {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    } @else {
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+}
+
+// Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: $text-color;
+    background-color: $bg-color;
+}
+
+// Header
+.header {
+    @include gradient-bg($primary-color, $secondary-color);
+    color: $white;
+    padding: $spacing-lg;
+    text-align: center;
+    @include box-shadow(1);
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: $spacing-sm;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        font-weight: 300;
+    }
+}
+
+// Content
+.content {
+    max-width: 1200px;
+    margin: $spacing-lg auto;
+    padding: 0 $spacing-md;
+
+    section {
+        background: $white;
+        padding: $spacing-lg;
+        margin-bottom: $spacing-md;
+        border-radius: 8px;
+        @include box-shadow(1);
+
+        h2 {
+            color: $primary-color;
+            margin-bottom: $spacing-md;
+            border-bottom: 3px solid $success-color;
+            padding-bottom: $spacing-sm;
+            font-size: 1.8rem;
+        }
+
+        p {
+            margin-bottom: $spacing-md;
+            line-height: 1.8;
+        }
+    }
+}
+
+// Code block
+.code-block {
+    background-color: $dark;
+    color: #61dafb;
+    padding: $spacing-md;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: $spacing-md 0;
+    border: 2px solid $primary-color;
+
+    pre {
+        margin: 0;
+
+        code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+    }
+}
+
+// Example boxes
+.example-box {
+    background: lighten($primary-color, 48%);
+    padding: $spacing-md;
+    margin-bottom: $spacing-lg;
+    border-radius: 8px;
+    border-left: 5px solid $primary-color;
+
+    h3 {
+        color: $primary-color;
+        margin-bottom: $spacing-md;
+        font-size: 1.2rem;
+    }
+}
+
+// Feature cards - demonstração dos recursos do Sass
+.feature-card {
+    background: linear-gradient(to right, lighten($secondary-color, 40%), $white);
+    padding: $spacing-md;
+    margin-bottom: $spacing-md;
+    border-radius: 5px;
+    border-left: 4px solid $secondary-color;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateX(10px);
+        @include box-shadow(2);
+    }
+
+    h3 {
+        color: $secondary-color;
+        margin-bottom: $spacing-sm;
+        font-size: 1.2rem;
+        font-weight: 600;
+
+        &::before {
+            content: '⚡';
+            margin-right: $spacing-sm;
+            font-size: 1.3rem;
+        }
+    }
+
+    p {
+        margin: 0;
+        color: darken($text-color, 5%);
+        font-size: 0.95rem;
+    }
+}
+
+// Footer
+.footer {
+    background-color: #333;
+    color: $white;
+    text-align: center;
+    padding: $spacing-md;
+    margin-top: $spacing-lg;
+
+    p {
+        font-size: 0.9rem;
+    }
+}

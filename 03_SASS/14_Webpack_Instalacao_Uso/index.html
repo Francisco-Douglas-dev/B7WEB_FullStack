@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpack - Instalação e Uso</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Webpack: Instalação e Uso</h1>
+        <p class="subtitle">Primeiros passos com o empacotador de módulos</p>
+    </header>
+
+    <main class="content">
+        <section class="concept">
+            <h2>O que é Webpack?</h2>
+            <p>Webpack é um empacotador de módulos (module bundler) para aplicações JavaScript modernas. Ele processa e combina múltiplos arquivos em bundles otimizados.</p>
+        </section>
+
+        <section class="installation">
+            <h2>Instalação</h2>
+            <div class="code-block">
+                <pre><code># Instalar webpack globalmente
+npm install -g webpack webpack-cli
+
+# Ou localmente no projeto
+npm install --save-dev webpack webpack-cli</code></pre>
+            </div>
+        </section>
+
+        <section class="usage">
+            <h2>Uso Básico</h2>
+            <div class="info-box">
+                <h3>Comando Simples:</h3>
+                <code>npx webpack</code>
+                <p>Este comando irá procurar por um arquivo de entrada padrão e gerar o bundle.</p>
+            </div>
+            <div class="info-box">
+                <h3>Com Parâmetros:</h3>
+                <code>npx webpack --mode development</code>
+                <p>Define o modo de compilação (development ou production).</p>
+            </div>
+        </section>
+
+        <section class="benefits">
+            <h2>Vantagens do Webpack</h2>
+            <ul>
+                <li>Gerenciamento de dependências automatizado</li>
+                <li>Otimização de código para produção</li>
+                <li>Suporte a diversos tipos de arquivos</li>
+                <li>Hot Module Replacement (HMR)</li>
+                <li>Code splitting e lazy loading</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 - Estudos FullStack B7WEB - Webpack Fundamentals</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,157 @@
+/**
+ * SASS: USANDO O WATCH NO SASS
+ * 
+ * Este arquivo demonstra o uso do modo watch do Sass.
+ * O watch monitora mudanças no arquivo SCSS e compila automaticamente.
+ * 
+ * Comandos:
+ * - sass --watch style.scss:style.css (watch em um arquivo)
+ * - sass --watch scss:css (watch em uma pasta inteira)
+ * - sass --watch style.scss:style.css --style compressed (minificado)
+ * 
+ * Quando você salvar este arquivo com o watch ativo,
+ * o CSS será regenerado automaticamente!
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.watch-demo {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  width: 100%;
+  overflow: hidden;
+  animation: slideIn 0.5s ease-out;
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.watch-demo .demo-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 50px 30px;
+  text-align: center;
+}
+.watch-demo .demo-header .icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+.watch-demo .demo-header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+.watch-demo .demo-header p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+.watch-demo .demo-content {
+  padding: 40px 30px;
+}
+.watch-demo .demo-content .info-box {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  border-left: 5px solid #667eea;
+}
+.watch-demo .demo-content .info-box h2 {
+  color: #2d3748;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+.watch-demo .demo-content .info-box p {
+  color: #4a5568;
+  line-height: 1.7;
+  font-size: 16px;
+}
+.watch-demo .demo-content .command-box {
+  background-color: #2d3748;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.watch-demo .demo-content .command-box h3 {
+  color: #a0aec0;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.watch-demo .demo-content .command-box code {
+  display: block;
+  color: #48bb78;
+  font-family: "Courier New", monospace;
+  font-size: 16px;
+  padding: 10px;
+  background-color: #1a202c;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+.watch-demo .demo-content .benefits-list {
+  background-color: #f0fff4;
+  padding: 25px;
+  border-radius: 10px;
+  border-left: 5px solid #48bb78;
+}
+.watch-demo .demo-content .benefits-list h3 {
+  color: #2d3748;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+.watch-demo .demo-content .benefits-list ul {
+  list-style: none;
+}
+.watch-demo .demo-content .benefits-list ul li {
+  color: #2d6a4f;
+  padding: 10px 0;
+  font-size: 16px;
+  border-bottom: 1px solid #c6f6d5;
+}
+.watch-demo .demo-content .benefits-list ul li:last-child {
+  border-bottom: none;
+}
+.watch-demo .demo-content .benefits-list ul li:hover {
+  color: #1b4332;
+  transform: translateX(5px);
+  transition: all 0.3s ease;
+}
+.watch-demo .demo-footer {
+  background-color: #fff5f5;
+  padding: 25px 30px;
+  text-align: center;
+  border-top: 1px solid #fed7d7;
+}
+.watch-demo .demo-footer p {
+  color: #c53030;
+  font-size: 16px;
+  font-weight: 500;
+}

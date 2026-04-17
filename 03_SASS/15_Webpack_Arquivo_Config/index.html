@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpack - Arquivo de Configuração</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Webpack Config</h1>
+        <p class="subtitle">Arquivo de configuração webpack.config.js</p>
+    </header>
+
+    <main class="content">
+        <section class="intro">
+            <h2>webpack.config.js</h2>
+            <p>O arquivo webpack.config.js é o coração da configuração do Webpack. Ele permite personalizar completamente o processo de build da sua aplicação.</p>
+        </section>
+
+        <section class="structure">
+            <h2>Estrutura Básica</h2>
+            <div class="code-block">
+                <pre><code>const path = require('path');
+
+module.exports = {
+    // Modo de compilação
+    mode: 'development', // ou 'production'
+    
+    // Arquivo de entrada
+    entry: './src/index.js',
+    
+    // Configuração de saída
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js'
+    }
+};</code></pre>
+            </div>
+        </section>
+
+        <section class="properties">
+            <h2>Principais Propriedades</h2>
+            <div class="property-card">
+                <h3>mode</h3>
+                <p>Define o ambiente: <code>development</code> ou <code>production</code></p>
+            </div>
+            <div class="property-card">
+                <h3>entry</h3>
+                <p>Ponto de entrada da aplicação. Pode ser uma string, array ou objeto.</p>
+            </div>
+            <div class="property-card">
+                <h3>output</h3>
+                <p>Define onde e como os arquivos gerados serão salvos.</p>
+            </div>
+            <div class="property-card">
+                <h3>module</h3>
+                <p>Configura loaders para processar diferentes tipos de arquivos.</p>
+            </div>
+            <div class="property-card">
+                <h3>plugins</h3>
+                <p>Extensões que realizam tarefas adicionais no processo de build.</p>
+            </div>
+        </section>
+
+        <section class="example">
+            <h2>Exemplo Completo</h2>
+            <div class="code-block">
+                <pre><code>const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+    mode: 'development',
+    entry: {
+        main: './src/index.js',
+        vendor: './src/vendor.js'
+    },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].bundle.js'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }
+        ]
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/index.html'
+        })
+    ]
+};</code></pre>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 - Estudos FullStack B7WEB - Webpack Configuration</p>
+    </footer>
+</body>
+</html>

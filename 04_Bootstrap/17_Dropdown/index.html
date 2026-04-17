@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Menus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="display-4 text-center mb-5">Dropdown Menus</h1>
+
+        <!-- Dropdown básico -->
+        <h3 class="mb-3">1. Dropdown Básico</h3>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Dropdown button
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Ação 1</a></li>
+                <li><a class="dropdown-item" href="#">Ação 2</a></li>
+                <li><a class="dropdown-item" href="#">Ação 3</a></li>
+            </ul>
+        </div>
+
+        <!-- Dropdown com cores -->
+        <h3 class="mb-3 mt-5">2. Dropdowns com Diferentes Cores</h3>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Primary</button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Ação</a></li>
+                <li><a class="dropdown-item" href="#">Outra ação</a></li>
+            </ul>
+        </div>
+        
+        <div class="btn-group ms-2">
+            <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown">Success</button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Item 1</a></li>
+                <li><a class="dropdown-item" href="#">Item 2</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group ms-2">
+            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown">Danger</button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Opção 1</a></li>
+                <li><a class="dropdown-item" href="#">Opção 2</a></li>
+            </ul>
+        </div>
+
+        <!-- Split dropdown -->
+        <h3 class="mb-3 mt-5">3. Split Dropdown (Botão Dividido)</h3>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">Ação Principal</button>
+            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
+                <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Ação secundária 1</a></li>
+                <li><a class="dropdown-item" href="#">Ação secundária 2</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Opção separada</a></li>
+            </ul>
+        </div>
+
+        <!-- Dropdown com divisores e cabeçalhos -->
+        <h3 class="mb-3 mt-5">4. Dropdown com Cabeçalhos e Divisores</h3>
+        <div class="dropdown">
+            <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Menu Completo
+            </button>
+            <ul class="dropdown-menu">
+                <li><h6 class="dropdown-header">Seção 1</h6></li>
+                <li><a class="dropdown-item" href="#">Ação A</a></li>
+                <li><a class="dropdown-item" href="#">Ação B</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><h6 class="dropdown-header">Seção 2</h6></li>
+                <li><a class="dropdown-item" href="#">Ação C</a></li>
+                <li><a class="dropdown-item" href="#">Ação D</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Ação separada</a></li>
+            </ul>
+        </div>
+
+        <!-- Dropdowns direcionais -->
+        <h3 class="mb-3 mt-5">5. Direções do Dropdown</h3>
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                Dropdown (baixo)
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Menu item</a></li>
+                <li><a class="dropdown-item" href="#">Menu item</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group dropup ms-2">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                Dropup (cima)
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Menu item</a></li>
+                <li><a class="dropdown-item" href="#">Menu item</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group dropend ms-2">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                Dropend (direita)
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Menu item</a></li>
+                <li><a class="dropdown-item" href="#">Menu item</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group dropstart ms-2">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                Dropstart (esquerda)
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Menu item</a></li>
+                <li><a class="dropdown-item" href="#">Menu item</a></li>
+            </ul>
+        </div>
+
+        <!-- Menu alinhamento -->
+        <h3 class="mb-3 mt-5">6. Alinhamento do Menu</h3>
+        <div class="btn-group">
+            <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown">
+                Alinhado à Esquerda
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Item 1</a></li>
+                <li><a class="dropdown-item" href="#">Item 2</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group ms-2">
+            <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown">
+                Alinhado à Direita
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Item 1</a></li>
+                <li><a class="dropdown-item" href="#">Item 2</a></li>
+            </ul>
+        </div>
+
+        <!-- Dropdown com formulário -->
+        <h3 class="mb-3 mt-5">7. Dropdown com Formulário</h3>
+        <div class="dropdown">
+            <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Login / Cadastro
+            </button>
+            <div class="dropdown-menu p-4" style="min-width: 300px;">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" placeholder="email@exemplo.com">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Senha</label>
+                        <input type="password" class="form-control" placeholder="Senha">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="remember">
+                        <label class="form-check-label" for="remember">
+                            Lembrar-me
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Entrar</button>
+                </form>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Criar nova conta</a>
+                <a class="dropdown-item" href="#">Esqueci a senha</a>
+            </div>
+        </div>
+
+        <!-- Dropdown com cores de itens -->
+        <h3 class="mb-3 mt-5">8. Itens com Estados</h3>
+        <div class="dropdown">
+            <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Menu com Estados
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Item normal</a></li>
+                <li><a class="dropdown-item active" href="#">Item ativo</a></li>
+                <li><a class="dropdown-item disabled" href="#">Item desabilitado</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item text-danger" href="#">❌ Excluir</a></li>
+                <li><a class="dropdown-item text-warning" href="#">⚠️ Avisar</a></li>
+                <li><a class="dropdown-item text-success" href="#">✓ Aprovar</a></li>
+            </ul>
+        </div>
+
+        <!-- Dropdown com texto e ícones -->
+        <h3 class="mb-3 mt-5">9. Dropdown com Ícones</h3>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Ações
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">👁️ Visualizar</a></li>
+                <li><a class="dropdown-item" href="#">✏️ Editar</a></li>
+                <li><a class="dropdown-item" href="#">📋 Copiar</a></li>
+                <li><a class="dropdown-item" href="#">📤 Compartilhar</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item text-danger" href="#">🗑️ Excluir</a></li>
+            </ul>
+        </div>
+
+        <!-- Exemplo prático: Menu de usuário -->
+        <h3 class="mb-3 mt-5">10. Exemplo Prático: Menu de Usuário</h3>
+        <div class="d-flex justify-content-end">
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown">
+                    <img src="https://via.placeholder.com/32" class="rounded-circle me-2" alt="Avatar">
+                    João Silva
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                        <div class="dropdown-item-text">
+                            <strong>João Silva</strong><br>
+                            <small class="text-muted">joao@email.com</small>
+                        </div>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">👤 Meu Perfil</a></li>
+                    <li><a class="dropdown-item" href="#">⚙️ Configurações</a></li>
+                    <li><a class="dropdown-item" href="#">💰 Pagamentos</a></li>
+                    <li><a class="dropdown-item" href="#">📊 Estatísticas</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">❓ Ajuda</a></li>
+                    <li><a class="dropdown-item text-danger" href="#">🚪 Sair</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Exemplo prático: Menu de ações em tabela -->
+        <h3 class="mb-3 mt-5">11. Exemplo: Menu de Ações em Tabela</h3>
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>João Silva</td>
+                    <td>joao@email.com</td>
+                    <td><span class="badge bg-success">Ativo</span></td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                Ações
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">👁️ Ver detalhes</a></li>
+                                <li><a class="dropdown-item" href="#">✏️ Editar</a></li>
+                                <li><a class="dropdown-item" href="#">📧 Enviar email</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-danger" href="#">🗑️ Excluir</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Maria Santos</td>
+                    <td>maria@email.com</td>
+                    <td><span class="badge bg-warning">Pendente</span></td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                Ações
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">👁️ Ver detalhes</a></li>
+                                <li><a class="dropdown-item" href="#">✏️ Editar</a></li>
+                                <li><a class="dropdown-item" href="#">📧 Enviar email</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-danger" href="#">🗑️ Excluir</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Dropdown dark -->
+        <h3 class="mb-3 mt-5">12. Dropdown Dark Theme</h3>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Dark Dropdown
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="#">Ação</a></li>
+                <li><a class="dropdown-item active" href="#">Ação ativa</a></li>
+                <li><a class="dropdown-item" href="#">Outra ação</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Link separado</a></li>
+            </ul>
+        </div>
+
+        <!-- Referência -->
+        <div class="alert alert-info mt-5">
+            <h4>📝 Classes do Dropdown</h4>
+            <ul class="mb-0">
+                <li><code>.dropdown</code> - Container principal</li>
+                <li><code>.dropdown-toggle</code> - Botão que abre o menu</li>
+                <li><code>.dropdown-menu</code> - O menu em si</li>
+                <li><code>.dropdown-item</code> - Cada item do menu</li>
+                <li><code>.dropdown-header</code> - Cabeçalho de seção</li>
+                <li><code>.dropdown-divider</code> - Linha divisória</li>
+                <li><code>.dropup / .dropend / .dropstart</code> - Direção do menu</li>
+                <li><code>.dropdown-menu-end</code> - Alinha menu à direita</li>
+                <li><code>.dropdown-menu-dark</code> - Tema escuro</li>
+                <li><code>data-bs-toggle="dropdown"</code> - Inicializa o dropdown</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botões e Grupos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="display-4 text-center mb-5">Botões e Grupos de Botões</h1>
+
+        <!-- Botões básicos -->
+        <h3 class="mb-3">1. Botões Básicos</h3>
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-secondary">Secondary</button>
+        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button type="button" class="btn btn-light">Light</button>
+        <button type="button" class="btn btn-dark">Dark</button>
+        <button type="button" class="btn btn-link">Link</button>
+
+        <!-- Botões outline -->
+        <h3 class="mb-3 mt-5">2. Botões Outline (Contornados)</h3>
+        <button type="button" class="btn btn-outline-primary">Primary</button>
+        <button type="button" class="btn btn-outline-secondary">Secondary</button>
+        <button type="button" class="btn btn-outline-success">Success</button>
+        <button type="button" class="btn btn-outline-danger">Danger</button>
+        <button type="button" class="btn btn-outline-warning">Warning</button>
+        <button type="button" class="btn btn-outline-info">Info</button>
+        <button type="button" class="btn btn-outline-dark">Dark</button>
+
+        <!-- Tamanhos -->
+        <h3 class="mb-3 mt-5">3. Tamanhos de Botões</h3>
+        <button type="button" class="btn btn-primary btn-lg">Botão Grande (.btn-lg)</button>
+        <button type="button" class="btn btn-primary">Botão Normal</button>
+        <button type="button" class="btn btn-primary btn-sm">Botão Pequeno (.btn-sm)</button>
+
+        <!-- Botões em bloco -->
+        <h3 class="mb-3 mt-5">4. Botões em Bloco (Largura Total)</h3>
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="button">Botão Bloco Primary</button>
+            <button class="btn btn-success" type="button">Botão Bloco Success</button>
+        </div>
+
+        <div class="d-grid gap-2 d-md-block mt-3">
+            <button class="btn btn-primary" type="button">Bloco em mobile</button>
+            <button class="btn btn-primary" type="button">Inline em desktop</button>
+        </div>
+
+        <!-- Estados -->
+        <h3 class="mb-3 mt-5">5. Estados de Botões</h3>
+        <button type="button" class="btn btn-primary">Normal</button>
+        <button type="button" class="btn btn-primary active">Ativo (.active)</button>
+        <button type="button" class="btn btn-primary" disabled>Desabilitado (disabled)</button>
+        <a class="btn btn-primary disabled" role="button" aria-disabled="true">Link Desabilitado</a>
+
+        <!-- Botões com ícones -->
+        <h3 class="mb-3 mt-5">6. Botões com Ícones e Emojis</h3>
+        <button type="button" class="btn btn-success">✓ Salvar</button>
+        <button type="button" class="btn btn-danger">✕ Cancelar</button>
+        <button type="button" class="btn btn-primary">📧 Enviar Email</button>
+        <button type="button" class="btn btn-warning">⚠️ Alerta</button>
+        <button type="button" class="btn btn-info">🔍 Buscar</button>
+        <button type="button" class="btn btn-secondary">⚙️ Configurações</button>
+
+        <!-- Grupos de botões -->
+        <h3 class="mb-3 mt-5">7. Grupos de Botões (.btn-group)</h3>
+        <div class="btn-group" role="group" aria-label="Grupo de botões">
+            <button type="button" class="btn btn-primary">Esquerda</button>
+            <button type="button" class="btn btn-primary">Centro</button>
+            <button type="button" class="btn btn-primary">Direita</button>
+        </div>
+
+        <div class="btn-group mt-3" role="group">
+            <button type="button" class="btn btn-outline-primary">Opção 1</button>
+            <button type="button" class="btn btn-outline-primary">Opção 2</button>
+            <button type="button" class="btn btn-outline-primary">Opção 3</button>
+            <button type="button" class="btn btn-outline-primary">Opção 4</button>
+        </div>
+
+        <!-- Grupo vertical -->
+        <h3 class="mb-3 mt-5">8. Grupo Vertical (.btn-group-vertical)</h3>
+        <div class="btn-group-vertical" role="group">
+            <button type="button" class="btn btn-success">Salvar</button>
+            <button type="button" class="btn btn-warning">Editar</button>
+            <button type="button" class="btn btn-danger">Excluir</button>
+        </div>
+
+        <!-- Toolbar -->
+        <h3 class="mb-3 mt-5">9. Toolbar (Barra de Ferramentas)</h3>
+        <div class="btn-toolbar" role="toolbar">
+            <div class="btn-group me-2" role="group">
+                <button type="button" class="btn btn-outline-secondary">1</button>
+                <button type="button" class="btn btn-outline-secondary">2</button>
+                <button type="button" class="btn btn-outline-secondary">3</button>
+                <button type="button" class="btn btn-outline-secondary">4</button>
+            </div>
+            <div class="btn-group me-2" role="group">
+                <button type="button" class="btn btn-outline-secondary">5</button>
+                <button type="button" class="btn btn-outline-secondary">6</button>
+                <button type="button" class="btn btn-outline-secondary">7</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-outline-secondary">8</button>
+            </div>
+        </div>
+
+        <!-- Tamanhos de grupos -->
+        <h3 class="mb-3 mt-5">10. Tamanhos de Grupos</h3>
+        <div class="btn-group btn-group-lg mb-3" role="group">
+            <button type="button" class="btn btn-primary">Grande</button>
+            <button type="button" class="btn btn-primary">Grande</button>
+            <button type="button" class="btn btn-primary">Grande</button>
+        </div>
+        <br>
+        <div class="btn-group mb-3" role="group">
+            <button type="button" class="btn btn-primary">Normal</button>
+            <button type="button" class="btn btn-primary">Normal</button>
+            <button type="button" class="btn btn-primary">Normal</button>
+        </div>
+        <br>
+        <div class="btn-group btn-group-sm" role="group">
+            <button type="button" class="btn btn-primary">Pequeno</button>
+            <button type="button" class="btn btn-primary">Pequeno</button>
+            <button type="button" class="btn btn-primary">Pequeno</button>
+        </div>
+
+        <!-- Botões com dropdown -->
+        <h3 class="mb-3 mt-5">11. Botões com Dropdown</h3>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                Dropdown
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Ação 1</a></li>
+                <li><a class="dropdown-item" href="#">Ação 2</a></li>
+                <li><a class="dropdown-item" href="#">Ação 3</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Ação Separada</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group ms-2">
+            <button type="button" class="btn btn-success">Ação Principal</button>
+            <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
+                <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Opção 1</a></li>
+                <li><a class="dropdown-item" href="#">Opção 2</a></li>
+            </ul>
+        </div>
+
+        <!-- Exemplo prático -->
+        <h3 class="mb-3 mt-5">12. Exemplo Prático: Barra de Ações</h3>
+        <div class="card">
+            <div class="card-header">
+                <h5>Gerenciar Usuário</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6>João Silva</h6>
+                        <p class="text-muted mb-0">joao@email.com</p>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-outline-primary">
+                            👁️ Visualizar
+                        </button>
+                        <button type="button" class="btn btn-outline-warning">
+                            ✏️ Editar
+                        </button>
+                        <button type="button" class="btn btn-outline-danger">
+                            🗑️ Excluir
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulário com botões -->
+        <h3 class="mb-3 mt-5">13. Formulário com Botões de Ação</h3>
+        <div class="card">
+            <div class="card-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Nome</label>
+                        <input type="text" class="form-control" placeholder="Digite seu nome">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" placeholder="Digite seu email">
+                    </div>
+                    <div class="btn-toolbar justify-content-between">
+                        <div class="btn-group">
+                            <button type="submit" class="btn btn-primary">✓ Salvar</button>
+                            <button type="button" class="btn btn-success">✓ Salvar e Novo</button>
+                        </div>
+                        <button type="button" class="btn btn-secondary">✕ Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Radio buttons estilo botão -->
+        <h3 class="mb-3 mt-5">14. Radio Buttons Estilo Botão</h3>
+        <div class="btn-group" role="group">
+            <input type="radio" class="btn-check" name="opcoes" id="opcao1" checked>
+            <label class="btn btn-outline-primary" for="opcao1">Opção 1</label>
+
+            <input type="radio" class="btn-check" name="opcoes" id="opcao2">
+            <label class="btn btn-outline-primary" for="opcao2">Opção 2</label>
+
+            <input type="radio" class="btn-check" name="opcoes" id="opcao3">
+            <label class="btn btn-outline-primary" for="opcao3">Opção 3</label>
+        </div>
+
+        <!-- Checkbox estilo botão -->
+        <h3 class="mb-3 mt-5">15. Checkbox Estilo Botão</h3>
+        <div class="btn-group" role="group">
+            <input type="checkbox" class="btn-check" id="check1" checked>
+            <label class="btn btn-outline-success" for="check1">HTML</label>
+
+            <input type="checkbox" class="btn-check" id="check2">
+            <label class="btn btn-outline-success" for="check2">CSS</label>
+
+            <input type="checkbox" class="btn-check" id="check3" checked>
+            <label class="btn btn-outline-success" for="check3">JavaScript</label>
+
+            <input type="checkbox" class="btn-check" id="check4">
+            <label class="btn btn-outline-success" for="check4">Bootstrap</label>
+        </div>
+
+        <!-- Referência -->
+        <div class="alert alert-info mt-5">
+            <h4>📝 Classes de Botões</h4>
+            <ul class="mb-0">
+                <li><code>.btn .btn-{cor}</code> - Botão colorido</li>
+                <li><code>.btn-outline-{cor}</code> - Botão com contorno</li>
+                <li><code>.btn-lg / .btn-sm</code> - Tamanhos</li>
+                <li><code>.btn-group</code> - Grupo horizontal</li>
+                <li><code>.btn-group-vertical</code> - Grupo vertical</li>
+                <li><code>.btn-toolbar</code> - Barra de ferramentas</li>
+                <li><code>.d-grid</code> - Botão em largura total</li>
+                <li><code>.active</code> / <code>disabled</code> - Estados</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

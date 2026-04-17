@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpack - Múltiplas Entradas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Webpack: Múltiplas Entradas</h1>
+        <p class="subtitle">Configurando múltiplos pontos de entrada e saída</p>
+    </header>
+
+    <main class="content">
+        <section class="intro">
+            <h2>Por que Múltiplas Entradas?</h2>
+            <p>Em aplicações maiores, é comum ter diferentes páginas ou módulos que precisam de bundles separados. Múltiplas entradas permitem criar bundles específicos para cada parte da aplicação.</p>
+        </section>
+
+        <section class="single">
+            <h2>Entrada Única (Padrão)</h2>
+            <div class="code-block">
+                <pre><code>module.exports = {
+    entry: './src/index.js',
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    }
+};</code></pre>
+            </div>
+        </section>
+
+        <section class="multiple">
+            <h2>Múltiplas Entradas com Objeto</h2>
+            <div class="code-block">
+                <pre><code>module.exports = {
+    entry: {
+        main: './src/index.js',
+        admin: './src/admin.js',
+        vendor: './src/vendor.js'
+    },
+    output: {
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    }
+};
+
+// Resultado:
+// dist/main.bundle.js
+// dist/admin.bundle.js
+// dist/vendor.bundle.js</code></pre>
+            </div>
+        </section>
+
+        <section class="array">
+            <h2>Múltiplos Arquivos em Uma Entrada</h2>
+            <div class="code-block">
+                <pre><code>module.exports = {
+    entry: {
+        app: ['./src/polyfills.js', './src/index.js'],
+        vendor: ['react', 'react-dom', 'lodash']
+    },
+    output: {
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    }
+};</code></pre>
+            </div>
+        </section>
+
+        <section class="html-plugin">
+            <h2>Com HtmlWebpackPlugin</h2>
+            <div class="code-block">
+                <pre><code>const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+    entry: {
+        main: './src/index.js',
+        admin: './src/admin.js'
+    },
+    output: {
+        filename: '[name].[contenthash].js',
+        path: path.resolve(__dirname, 'dist')
+    },
+    plugins: [
+        // Página principal
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            filename: 'index.html',
+            chunks: ['main']
+        }),
+        // Página admin
+        new HtmlWebpackPlugin({
+            template: './src/admin.html',
+            filename: 'admin.html',
+            chunks: ['admin']
+        })
+    ]
+};</code></pre>
+            </div>
+        </section>
+
+        <section class="optimization">
+            <h2>Otimização com SplitChunks</h2>
+            <div class="code-block">
+                <pre><code>module.exports = {
+    entry: {
+        main: './src/index.js',
+        admin: './src/admin.js'
+    },
+    output: {
+        filename: '[name].[contenthash].js',
+        path: path.resolve(__dirname, 'dist')
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    priority: 10
+                },
+                common: {
+                    minChunks: 2,
+                    priority: 5,
+                    reuseExistingChunk: true
+                }
+            }
+        }
+    }
+};</code></pre>
+            </div>
+        </section>
+
+        <section class="use-cases">
+            <h2>Casos de Uso</h2>
+            <div class="use-case">
+                <h3>🎯 Múltiplas Páginas (MPA)</h3>
+                <p>Aplicações com diferentes páginas HTML, cada uma com seu próprio bundle JavaScript.</p>
+            </div>
+            <div class="use-case">
+                <h3>🔧 Separação de Vendor</h3>
+                <p>Bibliotecas de terceiros em bundle separado para melhor cache no navegador.</p>
+            </div>
+            <div class="use-case">
+                <h3>⚙️ Admin vs Público</h3>
+                <p>Separar código administrativo do código público da aplicação.</p>
+            </div>
+            <div class="use-case">
+                <h3>📱 Diferentes Dispositivos</h3>
+                <p>Bundles específicos para mobile, desktop ou diferentes plataformas.</p>
+            </div>
+        </section>
+
+        <section class="benefits">
+            <h2>Vantagens</h2>
+            <ul>
+                <li>Melhor cache no navegador</li>
+                <li>Carregamento mais rápido de páginas específicas</li>
+                <li>Código compartilhado automaticamente</li>
+                <li>Facilita manutenção de grandes aplicações</li>
+                <li>Lazy loading mais eficiente</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 - Estudos FullStack B7WEB - Multiple Entries</p>
+    </footer>
+</body>
+</html>

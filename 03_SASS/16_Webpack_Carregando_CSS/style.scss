@@ -1,0 +1,179 @@
+// Variáveis
+$primary-color: #1c78c0;
+$secondary-color: #8b5cf6;
+$success-color: #10b981;
+$text-color: #333;
+$bg-color: #f5f5f5;
+$white: #ffffff;
+$dark: #282c34;
+
+// Espaçamentos
+$spacing-sm: 10px;
+$spacing-md: 20px;
+$spacing-lg: 40px;
+
+// Mixin para transições
+@mixin smooth-transition($property: all) {
+    transition: $property 0.3s ease;
+}
+
+// Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: $text-color;
+    background-color: $bg-color;
+}
+
+// Header
+.header {
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    color: $white;
+    padding: $spacing-lg;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: $spacing-sm;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+}
+
+// Content
+.content {
+    max-width: 1200px;
+    margin: $spacing-lg auto;
+    padding: 0 $spacing-md;
+
+    section {
+        background: $white;
+        padding: $spacing-lg;
+        margin-bottom: $spacing-md;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+        h2 {
+            color: $primary-color;
+            margin-bottom: $spacing-md;
+            border-bottom: 3px solid $success-color;
+            padding-bottom: $spacing-sm;
+        }
+
+        p {
+            margin-bottom: $spacing-md;
+            line-height: 1.8;
+        }
+    }
+}
+
+// Code block
+.code-block {
+    background-color: $dark;
+    color: #61dafb;
+    padding: $spacing-md;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: $spacing-md 0;
+    border: 2px solid $primary-color;
+
+    pre {
+        margin: 0;
+
+        code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+    }
+}
+
+// Info box
+.info-box {
+    background: linear-gradient(135deg, lighten($secondary-color, 40%), lighten($primary-color, 45%));
+    padding: $spacing-md;
+    border-radius: 8px;
+    margin-top: $spacing-md;
+    border-left: 5px solid $secondary-color;
+
+    p {
+        margin-bottom: $spacing-sm;
+        
+        strong {
+            color: $secondary-color;
+            font-size: 1.1rem;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// Step cards - cards de passos
+.step-card {
+    background: lighten($success-color, 45%);
+    padding: $spacing-md;
+    margin-bottom: $spacing-md;
+    border-left: 4px solid $success-color;
+    border-radius: 5px;
+    @include smooth-transition;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    h3 {
+        color: $success-color;
+        margin-bottom: $spacing-sm;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: '✓';
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background-color: $success-color;
+            color: $white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            margin-right: $spacing-sm;
+            font-weight: bold;
+        }
+    }
+
+    p {
+        margin: 0;
+        padding-left: 35px;
+    }
+
+    .code-block {
+        margin-top: $spacing-md;
+    }
+}
+
+// Footer
+.footer {
+    background-color: #333;
+    color: $white;
+    text-align: center;
+    padding: $spacing-md;
+    margin-top: $spacing-lg;
+
+    p {
+        font-size: 0.9rem;
+    }
+}

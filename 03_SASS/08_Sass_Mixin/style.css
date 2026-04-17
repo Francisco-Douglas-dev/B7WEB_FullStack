@@ -1,0 +1,204 @@
+/**
+ * SASS: MIXIN
+ * 
+ * Mixins são blocos de código reutilizáveis no Sass.
+ * Eles funcionam como funções que retornam CSS.
+ * 
+ * Sintaxe de definição:
+ * @mixin nome-do-mixin {
+ *     // propriedades CSS
+ * }
+ * 
+ * Sintaxe de uso:
+ * @include nome-do-mixin;
+ * 
+ * Mixins podem receber parâmetros:
+ * @mixin nome($parametro1, $parametro2) {
+ *     // usa $parametro1 e $parametro2
+ * }
+ * 
+ * Vantagens:
+ * - Evita repetição de código
+ * - Facilita manutenção
+ * - Permite criar padrões reutilizáveis
+ * - Aceita parâmetros para maior flexibilidade
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.container .page-header {
+  background: linear-gradient(135deg, #3498db, #9b59b6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  padding: 60px 20px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.container .page-header h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+.container .page-header p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+.container .content .mixin-examples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.container .content .mixin-examples .card {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+}
+.container .content .mixin-examples .card h2 {
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+.container .content .mixin-examples .card p {
+  color: #51657d;
+}
+.container .content .mixin-examples .card.card-gradient {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a6f);
+  color: #fff;
+}
+.container .content .mixin-examples .card.card-gradient p {
+  color: rgba(255, 255, 255, 0.9);
+}
+.container .content .mixin-examples .card.card-shadow {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.container .content .mixin-examples .card.card-shadow:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+.container .content .mixin-examples .card.card-responsive {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.container .content .mixin-examples .card.card-responsive:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+@media (max-width: 768px) {
+  .container .content .mixin-examples .card.card-responsive {
+    background-color: #ffe66d;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container .content .mixin-examples .card.card-responsive {
+    background-color: #4ecdc4;
+    color: #fff;
+  }
+}
+@media (min-width: 1025px) {
+  .container .content .mixin-examples .card.card-responsive {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+  }
+  .container .content .mixin-examples .card.card-responsive p {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+.container .content .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+.container .content .buttons .btn.btn-primary {
+  background-color: #3498db;
+  color: #fff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.container .content .buttons .btn.btn-primary:hover {
+  background-color: #217dbb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.4);
+}
+.container .content .buttons .btn.btn-primary:active {
+  transform: translateY(0);
+}
+.container .content .buttons .btn.btn-secondary {
+  background-color: #9b59b6;
+  color: #fff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.container .content .buttons .btn.btn-secondary:hover {
+  background-color: #804399;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(155, 89, 182, 0.4);
+}
+.container .content .buttons .btn.btn-secondary:active {
+  transform: translateY(0);
+}
+.container .content .buttons .btn.btn-success {
+  background-color: #2ecc71;
+  color: #fff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.container .content .buttons .btn.btn-success:hover {
+  background-color: #25a25a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(46, 204, 113, 0.4);
+}
+.container .content .buttons .btn.btn-success:active {
+  transform: translateY(0);
+}
+.container .page-footer {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.container .page-footer p {
+  color: #3498db;
+  font-size: 18px;
+  font-weight: 600;
+}

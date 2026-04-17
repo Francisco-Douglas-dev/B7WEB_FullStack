@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpack - Refatorando Output</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Webpack: Refatorando Output</h1>
+        <p class="subtitle">Boas práticas para organização avançada do output</p>
+    </header>
+
+    <main class="content">
+        <section class="intro">
+            <h2>Por que Refatorar o Output?</h2>
+            <p>À medida que a aplicação cresce, é essencial ter uma estrutura de output bem organizada. Isso facilita o deploy, melhora o cache do navegador e torna a manutenção mais simples.</p>
+        </section>
+
+        <section class="before">
+            <h2>Antes da Refatoração</h2>
+            <div class="code-block">
+                <pre><code>// Estrutura desorganizada
+dist/
+├── main.js
+├── vendor.js
+├── logo.png
+├── style.css
+└── font.woff2</code></pre>
+            </div>
+        </section>
+
+        <section class="after">
+            <h2>Depois da Refatoração</h2>
+            <div class="code-block">
+                <pre><code>dist/
+├── js/
+│   ├── main.[contenthash].js
+│   ├── vendor.[contenthash].js
+│   └── runtime.[contenthash].js
+├── css/
+│   ├── main.[contenthash].css
+│   └── vendors~main.[contenthash].css
+├── assets/
+│   ├── images/
+│   │   ├── logo.[hash].png
+│   │   └── icons/
+│   └── fonts/
+│       └── roboto.[hash].woff2
+└── index.html</code></pre>
+            </div>
+        </section>
+
+        <section class="config">
+            <h2>Configuração Completa Refatorada</h2>
+            <div class="code-block">
+                <pre><code>const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+module.exports = {
+    mode: 'production',
+    entry: {
+        main: './src/index.js',
+        vendor: './src/vendor.js'
+    },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'js/[name].[contenthash:8].js',
+        chunkFilename: 'js/[name].[contenthash:8].chunk.js',
+        assetModuleFilename: 'assets/[name].[hash:8][ext]',
+        clean: true
+    },
+    module: {
+        rules: [
+            // CSS/SCSS
+            {
+                test: /\.(sa|sc|c)ss$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'sass-loader'
+                ]
+            },
+            // Imagens
+            {
+                test: /\.(png|jpg|jpeg|gif|svg)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/images/[name].[hash:8][ext]'
+                }
+            },
+            // Fontes
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/fonts/[name].[hash:8][ext]'
+                }
+            }
+        ]
+    },
+    plugins: [
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            filename: 'index.html',
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true
+            }
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'css/[name].[contenthash:8].css',
+            chunkFilename: 'css/[name].[contenthash:8].chunk.css'
+        })
+    ],
+    optimization: {
+        moduleIds: 'deterministic',
+        runtimeChunk: 'single',
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: 'all',
+                    priority: 10
+                },
+                common: {
+                    minChunks: 2,
+                    priority: 5,
+                    reuseExistingChunk: true,
+                    enforce: true
+                }
+            }
+        }
+    }
+};</code></pre>
+            </div>
+        </section>
+
+        <section class="best-practices">
+            <h2>Boas Práticas</h2>
+            <div class="practice">
+                <h3>🔹 Use ContentHash para Cache</h3>
+                <p>ContentHash garante que apenas arquivos modificados tenham novos nomes, otimizando o cache do navegador.</p>
+            </div>
+            <div class="practice">
+                <h3>🔹 Separe por Tipo de Asset</h3>
+                <p>Organize arquivos em subpastas (js/, css/, assets/) para facilitar localização e manutenção.</p>
+            </div>
+            <div class="practice">
+                <h3>🔹 Runtime Chunk Separado</h3>
+                <p>Extrai o runtime do Webpack em arquivo separado para melhor cache de vendors.</p>
+            </div>
+            <div class="practice">
+                <h3>🔹 Clean Plugin</h3>
+                <p>Limpa a pasta dist automaticamente antes de cada build, evitando arquivos obsoletos.</p>
+            </div>
+            <div class="practice">
+                <h3>🔹 Hash com Tamanho Fixo</h3>
+                <p>Use [contenthash:8] para hashes curtos mas únicos, reduzindo o tamanho dos nomes de arquivo.</p>
+            </div>
+        </section>
+
+        <section class="results">
+            <h2>Resultados da Refatoração</h2>
+            <ul>
+                <li>Cache otimizado - apenas arquivos alterados são baixados novamente</li>
+                <li>Deploy mais eficiente - estrutura previsível e organizada</li>
+                <li>Debugging facilitado - fácil localizar arquivos específicos</li>
+                <li>Performance melhorada - chunks otimizados e lazy loading</li>
+                <li>Manutenção simplificada - estrutura clara e lógica</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 - Estudos FullStack B7WEB - Output Refactoring</p>
+    </footer>
+</body>
+</html>

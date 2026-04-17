@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagens Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="display-4 text-center mb-5">Classes para Imagens</h1>
+
+        <!-- Imagens responsivas -->
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h3>1. Imagens Responsivas</h3>
+            </div>
+            <div class="card-body">
+                <p>A classe <code>.img-fluid</code> torna a imagem responsiva (max-width: 100%; height: auto;)</p>
+                <img src="https://via.placeholder.com/1200x400/0d6efd/ffffff?text=Imagem+Responsiva" 
+                     class="img-fluid" alt="Imagem Responsiva">
+                <pre class="bg-light p-2 mt-3"><code>&lt;img src="imagem.jpg" class="img-fluid" alt="..."&gt;</code></pre>
+            </div>
+        </div>
+
+        <!-- Thumbnails -->
+        <div class="card mb-4">
+            <div class="card-header bg-success text-white">
+                <h3>2. Thumbnail (Miniatura com Borda)</h3>
+            </div>
+            <div class="card-body">
+                <img src="https://via.placeholder.com/200/28a745/ffffff?text=Thumbnail" 
+                     class="img-thumbnail" alt="Thumbnail">
+                <pre class="bg-light p-2 mt-3"><code>&lt;img src="imagem.jpg" class="img-thumbnail" alt="..."&gt;</code></pre>
+            </div>
+        </div>
+
+        <!-- Formas de imagem -->
+        <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+                <h3>3. Formas de Imagem</h3>
+            </div>
+            <div class="card-body">
+                <div class="row text-center">
+                    <div class="col-md-4 mb-3">
+                        <h5>Padrão</h5>
+                        <img src="https://via.placeholder.com/200/17a2b8/ffffff?text=Normal" 
+                             class="img-fluid" alt="Normal">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5>.rounded</h5>
+                        <img src="https://via.placeholder.com/200/17a2b8/ffffff?text=Rounded" 
+                             class="img-fluid rounded" alt="Arredondada">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5>.rounded-circle</h5>
+                        <img src="https://via.placeholder.com/200/17a2b8/ffffff?text=Circle" 
+                             class="img-fluid rounded-circle" alt="Circular">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Variações de arredondamento -->
+        <div class="card mb-4">
+            <div class="card-header bg-warning">
+                <h3>4. Variações de Arredondamento</h3>
+            </div>
+            <div class="card-body">
+                <div class="row text-center">
+                    <div class="col-md-3 mb-3">
+                        <h6>.rounded-0</h6>
+                        <img src="https://via.placeholder.com/150/ffc107/000?text=0" 
+                             class="rounded-0" alt="Sem arredondamento" width="150">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <h6>.rounded-1</h6>
+                        <img src="https://via.placeholder.com/150/ffc107/000?text=1" 
+                             class="rounded-1" alt="Pouco arredondado" width="150">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <h6>.rounded-2</h6>
+                        <img src="https://via.placeholder.com/150/ffc107/000?text=2" 
+                             class="rounded-2" alt="Médio" width="150">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <h6>.rounded-3</h6>
+                        <img src="https://via.placeholder.com/150/ffc107/000?text=3" 
+                             class="rounded-3" alt="Muito arredondado" width="150">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alinhamento -->
+        <div class="card mb-4">
+            <div class="card-header bg-danger text-white">
+                <h3>5. Alinhamento de Imagens</h3>
+            </div>
+            <div class="card-body">
+                <h5>Float Left</h5>
+                <img src="https://via.placeholder.com/150/dc3545/ffffff?text=Float+Left" 
+                     class="float-start me-3" alt="Float Left">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                <div class="clearfix"></div>
+
+                <hr class="my-4">
+
+                <h5>Float Right</h5>
+                <img src="https://via.placeholder.com/150/dc3545/ffffff?text=Float+Right" 
+                     class="float-end ms-3" alt="Float Right">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                <div class="clearfix"></div>
+
+                <hr class="my-4">
+
+                <h5>Centralizada (com d-block e mx-auto)</h5>
+                <img src="https://via.placeholder.com/300/dc3545/ffffff?text=Centralizada" 
+                     class="d-block mx-auto" alt="Centralizada">
+            </div>
+        </div>
+
+        <!-- Galeria de imagens -->
+        <div class="card mb-4">
+            <div class="card-header bg-dark text-white">
+                <h3>6. Galeria de Imagens Responsiva</h3>
+            </div>
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="https://via.placeholder.com/300/e74c3c/ffffff?text=1" 
+                             class="img-fluid rounded img-thumbnail" alt="Imagem 1">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="https://via.placeholder.com/300/3498db/ffffff?text=2" 
+                             class="img-fluid rounded img-thumbnail" alt="Imagem 2">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="https://via.placeholder.com/300/2ecc71/ffffff?text=3" 
+                             class="img-fluid rounded img-thumbnail" alt="Imagem 3">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="https://via.placeholder.com/300/f39c12/ffffff?text=4" 
+                             class="img-fluid rounded img-thumbnail" alt="Imagem 4">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="https://via.placeholder.com/300/9b59b6/ffffff?text=5" 
+                             class="img-fluid rounded img-thumbnail" alt="Imagem 5">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="https://via.placeholder.com/300/1abc9c/ffffff?text=6" 
+                             class="img-fluid rounded img-thumbnail" alt="Imagem 6">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="https://via.placeholder.com/300/34495e/ffffff?text=7" 
+                             class="img-fluid rounded img-thumbnail" alt="Imagem 7">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="https://via.placeholder.com/300/e67e22/ffffff?text=8" 
+                             class="img-fluid rounded img-thumbnail" alt="Imagem 8">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cards com imagem -->
+        <div class="card mb-4">
+            <div class="card-header bg-secondary text-white">
+                <h3>7. Imagens em Cards</h3>
+            </div>
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x250/6c757d/ffffff?text=Card+Top" 
+                                 class="card-img-top" alt="Card Top">
+                            <div class="card-body">
+                                <h5 class="card-title">Card com Imagem no Topo</h5>
+                                <p class="card-text">Imagem posicionada no topo do card.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Card com Imagem na Base</h5>
+                                <p class="card-text">Imagem posicionada na base do card.</p>
+                            </div>
+                            <img src="https://via.placeholder.com/400x250/6c757d/ffffff?text=Card+Bottom" 
+                                 class="card-img-bottom" alt="Card Bottom">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x300/6c757d/ffffff?text=Card+Overlay" 
+                                 class="card-img" alt="Card Overlay">
+                            <div class="card-img-overlay text-white">
+                                <h5 class="card-title">Card Overlay</h5>
+                                <p class="card-text">Texto sobreposto à imagem.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Figure -->
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h3>8. Figure (Imagem com Legenda)</h3>
+            </div>
+            <div class="card-body text-center">
+                <figure class="figure">
+                    <img src="https://via.placeholder.com/600x300/0d6efd/ffffff?text=Figura+com+Legenda" 
+                         class="figure-img img-fluid rounded" alt="Figura">
+                    <figcaption class="figure-caption">Esta é uma legenda para a figura acima.</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <!-- Exemplo prático: Perfil -->
+        <div class="card border-success">
+            <div class="card-body">
+                <h3 class="card-title text-center mb-4">Exemplo: Card de Perfil</h3>
+                <div class="text-center">
+                    <img src="https://via.placeholder.com/150/28a745/ffffff?text=Avatar" 
+                         class="rounded-circle img-thumbnail mb-3" alt="Avatar" width="150">
+                    <h4>João Silva</h4>
+                    <p class="text-muted">Desenvolvedor Full Stack</p>
+                    <p>Especialista em Bootstrap e desenvolvimento web moderno. Apaixonado por criar interfaces bonitas e funcionais.</p>
+                    <button class="btn btn-primary">Seguir</button>
+                    <button class="btn btn-outline-secondary">Mensagem</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabela de referência -->
+        <div class="alert alert-info mt-5">
+            <h4>📝 Referência Rápida</h4>
+            <ul class="mb-0">
+                <li><code>.img-fluid</code> - Imagem responsiva</li>
+                <li><code>.img-thumbnail</code> - Imagem com borda</li>
+                <li><code>.rounded</code> - Cantos arredondados</li>
+                <li><code>.rounded-circle</code> - Imagem circular</li>
+                <li><code>.float-start</code> / <code>.float-end</code> - Alinhamento lateral</li>
+                <li><code>.d-block .mx-auto</code> - Centralização</li>
+                <li><code>.card-img-top</code> / <code>.card-img-bottom</code> - Imagens em cards</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar básica -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBasic">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarBasic">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h1 class="display-4 text-center mb-5">Navbar (Barra de Navegação)</h1>
+
+        <h3>2. Navbar Escura</h3>
+        <p class="text-muted">Navbar com tema escuro</p>
+    </div>
+
+    <!-- Navbar escura -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">MeuSite</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDark">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarDark">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h3>3. Navbar com Cores</h3>
+        <p class="text-muted">Navbars com diferentes cores de background</p>
+    </div>
+
+    <!-- Navbar primary -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Primary</a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#">Link 1</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Link 2</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Navbar success -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Success</a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#">Link 1</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Link 2</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Navbar warning -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Warning</a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#">Link 1</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Link 2</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h3>4. Navbar com Dropdown</h3>
+    </div>
+
+    <!-- Navbar com dropdown -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Portal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarDropdown">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Início</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            Categorias
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Eletrônicos</a></li>
+                            <li><a class="dropdown-item" href="#">Roupas</a></li>
+                            <li><a class="dropdown-item" href="#">Livros</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Ver todos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h3>5. Navbar com Formulário de Busca</h3>
+    </div>
+
+    <!-- Navbar com busca -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Busca</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBusca">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarBusca">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Produtos</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Buscar">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h3>6. Navbar com Botões e Badges</h3>
+    </div>
+
+    <!-- Navbar com botões -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarButtons">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarButtons">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Mensagens
+                            <span class="badge bg-danger rounded-pill">5</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Notificações
+                            <span class="badge bg-warning rounded-pill">12</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-outline-light me-2">Login</button>
+                    <button class="btn btn-primary">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h3>7. Navbar Fixa no Topo</h3>
+        <p class="text-muted">Use <code>.fixed-top</code> para fixar no topo</p>
+    </div>
+
+    <!-- Exemplo de navbar fixa demonstrado -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Fixa no Topo</a>
+            <span class="navbar-text text-white">
+                (Na prática, use class="navbar fixed-top")
+            </span>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h3>8. Navbar com Logo (Imagem)</h3>
+    </div>
+
+    <!-- Navbar com logo -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://via.placeholder.com/30" alt="Logo" class="d-inline-block align-text-top">
+                MarcaLogo
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLogo">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarLogo">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sobre</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h3>9. Navbar Completa - E-commerce</h3>
+        <p class="text-muted">Exemplo completo com todos os recursos</p>
+    </div>
+
+    <!-- Navbar completa -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">
+                🛒 MegaStore
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCompleta">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCompleta">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Início</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            Departamentos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">📱 Eletrônicos</a></li>
+                            <li><a class="dropdown-item" href="#">👕 Moda</a></li>
+                            <li><a class="dropdown-item" href="#">🏠 Casa e Decoração</a></li>
+                            <li><a class="dropdown-item" href="#">📚 Livros</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Ver todos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ofertas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contato</a>
+                    </li>
+                </ul>
+                <form class="d-flex me-3">
+                    <input class="form-control me-2" type="search" placeholder="Buscar produtos" style="min-width: 250px;">
+                    <button class="btn btn-light" type="submit">🔍</button>
+                </form>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-outline-light me-2 position-relative">
+                        🛒 Carrinho
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            3
+                        </span>
+                    </a>
+                    <a href="#" class="btn btn-light">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h3>10. Navbar com Menu de Usuário</h3>
+    </div>
+
+    <!-- Navbar com perfil -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Painel Admin</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPerfil">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarPerfil">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Usuários</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Relatórios</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            <img src="https://via.placeholder.com/32" class="rounded-circle" alt="User">
+                            João Silva
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">👤 Meu Perfil</a></li>
+                            <li><a class="dropdown-item" href="#">⚙️ Configurações</a></li>
+                            <li><a class="dropdown-item" href="#">💬 Mensagens <span class="badge bg-primary">4</span></a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#">🚪 Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Referência -->
+    <div class="container my-5">
+        <div class="alert alert-info">
+            <h4>📝 Classes da Navbar</h4>
+            <ul class="mb-0">
+                <li><code>.navbar</code> - Container principal</li>
+                <li><code>.navbar-expand-{breakpoint}</code> - Quando expandir (lg, md, sm)</li>
+                <li><code>.navbar-light / .navbar-dark</code> - Tema claro ou escuro</li>
+                <li><code>.navbar-brand</code> - Logo/marca</li>
+                <li><code>.navbar-toggler</code> - Botão de toggle mobile</li>
+                <li><code>.navbar-nav</code> - Container dos links</li>
+                <li><code>.nav-item</code> - Item de navegação</li>
+                <li><code>.nav-link</code> - Link de navegação</li>
+                <li><code>.fixed-top / .fixed-bottom / .sticky-top</code> - Posicionamento</li>
+                <li>Combine com <code>bg-{color}</code> para cores</li>
+            </ul>
+        </div>
+
+        <div class="alert alert-warning">
+            <h5>💡 Dica: Responsividade</h5>
+            <p class="mb-0">Use <code>.navbar-expand-lg</code> para colapsar em telas menores que large. O botão <code>.navbar-toggler</code> aparece automaticamente em mobile!</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

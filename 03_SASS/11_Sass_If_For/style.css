@@ -1,0 +1,436 @@
+/**
+ * SASS: IF + FOR
+ * 
+ * O Sass possui estruturas de controle que permitem criar CSS dinâmico.
+ * 
+ * ============================================
+ * @IF - CONDICIONAIS
+ * ============================================
+ * Sintaxe:
+ * @if (condição) {
+ *     // código se verdadeiro
+ * } @else if (outra condição) {
+ *     // código se segunda condição verdadeira
+ * } @else {
+ *     // código se todas falsas
+ * }
+ * 
+ * ============================================
+ * @FOR - LOOPS
+ * ============================================
+ * Sintaxe:
+ * @for $i from 1 through 10 {
+ *     // código repetido 10 vezes
+ *     // $i varia de 1 a 10 (inclusivo)
+ * }
+ * 
+ * ou
+ * 
+ * @for $i from 1 to 10 {
+ *     // $i varia de 1 a 9 (exclusivo)
+ * }
+ * 
+ * Vantagens:
+ * - Gera código CSS automaticamente
+ * - Reduz repetição
+ * - Facilita criação de sistemas de grid
+ * - Útil para gerar classes utilitárias
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.container .header {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+  padding: 50px 30px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.container .header h1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+.container .header p {
+  font-size: 18px;
+  opacity: 0.95;
+}
+.container .content section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+.container .content section h2 {
+  color: #6366f1;
+  margin-bottom: 25px;
+  font-size: 26px;
+  border-bottom: 3px solid #6366f1;
+  padding-bottom: 10px;
+}
+.container .content .if-examples .themes {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.container .content .if-examples .themes .box {
+  flex: 1;
+  min-width: 250px;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+.container .content .if-examples .themes .box:hover {
+  transform: scale(1.05);
+}
+.container .content .if-examples .themes .box.theme-light {
+  background-color: #fff;
+  color: #1f2937;
+  border: 2px solid #c4c8ce;
+}
+.container .content .if-examples .themes .box.theme-dark {
+  background-color: #0f131a;
+  color: #fff;
+  border: 2px solid #4d4d4d;
+}
+.container .content .for-examples .grid-sizes {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.container .content .for-examples .grid-sizes .col-1 {
+  background: #e7ecff;
+  color: #4f46e5;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  border-left: 4px solid #6366f1;
+  flex: 0 0 calc(6.6666666667% - 10px);
+  background: #ebfff3;
+  border-left-color: #10b981;
+  color: #0a8958;
+}
+.container .content .for-examples .grid-sizes .col-2 {
+  background: #e7ecff;
+  color: #4f46e5;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  border-left: 4px solid #6366f1;
+  flex: 0 0 calc(23.3333333333% - 10px);
+  background: #ebfff3;
+  border-left-color: #10b981;
+  color: #0a8958;
+}
+.container .content .for-examples .grid-sizes .col-3 {
+  background: #e7ecff;
+  color: #4f46e5;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  border-left: 4px solid #6366f1;
+  flex: 0 0 calc(40% - 10px);
+  background: #fffaeb;
+  border-left-color: #f59e0b;
+  color: #c27803;
+}
+.container .content .for-examples .grid-sizes .col-4 {
+  background: #e7ecff;
+  color: #4f46e5;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  border-left: 4px solid #6366f1;
+  flex: 0 0 calc(56.6666666667% - 10px);
+  background: #fffaeb;
+  border-left-color: #f59e0b;
+  color: #c27803;
+}
+.container .content .for-examples .grid-sizes .col-5 {
+  background: #e7ecff;
+  color: #4f46e5;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  border-left: 4px solid #6366f1;
+  flex: 0 0 calc(73.3333333333% - 10px);
+  background: #ffeeee;
+  border-left-color: #ef4444;
+  color: #c41e1e;
+}
+.container .content .for-examples .grid-sizes .col-6 {
+  background: #e7ecff;
+  color: #4f46e5;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  border-left: 4px solid #6366f1;
+  flex: 0 0 calc(90% - 10px);
+  background: #ffeeee;
+  border-left-color: #ef4444;
+  color: #c41e1e;
+}
+.container .content .opacity-examples .opacity-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 15px;
+}
+.container .content .opacity-examples .opacity-boxes .opacity-1 {
+  background-color: #6366f1;
+  color: #fff;
+  padding: 25px 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  opacity: 0.1;
+  transition: transform 0.3s ease;
+}
+.container .content .opacity-examples .opacity-boxes .opacity-1:hover {
+  transform: scale(1.1);
+}
+.container .content .opacity-examples .opacity-boxes .opacity-2 {
+  background-color: #6366f1;
+  color: #fff;
+  padding: 25px 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  opacity: 0.2;
+  transition: transform 0.3s ease;
+}
+.container .content .opacity-examples .opacity-boxes .opacity-2:hover {
+  transform: scale(1.1);
+}
+.container .content .opacity-examples .opacity-boxes .opacity-3 {
+  background-color: #6366f1;
+  color: #fff;
+  padding: 25px 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  opacity: 0.3;
+  transition: transform 0.3s ease;
+}
+.container .content .opacity-examples .opacity-boxes .opacity-3:hover {
+  transform: scale(1.1);
+}
+.container .content .opacity-examples .opacity-boxes .opacity-4 {
+  background-color: #6366f1;
+  color: #fff;
+  padding: 25px 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  opacity: 0.4;
+  transition: transform 0.3s ease;
+}
+.container .content .opacity-examples .opacity-boxes .opacity-4:hover {
+  transform: scale(1.1);
+}
+.container .content .opacity-examples .opacity-boxes .opacity-5 {
+  background-color: #6366f1;
+  color: #fff;
+  padding: 25px 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  opacity: 0.5;
+  transition: transform 0.3s ease;
+}
+.container .content .opacity-examples .opacity-boxes .opacity-5:hover {
+  transform: scale(1.1);
+}
+.container .content .opacity-examples .opacity-boxes .opacity-6 {
+  background-color: #6366f1;
+  color: #fff;
+  padding: 25px 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  opacity: 0.6;
+  transition: transform 0.3s ease;
+}
+.container .content .opacity-examples .opacity-boxes .opacity-6:hover {
+  transform: scale(1.1);
+}
+.container .content .opacity-examples .opacity-boxes .opacity-7 {
+  background-color: #6366f1;
+  color: #fff;
+  padding: 25px 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  opacity: 0.7;
+  transition: transform 0.3s ease;
+}
+.container .content .opacity-examples .opacity-boxes .opacity-7:hover {
+  transform: scale(1.1);
+}
+.container .content .opacity-examples .opacity-boxes .opacity-8 {
+  background-color: #6366f1;
+  color: #fff;
+  padding: 25px 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  opacity: 0.8;
+  transition: transform 0.3s ease;
+}
+.container .content .opacity-examples .opacity-boxes .opacity-8:hover {
+  transform: scale(1.1);
+}
+.container .content .opacity-examples .opacity-boxes .opacity-9 {
+  background-color: #6366f1;
+  color: #fff;
+  padding: 25px 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  opacity: 0.9;
+  transition: transform 0.3s ease;
+}
+.container .content .opacity-examples .opacity-boxes .opacity-9:hover {
+  transform: scale(1.1);
+}
+.container .content .opacity-examples .opacity-boxes .opacity-10 {
+  background-color: #6366f1;
+  color: #fff;
+  padding: 25px 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  opacity: 1;
+  transition: transform 0.3s ease;
+}
+.container .content .opacity-examples .opacity-boxes .opacity-10:hover {
+  transform: scale(1.1);
+}
+.container .content .spacing-examples .spacing-demo {
+  background-color: #f3f4f6;
+  padding: 20px;
+  border-radius: 8px;
+}
+.container .content .spacing-examples .spacing-demo .mt-1 {
+  background-color: #e8d8ff;
+  color: #6e50a1;
+  padding: 15px;
+  border-radius: 5px;
+  border-left: 4px solid #8b5cf6;
+  font-weight: 600;
+  margin-top: 8px;
+}
+.container .content .spacing-examples .spacing-demo .mt-2 {
+  background-color: #e8d8ff;
+  color: #6e50a1;
+  padding: 15px;
+  border-radius: 5px;
+  border-left: 4px solid #8b5cf6;
+  font-weight: 600;
+  margin-top: 16px;
+}
+.container .content .spacing-examples .spacing-demo .mt-3 {
+  background-color: #e8d8ff;
+  color: #6e50a1;
+  padding: 15px;
+  border-radius: 5px;
+  border-left: 4px solid #8b5cf6;
+  font-weight: 600;
+  margin-top: 24px;
+}
+.container .content .spacing-examples .spacing-demo .mt-4 {
+  background-color: #e8d8ff;
+  color: #6e50a1;
+  padding: 15px;
+  border-radius: 5px;
+  border-left: 4px solid #8b5cf6;
+  font-weight: 600;
+  margin-top: 32px;
+}
+.container .footer {
+  background-color: #1f2937;
+  color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.container .footer p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.p-1 {
+  padding: 8px;
+}
+
+.p-2 {
+  padding: 16px;
+}
+
+.p-3 {
+  padding: 24px;
+}
+
+.p-4 {
+  padding: 32px;
+}
+
+.p-5 {
+  padding: 40px;
+}
+
+.text-1 {
+  font-size: 14px;
+}
+
+.text-2 {
+  font-size: 16px;
+}
+
+.text-3 {
+  font-size: 18px;
+}
+
+.text-4 {
+  font-size: 20px;
+}
+
+.text-5 {
+  font-size: 22px;
+}

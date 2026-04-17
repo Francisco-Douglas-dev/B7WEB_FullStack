@@ -1,0 +1,128 @@
+/**
+ * SASS: IMPORTANDO OUTROS ARQUIVOS
+ * 
+ * O Sass permite importar outros arquivos SCSS usando @import ou @use.
+ * Isso ajuda a organizar o código em módulos separados.
+ * 
+ * Sintaxe:
+ * @import 'arquivo'; ou @import 'arquivo.scss';
+ * 
+ * Arquivos parciais começam com underscore (_)
+ * Exemplo: _variables.scss
+ * 
+ * Vantagens:
+ * - Melhor organização do código
+ * - Reutilização de código
+ * - Facilita manutenção
+ * - Trabalho em equipe mais eficiente
+ * 
+ * Ordem de importação recomendada:
+ * 1. Variáveis
+ * 2. Mixins
+ * 3. Reset/Base
+ * 4. Componentes
+ * 5. Páginas
+ */
+
+// Importando arquivos parciais
+@import 'variables';  // Importa _variables.scss
+@import 'reset';      // Importa _reset.scss
+@import 'mixins';     // Importa _mixins.scss
+
+// Estilos principais usando os imports
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .header {
+        @include gradient-bg($primary-color, $secondary-color);
+        color: $white;
+        padding: $spacing-md $spacing-lg;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: $box-shadow;
+
+        .logo {
+            font-size: $font-size-lg;
+            font-weight: bold;
+        }
+
+        .navigation {
+            display: flex;
+            gap: $spacing-md;
+
+            a {
+                color: $white;
+                padding: $spacing-sm $spacing-md;
+                border-radius: $border-radius / 2;
+                transition: $transition;
+
+                &:hover {
+                    background-color: rgba($white, 0.2);
+                }
+            }
+        }
+    }
+
+    .main-content {
+        flex: 1;
+        padding: $spacing-lg;
+
+        .hero {
+            @include flex-center;
+            flex-direction: column;
+            padding: $spacing-xl 0;
+            text-align: center;
+
+            h1 {
+                font-size: $font-size-xl;
+                color: $primary-color;
+                margin-bottom: $spacing-md;
+            }
+
+            p {
+                font-size: $font-size-lg;
+                color: $text-color;
+                max-width: 600px;
+            }
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: $spacing-md;
+            max-width: 1200px;
+            margin: 0 auto;
+
+            .info-card {
+                background-color: $white;
+                padding: $spacing-lg;
+                border-radius: $border-radius;
+                @include card-shadow;
+
+                h2 {
+                    color: $primary-color;
+                    margin-bottom: $spacing-sm;
+                    font-size: $font-size-lg;
+                }
+
+                p {
+                    color: lighten($text-color, 20%);
+                }
+            }
+        }
+    }
+
+    .footer {
+        background-color: $text-color;
+        color: $white;
+        padding: $spacing-md;
+        text-align: center;
+
+        p {
+            opacity: 0.8;
+        }
+    }
+}

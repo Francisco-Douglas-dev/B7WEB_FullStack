@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpack - Output Organizado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Webpack: Output Organizado</h1>
+        <p class="subtitle">Estruturando a saída dos arquivos compilados</p>
+    </header>
+
+    <main class="content">
+        <section class="intro">
+            <h2>Organização do Output</h2>
+            <p>Organizar adequadamente os arquivos de saída do Webpack facilita a manutenção, deploy e otimização da aplicação. Uma estrutura bem definida melhora o cache e performance.</p>
+        </section>
+
+        <section class="basic">
+            <h2>Configuração Básica de Output</h2>
+            <div class="code-block">
+                <pre><code>const path = require('path');
+
+module.exports = {
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js',
+        clean: true  // Limpa a pasta dist antes de cada build
+    }
+};</code></pre>
+            </div>
+        </section>
+
+        <section class="organized">
+            <h2>Output Organizado por Tipo</h2>
+            <div class="code-block">
+                <pre><code>module.exports = {
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        // JavaScript em subpasta com hash
+        filename: 'js/[name].[contenthash].js',
+        // Assets em subpasta específica
+        assetModuleFilename: 'assets/[name].[hash][ext]',
+        clean: true
+    },
+    
+    module: {
+        rules: [
+            // Imagens na pasta images/
+            {
+                test: /\.(png|jpg|jpeg|gif|svg)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'images/[name].[hash][ext]'
+                }
+            },
+            // Fontes na pasta fonts/
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'fonts/[name].[hash][ext]'
+                }
+            }
+        ]
+    }
+};</code></pre>
+            </div>
+        </section>
+
+        <section class="structure">
+            <h2>Estrutura Resultante</h2>
+            <div class="folder-structure">
+                <pre>dist/
+├── js/
+│   ├── main.abc123.js
+│   ├── vendor.def456.js
+│   └── runtime.ghi789.js
+├── css/
+│   └── styles.jkl012.css
+├── images/
+│   ├── logo.mno345.png
+│   └── background.pqr678.jpg
+├── fonts/
+│   └── roboto.stu901.woff2
+└── index.html</pre>
+            </div>
+        </section>
+
+        <section class="patterns">
+            <h2>Padrões de Nomenclatura</h2>
+            <div class="pattern-card">
+                <h3>[name]</h3>
+                <p>Nome do arquivo original ou nome do chunk</p>
+            </div>
+            <div class="pattern-card">
+                <h3>[contenthash]</h3>
+                <p>Hash baseado no conteúdo do arquivo (melhor para cache)</p>
+            </div>
+            <div class="pattern-card">
+                <h3>[chunkhash]</h3>
+                <p>Hash baseado no chunk específico</p>
+            </div>
+            <div class="pattern-card">
+                <h3>[hash]</h3>
+                <p>Hash da compilação completa</p>
+            </div>
+            <div class="pattern-card">
+                <h3>[ext]</h3>
+                <p>Extensão do arquivo original</p>
+            </div>
+        </section>
+
+        <section class="plugins">
+            <h2>Plugin para CSS Separado</h2>
+            <div class="code-block">
+                <pre><code>const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+module.exports = {
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'css/[name].[contenthash].css'
+        })
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader'
+                ]
+            }
+        ]
+    }
+};</code></pre>
+            </div>
+        </section>
+
+        <section class="benefits">
+            <h2>Benefícios</h2>
+            <ul>
+                <li>Cache otimizado no navegador</li>
+                <li>Estrutura organizada e previsível</li>
+                <li>Facilita versionamento e rollback</li>
+                <li>Melhor separação de responsabilidades</li>
+                <li>Deploy mais eficiente</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 - Estudos FullStack B7WEB - Organized Output</p>
+    </footer>
+</body>
+</html>

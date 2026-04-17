@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpack - Usando Sass</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Webpack + Sass</h1>
+        <p class="subtitle">Integrando Sass/SCSS no Webpack</p>
+    </header>
+
+    <main class="content">
+        <section class="intro">
+            <h2>Por que usar Sass com Webpack?</h2>
+            <p>Sass (Syntactically Awesome Stylesheets) é um pré-processador CSS que adiciona recursos poderosos como variáveis, aninhamento, mixins e funções. Com Webpack, o processo de compilação é automatizado e integrado ao build.</p>
+        </section>
+
+        <section class="installation">
+            <h2>Instalação</h2>
+            <div class="code-block">
+                <pre><code># Instalar sass-loader e sass
+npm install --save-dev sass-loader sass
+
+# Também precisamos dos loaders de CSS
+npm install --save-dev style-loader css-loader</code></pre>
+            </div>
+        </section>
+
+        <section class="config">
+            <h2>Configuração do webpack.config.js</h2>
+            <div class="code-block">
+                <pre><code>module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    // Cria tags style no DOM
+                    'style-loader',
+                    // Transforma CSS em CommonJS
+                    'css-loader',
+                    // Compila Sass para CSS
+                    'sass-loader'
+                ]
+            }
+        ]
+    }
+};
+
+// Os loaders são executados de baixo para cima:
+// sass-loader → css-loader → style-loader</code></pre>
+            </div>
+        </section>
+
+        <section class="usage">
+            <h2>Exemplo de Uso</h2>
+            <div class="example-box">
+                <h3>1. Criar arquivo styles.scss</h3>
+                <div class="code-block">
+                    <pre><code>// styles.scss
+$primary: #1c78c0;
+$secondary: #8b5cf6;
+
+.container {
+    padding: 20px;
+    background: $primary;
+
+    .title {
+        color: white;
+        font-size: 2rem;
+        
+        &:hover {
+            color: $secondary;
+        }
+    }
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h3>2. Importar no JavaScript</h3>
+                <div class="code-block">
+                    <pre><code>// index.js
+import './styles.scss';
+
+console.log('Sass está funcionando!');</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Recursos do Sass no Webpack</h2>
+            <div class="feature-card">
+                <h3>Variáveis</h3>
+                <p>Use $nome para criar variáveis reutilizáveis</p>
+            </div>
+            <div class="feature-card">
+                <h3>Aninhamento</h3>
+                <p>Estruture CSS de forma hierárquica e organizada</p>
+            </div>
+            <div class="feature-card">
+                <h3>Mixins</h3>
+                <p>Crie blocos de código reutilizáveis com @mixin</p>
+            </div>
+            <div class="feature-card">
+                <h3>Partials e Import</h3>
+                <p>Organize estilos em múltiplos arquivos com @import</p>
+            </div>
+            <div class="feature-card">
+                <h3>Funções</h3>
+                <p>Use funções nativas como lighten(), darken(), etc.</p>
+            </div>
+        </section>
+
+        <section class="advanced">
+            <h2>Configurações Avançadas</h2>
+            <div class="code-block">
+                <pre><code>{
+    test: /\.s[ac]ss$/i,
+    use: [
+        'style-loader',
+        'css-loader',
+        {
+            loader: 'sass-loader',
+            options: {
+                // Opções do sass-loader
+                sassOptions: {
+                    indentWidth: 4,
+                    includePaths: ['src/styles']
+                }
+            }
+        }
+    ]
+}</code></pre>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 - Estudos FullStack B7WEB - Sass Integration</p>
+    </footer>
+</body>
+</html>

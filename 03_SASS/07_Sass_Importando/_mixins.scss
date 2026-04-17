@@ -1,0 +1,28 @@
+/**
+ * ARQUIVO PARCIAL: _mixins.scss
+ * 
+ * Mixins reutilizáveis
+ */
+
+// Mixin para flexbox centralizado
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Mixin para sombra de card
+@mixin card-shadow {
+    box-shadow: $box-shadow;
+    transition: $transition;
+    
+    &:hover {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        transform: translateY(-5px);
+    }
+}
+
+// Mixin para gradiente
+@mixin gradient-bg($color1, $color2) {
+    background: linear-gradient(135deg, $color1, $color2);
+}

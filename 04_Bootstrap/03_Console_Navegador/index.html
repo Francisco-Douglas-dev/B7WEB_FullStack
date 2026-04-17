@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console do Navegador</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="display-4 text-center mb-5">Console do Navegador</h1>
+
+        <!-- Introdução -->
+        <div class="alert alert-primary">
+            <h4 class="alert-heading">🖥️ O que é o Console?</h4>
+            <p>O console do navegador é uma ferramenta de desenvolvimento que permite:</p>
+            <ul class="mb-0">
+                <li>Visualizar erros JavaScript</li>
+                <li>Executar código JavaScript em tempo real</li>
+                <li>Inspecionar elementos e seus estilos</li>
+                <li>Debugar aplicações</li>
+            </ul>
+        </div>
+
+        <!-- Como abrir -->
+        <div class="card mb-4">
+            <div class="card-header bg-dark text-white">
+                <h4>Como Abrir o Console</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body text-center">
+                                <h5>Windows/Linux</h5>
+                                <kbd>F12</kbd> ou <kbd>Ctrl + Shift + I</kbd>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body text-center">
+                                <h5>Mac</h5>
+                                <kbd>Cmd + Option + I</kbd>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body text-center">
+                                <h5>Botão Direito</h5>
+                                <p class="small">Clicar com o botão direito → <strong>Inspecionar</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exemplos interativos -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white">
+                        <h5>console.log()</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Exibe mensagens no console</p>
+                        <button class="btn btn-success" onclick="testeLog()">Testar console.log()</button>
+                        <pre class="bg-light p-2 mt-3 small">console.log("Olá, Console!");</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-info text-white">
+                        <h5>console.error()</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Exibe mensagens de erro</p>
+                        <button class="btn btn-info" onclick="testeError()">Testar console.error()</button>
+                        <pre class="bg-light p-2 mt-3 small">console.error("Erro!");</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-warning">
+                        <h5>console.warn()</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Exibe avisos</p>
+                        <button class="btn btn-warning" onclick="testeWarn()">Testar console.warn()</button>
+                        <pre class="bg-light p-2 mt-3 small">console.warn("Atenção!");</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5>console.table()</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Exibe dados em formato de tabela</p>
+                        <button class="btn btn-primary" onclick="testeTable()">Testar console.table()</button>
+                        <pre class="bg-light p-2 mt-3 small">console.table([{nome: "João"}]);</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inspeção de elementos Bootstrap -->
+        <div class="card mb-4 border-danger">
+            <div class="card-header bg-danger text-white">
+                <h5>Inspecionando Elementos Bootstrap</h5>
+            </div>
+            <div class="card-body">
+                <p>Clique com o botão direito neste botão e selecione <strong>"Inspecionar"</strong>:</p>
+                <button class="btn btn-lg btn-gradient" id="botaoInspecao" 
+                        style="background: linear-gradient(45deg, #667eea 0%, #764ba2 100%); color: white;">
+                    Inspecione este botão!
+                </button>
+                <div class="mt-3">
+                    <p><strong>O que observar no console:</strong></p>
+                    <ul>
+                        <li>Classes Bootstrap aplicadas (.btn, .btn-lg)</li>
+                        <li>Estilos CSS computados</li>
+                        <li>Propriedades do elemento</li>
+                        <li>Event listeners (se houver)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercício prático -->
+        <div class="alert alert-success">
+            <h4 class="alert-heading">✏️ Exercício Prático</h4>
+            <p><strong>Abra o console agora (F12) e:</strong></p>
+            <ol>
+                <li>Clique nos botões acima para ver as mensagens</li>
+                <li>Digite no console: <code>document.body.style.backgroundColor = "lightblue"</code></li>
+                <li>Inspecione o botão colorido e veja suas propriedades</li>
+                <li>No console, digite: <code>bootstrap</code> para ver o objeto Bootstrap</li>
+            </ol>
+        </div>
+
+        <!-- Comandos úteis -->
+        <div class="card">
+            <div class="card-header">
+                <h4>Comandos Úteis no Console</h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Comando</th>
+                            <th>Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>document.querySelector('.classe')</code></td>
+                            <td>Seleciona um elemento</td>
+                        </tr>
+                        <tr>
+                            <td><code>document.querySelectorAll('.classe')</code></td>
+                            <td>Seleciona todos os elementos</td>
+                        </tr>
+                        <tr>
+                            <td><code>$0</code></td>
+                            <td>Referencia o último elemento inspecionado</td>
+                        </tr>
+                        <tr>
+                            <td><code>clear()</code></td>
+                            <td>Limpa o console</td>
+                        </tr>
+                        <tr>
+                            <td><code>console.dir(elemento)</code></td>
+                            <td>Mostra propriedades do elemento</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Scripts de demonstração -->
+    <script>
+        // Função para testar console.log
+        function testeLog() {
+            console.log("✅ Teste de console.log() executado com sucesso!");
+            console.log("Este é um exemplo de mensagem no console");
+            console.log("Você está usando Bootstrap", bootstrap);
+        }
+
+        // Função para testar console.error
+        function testeError() {
+            console.error("❌ Este é um exemplo de erro no console");
+            console.error("Erros aparecem em vermelho");
+        }
+
+        // Função para testar console.warn
+        function testeWarn() {
+            console.warn("⚠️ Este é um exemplo de aviso no console");
+            console.warn("Avisos aparecem em amarelo");
+        }
+
+        // Função para testar console.table
+        function testeTable() {
+            const dados = [
+                { nome: "João", idade: 25, cidade: "São Paulo" },
+                { nome: "Maria", idade: 30, cidade: "Rio de Janeiro" },
+                { nome: "Pedro", idade: 28, cidade: "Belo Horizonte" }
+            ];
+            console.table(dados);
+            console.log("👆 Veja a tabela acima no console!");
+        }
+
+        // Mensagem de boas-vindas no console
+        console.log("%c🎓 Bem-vindo ao exemplo de Console do Navegador!", 
+                    "font-size: 20px; font-weight: bold; color: #667eea;");
+        console.log("%cAbra o DevTools e explore as funcionalidades!", 
+                    "font-size: 14px; color: #764ba2;");
+        console.log("Versão do Bootstrap:", bootstrap.Tooltip.VERSION);
+    </script>
+</body>
+</html>
