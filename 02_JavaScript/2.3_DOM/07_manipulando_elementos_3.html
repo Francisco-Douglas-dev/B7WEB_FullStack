@@ -1,0 +1,18 @@
+<!-- Aula: Manipulando elementos 3 -->
+<!-- Podemos alterar o HTML interno de um elemento -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Manipulando Elementos 3</title>
+</head>
+<body>
+    <div id="area">Conteúdo inicial</div>
+    <button onclick="alterarHtml()">Alterar HTML</button>
+    <script>
+        function alterarHtml() {
+            document.getElementById('area').innerHTML = '<strong>Conteúdo alterado!</strong>';
+        }
+    </script>
+</body>
+</html>

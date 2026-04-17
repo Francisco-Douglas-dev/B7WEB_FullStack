@@ -1,0 +1,29 @@
+<!-- Resolução: Lista de Tarefas Simples -->
+<!-- Exemplo funcional de lista de tarefas com remoção -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Resolução Lista de Tarefas</title>
+</head>
+<body>
+    <input id="tarefa" type="text" placeholder="Digite uma tarefa">
+    <button onclick="adicionarTarefa()">Adicionar</button>
+    <ul id="lista"></ul>
+    <script>
+        function adicionarTarefa() {
+            let texto = document.getElementById('tarefa').value;
+            if (texto) {
+                let li = document.createElement('li');
+                li.textContent = texto + ' ';
+                let btn = document.createElement('button');
+                btn.textContent = 'Remover';
+                btn.onclick = function() { li.remove(); };
+                li.appendChild(btn);
+                document.getElementById('lista').appendChild(li);
+                document.getElementById('tarefa').value = '';
+            }
+        }
+    </script>
+</body>
+</html>

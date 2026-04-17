@@ -1,0 +1,17 @@
+<!-- Aula: Eventos de teclado 1 -->
+<!-- Podemos capturar eventos de teclado em inputs -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos de Teclado 1</title>
+</head>
+<body>
+    <input id="campo" type="text" placeholder="Digite algo...">
+    <script>
+        document.getElementById('campo').addEventListener('keydown', function(event) {
+            console.log('Tecla pressionada:', event.key);
+        });
+    </script>
+</body>
+</html>

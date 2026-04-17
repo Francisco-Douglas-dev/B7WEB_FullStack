@@ -1,0 +1,18 @@
+<!-- Aula: Manipulando elementos 1 -->
+<!-- Podemos alterar o texto de elementos -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Manipulando Elementos 1</title>
+</head>
+<body>
+    <p id="mensagem">Texto original</p>
+    <button onclick="mudarTexto()">Mudar texto</button>
+    <script>
+        function mudarTexto() {
+            document.getElementById('mensagem').textContent = 'Texto alterado!';
+        }
+    </script>
+</body>
+</html>

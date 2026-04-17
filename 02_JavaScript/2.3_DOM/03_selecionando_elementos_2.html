@@ -1,0 +1,21 @@
+<!-- Aula: Selecionando elementos 2 -->
+<!-- Podemos selecionar por classe, tag ou querySelector -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionando Elementos 2</title>
+</head>
+<body>
+    <p class="destaque">Primeiro parágrafo</p>
+    <p>Segundo parágrafo</p>
+    <script>
+        // Selecionando por classe
+        var elementos = document.getElementsByClassName('destaque');
+        console.log(elementos[0].textContent);
+        // Usando querySelector
+        var p = document.querySelector('p');
+        console.log(p.textContent);
+    </script>
+</body>
+</html>

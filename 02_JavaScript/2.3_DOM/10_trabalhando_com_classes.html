@@ -1,0 +1,25 @@
+<!-- Aula: Trabalhando com Classes -->
+<!-- Podemos adicionar, remover e alternar classes CSS -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Trabalhando com Classes</title>
+    <style>
+        .destaque { background: yellow; }
+    </style>
+</head>
+<body>
+    <p id="paragrafo">Texto</p>
+    <button onclick="destacar()">Destacar</button>
+    <button onclick="removerDestaque()">Remover destaque</button>
+    <script>
+        function destacar() {
+            document.getElementById('paragrafo').classList.add('destaque');
+        }
+        function removerDestaque() {
+            document.getElementById('paragrafo').classList.remove('destaque');
+        }
+    </script>
+</body>
+</html>

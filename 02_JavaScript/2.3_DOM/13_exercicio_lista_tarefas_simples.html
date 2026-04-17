@@ -1,0 +1,25 @@
+<!-- Exercício: Lista de Tarefas Simples -->
+<!-- Crie um campo de texto, um botão e uma lista para adicionar tarefas -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tarefas Simples</title>
+</head>
+<body>
+    <input id="tarefa" type="text" placeholder="Digite uma tarefa">
+    <button onclick="adicionarTarefa()">Adicionar</button>
+    <ul id="lista"></ul>
+    <script>
+        function adicionarTarefa() {
+            let texto = document.getElementById('tarefa').value;
+            if (texto) {
+                let li = document.createElement('li');
+                li.textContent = texto;
+                document.getElementById('lista').appendChild(li);
+                document.getElementById('tarefa').value = '';
+            }
+        }
+    </script>
+</body>
+</html>

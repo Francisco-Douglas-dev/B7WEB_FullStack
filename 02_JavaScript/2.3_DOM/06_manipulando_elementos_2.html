@@ -1,0 +1,26 @@
+<!-- Aula: Manipulando elementos 2 -->
+<!-- Podemos criar e remover elementos dinamicamente -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Manipulando Elementos 2</title>
+</head>
+<body>
+    <div id="container"></div>
+    <button onclick="adicionarElemento()">Adicionar</button>
+    <button onclick="removerElemento()">Remover</button>
+    <script>
+        function adicionarElemento() {
+            let novo = document.createElement('p');
+            novo.textContent = 'Novo elemento!';
+            novo.id = 'novoElemento';
+            document.getElementById('container').appendChild(novo);
+        }
+        function removerElemento() {
+            let el = document.getElementById('novoElemento');
+            if (el) el.remove();
+        }
+    </script>
+</body>
+</html>

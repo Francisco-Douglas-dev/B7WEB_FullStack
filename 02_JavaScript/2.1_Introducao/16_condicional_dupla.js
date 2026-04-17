@@ -1,0 +1,9 @@
+// Aula: Condicional Dupla (if else)
+// Estrutura clássica de decisão com duas possibilidades
+
+let numero = 8;
+if (numero % 2 === 0) {
+    console.log('O número é par');
+} else {
+    console.log('O número é ímpar');
+}
